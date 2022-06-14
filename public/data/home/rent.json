@@ -1,0 +1,27 @@
+[
+    {
+        "caption": "Фудтраки",
+        "imgSrc": "/img/home/rent-1.jpg",
+        "link": "/"
+    },
+    {
+        "caption": "Кулинарные станции",
+        "imgSrc": "/img/home/rent-2.jpg",
+        "link": "/"
+    },
+    {
+        "caption": "Мастер-классы",
+        "imgSrc": "/img/home/rent-3.jpg",
+        "link": "/"
+    },
+    {
+        "caption": "Киоски, палатки",
+        "imgSrc": "/img/home/rent-4.jpg",
+        "link": "/"
+    },
+    {
+        "caption": "Аренда мебели",
+        "imgSrc": "/img/home/rent-5.jpg",
+        "link": "/"
+    }
+]

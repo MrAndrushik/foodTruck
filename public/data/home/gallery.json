@@ -1,0 +1,42 @@
+{
+    "Все": [
+        "/img/home/gallery-1.jpg",
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-3.jpg",
+        "/img/home/gallery-1.jpg",
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-3.jpg"
+    ],
+    "Фудтраки": [
+        "/img/home/gallery-1.jpg",
+        "/img/home/gallery-1.jpg",
+        "/img/home/gallery-1.jpg",
+        "/img/home/gallery-1.jpg",
+        "/img/home/gallery-1.jpg",
+        "/img/home/gallery-1.jpg"
+    ],
+    "Киоски, шатры": [
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-2.jpg"
+    ],
+    "Мастер-классы": [
+        "/img/home/gallery-3.jpg",
+        "/img/home/gallery-3.jpg",
+        "/img/home/gallery-3.jpg",
+        "/img/home/gallery-3.jpg",
+        "/img/home/gallery-3.jpg",
+        "/img/home/gallery-3.jpg"
+    ],
+    "Мебель": [
+        "/img/home/gallery-3.jpg",
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-1.jpg",
+        "/img/home/gallery-3.jpg",
+        "/img/home/gallery-2.jpg",
+        "/img/home/gallery-1.jpg"
+    ]
+}

@@ -1,0 +1,161 @@
+@import "../const";
+
+.gifts {
+    background: $blue url("../../public/img/gift-bg.png") no-repeat center
+        center;
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 70px;
+    clip-path: polygon(0 100%, 50% 97%, 100% 100%, 100% 6%, 0 0);
+
+    @media (max-width: $xl) {
+        background: $blue;
+        clip-path: none;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    @media (max-width: $md) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.container {
+    @media (max-width: $md) {
+        padding: 0;
+    }
+}
+
+.title {
+    margin-bottom: 40px;
+    color: #fff;
+
+    @media (max-width: $xl) {
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: $md) {
+        padding: 0 15px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    @media (max-width: $xl) {
+        margin-bottom: 20px;
+    }
+}
+
+.swiper {
+    @media (max-width: $md) {
+        padding: 0 15px;
+    }
+}
+
+.slide {
+    @media (max-width: $md) {
+        width: 295px;
+    }
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #fff;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 40px;
+
+    @media (max-width: $xl) {
+        padding-bottom: 16px;
+        gap: 10px;
+    }
+
+    @media (max-width: $md) {
+        padding-bottom: 21px;
+        gap: 16px;
+    }
+}
+
+.imgBlock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #bdbdbd20;
+    border-radius: 20px;
+    padding: 30px 70px 20px;
+
+    @media (max-width: $xl) {
+        padding: 16px 55px;
+    }
+
+    @media (max-width: $md) {
+        padding: 22px 77px;
+    }
+}
+
+.content {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.caption {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 6px;
+
+    @media (max-width: $xl) {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 4px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 6px;
+    }
+}
+
+.descr {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    @media (max-width: $xl) {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.notice {
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+
+    @media (max-width: $xl) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    @media (max-width: $md) {
+        padding: 0 15px;
+    }
+}

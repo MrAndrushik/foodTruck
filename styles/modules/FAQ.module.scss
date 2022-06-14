@@ -1,0 +1,125 @@
+@import "../const";
+
+.section {
+    background: linear-gradient(93.04deg, #fcfcfc 10.53%, #dcdcdc 92.66%);
+    padding-top: 60px;
+    padding-bottom: 80px;
+    margin-bottom: 0;
+
+    @media (max-width: $xl) {
+        background: none;
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
+}
+
+.title {
+    margin-bottom: 30px;
+
+    @media (max-width: $xl) {
+        margin-bottom: 20px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-width: $xl) {
+        gap: 15px;
+    }
+}
+
+.shadow {
+    filter: drop-shadow(0px 6px 25px rgba(0, 0, 0, 0.1));
+}
+
+.dropdown {
+    background-color: #fff;
+    clip-path: polygon(0 0, 100% 0, 99% 100%, 2% 100%);
+}
+
+.topBlock {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 27px 30px 24px 50px;
+    background: #fff;
+    transition: all 0.15s ease;
+    clip-path: polygon(0 0, 100% 0, 99% 100%, 2% 100%);
+
+    & > svg {
+        transition: all 0.15s ease;
+        min-width: 30px;
+    }
+
+    & > svg > path {
+        transition: all 0.15s ease;
+    }
+
+    @media (max-width: $xl) {
+        padding: 20px;
+    }
+}
+
+.topBlockActive {
+    background: $black;
+    color: #fff;
+
+    & > svg {
+        transform: rotate(180deg);
+    }
+
+    & > svg > path {
+        fill: #ffffff;
+    }
+}
+
+.caption {
+    font-size: 22px;
+    line-height: 29px;
+    font-weight: 400;
+
+    @media (max-width: $xl) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.bottom {
+    padding: 0px 20px 0px 50px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+    box-sizing: content-box;
+    transition: all 0.15s ease;
+
+    @media (max-width: $xl) {
+        padding: 0 20px 0 20px;
+    }
+}
+
+.bottomActive {
+    opacity: 1;
+    padding-bottom: 50px;
+    padding-top: 30px;
+
+    @media (max-width: $xl) {
+        padding: 20px;
+    }
+}
+
+.text {
+    font-size: 22px;
+    line-height: 26px;
+    max-width: 725px;
+
+    @media (max-width: $xl) {
+        font-size: 14px;
+        line-height: 16px;
+        max-width: 585px;
+    }
+}

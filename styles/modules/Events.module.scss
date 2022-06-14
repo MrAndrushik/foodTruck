@@ -1,0 +1,121 @@
+@import "../const";
+
+.title {
+    margin-bottom: 30px;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    @media (max-width: $xl) {
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: $md) {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+.block {
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    width: 33, 33%;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $md) {
+        max-width: 330px;
+    }
+}
+
+.imgBlock {
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 10px;
+
+    @media (max-width: $md) {
+    }
+}
+
+.content {
+    text-align: center;
+    margin-bottom: 18px;
+    padding: 0 20px;
+
+    @media (max-width: $xl) {
+        padding: 0 6px;
+    }
+
+    @media (max-width: $md) {
+        margin-bottom: 14px;
+    }
+}
+
+.caption {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+    @media (max-width: $xl) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    @media (max-width: $md) {
+        margin-bottom: 4px;
+    }
+}
+
+.descr {
+    font-size: 14px;
+    line-height: 16px;
+    color: $gray;
+
+    @media (max-width: $xl) {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+.detail {
+    border-top: 1px solid #d3d3d3;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    color: #828282;
+
+    @media (max-width: $xl) {
+        padding: 12px;
+    }
+
+    @media (max-width: $md) {
+        padding: 20px 12px;
+    }
+}
+
+.btn {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #ffffff;
+    padding: 12px 28px;
+    background: #3ba8c0;
+    border-radius: 10px;
+    display: flex;
+    margin: 0 auto;
+}

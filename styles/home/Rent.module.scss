@@ -1,0 +1,95 @@
+@import "../const";
+
+.title {
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 19px;
+    flex-wrap: wrap;
+
+    @media (max-width: $xl) {
+        gap: 12px;
+    }
+
+    @media (max-width: $md) {
+        justify-content: center;
+    }
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    & > .block {
+        width: 50%;
+    }
+
+    @media (max-width: $xl) {
+        gap: 12px;
+    }
+
+    @media (max-width: $md) {
+        flex-wrap: wrap;
+        justify-content: center;
+        & > .block {
+            width: 330px;
+        }
+    }
+}
+
+.block {
+    position: relative;
+    width: 367px;
+    height: 207px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+        border-radius: 10px;
+    }
+
+    @media (max-width: $xl) {
+        width: 218px;
+        height: 123px;
+    }
+
+    @media (max-width: $md) {
+        width: 330px;
+    }
+
+    &::after {
+        content: "";
+        border-radius: 10px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        );
+    }
+}
+
+.caption {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+
+    @media (max-width: $xl) {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 22px;
+        line-height: 29px;
+    }
+}
