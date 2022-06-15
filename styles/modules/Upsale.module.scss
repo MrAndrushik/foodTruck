@@ -1,0 +1,36 @@
+@import "../const";
+
+.section {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    margin-bottom: 0;
+    background-color: #f4f4f4;
+
+    @media (max-width: $xl) {
+        padding-bottom: 50px;
+    }
+
+    @media (max-width: $md) {
+        padding-bottom: 30px;
+    }
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.swiper {
+    padding-left: calc((100% - $xl + 30px) / 2);
+
+    @media (max-width: $xl) {
+        padding: 0 15px;
+    }
+
+    & > div {
+        padding-bottom: 30px;
+    }
+}
+
+.swiperSlide {
+    width: auto;
+}

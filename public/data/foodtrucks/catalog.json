@@ -1,0 +1,70 @@
+{
+    "title": "Каталог фудтраков и прицепов",
+    "tags": ["Все", "Фудтраки", "Полевая кухня"],
+    "catalog": [
+        {
+            "tags": ["Полевая кухня"],
+            "imgSrc": "/img/foodtrucks/catalog-1.jpg",
+            "caption": "Фудтрак военный",
+            "startPrice1": "55 000",
+            "startPrice2": "35 000",
+            "id": 1
+        },
+        {
+            "tags": ["Фудтраки"],
+            "imgSrc": "/img/foodtrucks/catalog-2.jpg",
+            "caption": "AFORMER 65 - 6 МЕТРОВ",
+            "startPrice1": "55 000",
+            "startPrice2": "35 000",
+            "id": 2
+        },
+        {
+            "tags": ["Фудтраки"],
+            "imgSrc": "/img/foodtrucks/catalog-3.jpg",
+            "caption": "V6 ДЛИНА 6 МЕТРОВ",
+            "startPrice1": "55 000",
+            "startPrice2": "35 000",
+            "id": 3
+        },
+        {
+            "tags": ["Фудтраки"],
+            "imgSrc": "/img/foodtrucks/catalog-4.jpg",
+            "caption": "SL4 САМЫЙ КОМПАКТНЫЙ И МОБИЛЬНЫЙ 4,5 МЕТРА ",
+            "startPrice1": "55 000",
+            "startPrice2": "35 000",
+            "id": 4
+        },
+        {
+            "tags": ["Фудтраки"],
+            "imgSrc": "/img/foodtrucks/catalog-5.jpg",
+            "caption": "V6 ДЛИНА 6 МЕТРОВ",
+            "startPrice1": "55 000",
+            "startPrice2": "35 000",
+            "id": 5
+        },
+        {
+            "tags": ["Фудтраки"],
+            "imgSrc": "/img/foodtrucks/catalog-6.jpg",
+            "caption": "Бочка с квасом",
+            "startPrice1": "55 000",
+            "startPrice2": "35 000",
+            "id": 6
+        },
+        {
+            "tags": ["Полевая кухня"],
+            "imgSrc": "/img/foodtrucks/catalog-7.jpg",
+            "caption": "КП-150 (кухня)",
+            "startPrice1": "55 000",
+            "startPrice2": "35 000",
+            "id": 7
+        },
+        {
+            "tags": ["Полевая кухня"],
+            "imgSrc": "/img/foodtrucks/catalog-8.jpg",
+            "caption": "КП-150 (кухня)",
+            "startPrice1": "55 000",
+            "startPrice2": "35 000",
+            "id": 8
+        }
+    ]
+}

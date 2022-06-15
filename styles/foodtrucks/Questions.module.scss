@@ -1,0 +1,110 @@
+@import "../const";
+
+.section {
+    background: #fff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @media (max-width: $xl) {
+        gap: 15px;
+    }
+}
+
+.dropdown {
+    background-color: #fff;
+    outline: 2px solid #3ba8c0;
+    border-radius: 10px;
+}
+
+.topBlock {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    padding: 36px 30px 36px 35px;
+    border-radius: 10px;
+    color: $blue;
+    transition: all 0.15s ease;
+
+    & > svg {
+        transition: all 0.15s ease;
+        min-width: 30px;
+    }
+
+    & > svg > path {
+        transition: all 0.15s ease;
+        fill: $blue;
+    }
+
+    @media (max-width: $xl) {
+        padding: 20px;
+    }
+}
+
+.topBlockActive {
+    background: $blue;
+    color: #fff;
+
+    & > svg {
+        transform: rotate(180deg);
+    }
+
+    & > svg > path {
+        fill: #ffffff;
+    }
+}
+
+.caption {
+    font-size: 22px;
+    line-height: 29px;
+    font-weight: 700;
+
+    @media (max-width: $xl) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.bottom {
+    padding: 0px 30px 0px 35px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+    box-sizing: content-box;
+    transition: all 0.15s ease;
+
+    @media (max-width: $xl) {
+        padding: 0 20px 0 20px;
+    }
+}
+
+.bottomActive {
+    opacity: 1;
+    padding-bottom: 50px;
+    padding-top: 30px;
+
+    @media (max-width: $xl) {
+        padding: 20px;
+    }
+}
+
+.text {
+    font-size: 22px;
+    line-height: 26px;
+    max-width: 725px;
+
+    @media (max-width: $xl) {
+        font-size: 14px;
+        line-height: 16px;
+        max-width: 585px;
+    }
+}

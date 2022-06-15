@@ -1,0 +1,44 @@
+@import "../const";
+
+.tags {
+    height: 69px;
+    overflow: auto;
+    position: relative;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        height: 0;
+    }
+}
+
+.list {
+    white-space: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+
+    @media (max-width: $md) {
+        position: absolute;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.tag {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: $gray;
+    padding: 9px 22px;
+    border: 1px solid $gray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.activeTag {
+    color: #fff;
+    background: $gray;
+}

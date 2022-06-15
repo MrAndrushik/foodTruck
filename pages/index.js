@@ -4,13 +4,13 @@ import Rent from "../components/home/Rent";
 import Gallery from "../components/home/Gallery";
 import Gifts from "../components/modules/Gifts";
 import Events from "../components/modules/Events";
+import FAQ from "../components/modules/FAQ";
+import Feedback from "../components/modules/Feedback";
 
 // DATA
 import StepsData from "../public/data/home/steps.json";
 import RentData from "../public/data/home/rent.json";
 import GalleryData from "../public/data/home/gallery.json";
-import FAQ from "../components/modules/FAQ";
-import Feedback from "../components/modules/Feedback";
 
 export default function Home() {
     return (

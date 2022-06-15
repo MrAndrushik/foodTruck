@@ -1,0 +1,134 @@
+{
+    "title": "Дополните станцию",
+    "tags": ["Все", "Мебель", "Урны", "Персонал", "Мастер-классы"],
+    "catalog": [
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-1.jpg",
+            "caption": "Стул белый кьявари",
+            "startPrice1": "250",
+            "startPrice2": "100",
+            "id": 1
+        },
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-2.jpg",
+            "caption": "Стол бочка №1",
+            "startPrice1": "750",
+            "startPrice2": "450",
+            "id": 2
+        },
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-3.jpg",
+            "caption": "Пластиковый бак для мусора",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": 3
+        },
+        {
+            "tags": ["Персонал"],
+            "imgSrc": "/img/foodtrucks/upsale-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": 4
+        },
+        {
+            "tags": ["Персонал"],
+            "imgSrc": "/img/foodtrucks/upsale-1.jpg",
+            "caption": "Стул белый кьявари",
+            "startPrice1": "250",
+            "startPrice2": "100",
+            "id": 5
+        },
+        {
+            "tags": ["Персонал"],
+            "imgSrc": "/img/foodtrucks/upsale-2.jpg",
+            "caption": "Стол бочка №1",
+            "startPrice1": "750",
+            "startPrice2": "450",
+            "id": 6
+        },
+        {
+            "tags": ["Мастер-классы"],
+            "imgSrc": "/img/foodtrucks/upsale-3.jpg",
+            "caption": "Пластиковый бак для мусора",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": 7
+        },
+        {
+            "tags": ["Мастер-классы"],
+            "imgSrc": "/img/foodtrucks/upsale-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": 8
+        },
+        {
+            "tags": ["Мастер-классы"],
+            "imgSrc": "/img/foodtrucks/upsale-1.jpg",
+            "caption": "Стул белый кьявари",
+            "startPrice1": "250",
+            "startPrice2": "100",
+            "id": 9
+        },
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-2.jpg",
+            "caption": "Стол бочка №1",
+            "startPrice1": "750",
+            "startPrice2": "450",
+            "id": 10
+        },
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-3.jpg",
+            "caption": "Пластиковый бак для мусора",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": 11
+        },
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": 12
+        },
+        {
+            "tags": ["Урны"],
+            "imgSrc": "/img/foodtrucks/upsale-1.jpg",
+            "caption": "Стул белый кьявари",
+            "startPrice1": "250",
+            "startPrice2": "100",
+            "id": 13
+        },
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-2.jpg",
+            "caption": "Стол бочка №1",
+            "startPrice1": "750",
+            "startPrice2": "450",
+            "id": 14
+        },
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-3.jpg",
+            "caption": "Пластиковый бак для мусора",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": 15
+        },
+        {
+            "tags": ["Мебель"],
+            "imgSrc": "/img/foodtrucks/upsale-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": 16
+        }
+    ]
+}

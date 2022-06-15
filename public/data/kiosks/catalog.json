@@ -1,0 +1,54 @@
+{
+    "catalog": [
+        {
+            "imgSrc": "/img/kiosks/catalog-1.jpg",
+            "caption": "Питание с шатрами",
+            "startPrice1": "12 000",
+            "startPrice2": "35 000",
+            "id": "K-1"
+        },
+        {
+            "imgSrc": "/img/furniture/catalog-2.jpg",
+            "caption": "Стол бочка №1",
+            "startPrice1": "750",
+            "startPrice2": "450",
+            "id": "K-2"
+        },
+        {
+            "imgSrc": "/img/furniture/catalog-3.jpg",
+            "caption": "Пластиковый бак для мусора",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": "K-3"
+        },
+        {
+            "imgSrc": "/img/furniture/catalog-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": "K-4"
+        },
+        {
+            "tags": ["Дополнительно"],
+            "imgSrc": "/img/furniture/catalog-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": "K-5"
+        },
+        {
+            "imgSrc": "/img/furniture/catalog-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": "K-6"
+        },
+        {
+            "imgSrc": "/img/furniture/catalog-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": "K-7"
+        }
+    ]
+}

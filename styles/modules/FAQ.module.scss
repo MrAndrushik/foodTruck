@@ -50,6 +50,15 @@
     transition: all 0.15s ease;
     clip-path: polygon(0 0, 100% 0, 99% 100%, 2% 100%);
 
+    &:hover {
+        background: $blue;
+        color: #fff;
+    }
+
+    &:hover > svg > path {
+        fill: #fff;
+    }
+
     & > svg {
         transition: all 0.15s ease;
         min-width: 30px;

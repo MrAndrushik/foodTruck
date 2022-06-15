@@ -1,0 +1,36 @@
+@import "../const";
+
+.section {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    background: #f4f4f4;
+    margin-bottom: 0;
+    overflow-x: hidden;
+
+    @media (max-width: $xl) {
+        background: #f4f4f4;
+        padding-bottom: 0;
+    }
+}
+
+.sectionPartial {
+    padding-top: 0;
+}
+
+.title {
+    margin-bottom: 30px;
+
+    @media (max-width: $md) {
+        margin-bottom: 20px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+
+    @media (max-width: $md) {
+        justify-content: center;
+    }
+}

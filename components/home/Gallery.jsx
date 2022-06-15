@@ -1,12 +1,19 @@
 import { useState } from "react";
 import Image from "next/image";
+
+import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import "swiper/css/navigation";
+
 import styles from "../../styles/home/Gallery.module.scss";
+import SlideBtn from "../modules/SlideBtn";
+import Tags from "../modules/Tags";
 
 const Gallery = ({ obj }) => {
     const [activeTag, setActiveTag] = useState("Все");
+    const tags = Object.keys(obj);
     return (
         <section className={styles.gallery}>
             <div className="container">
@@ -14,47 +21,38 @@ const Gallery = ({ obj }) => {
                     Как это выглядит в деле
                 </h2>
             </div>
-            <div className={styles.container}>
-                <ul className={styles.list}>
-                    {Object.keys(obj).map((tag) => (
-                        <li key={tag}>
-                            <button
-                                className={
-                                    tag === activeTag
-                                        ? `${styles.tag} ${styles.tagActive}`
-                                        : `${styles.tag}`
-                                }
-                                onClick={() => setActiveTag(tag)}
-                            >
-                                {tag}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <Tags
+                tags={tags}
+                activeTag={activeTag}
+                setActiveTag={setActiveTag}
+            />
             <Swiper
+                modules={[Navigation]}
                 slidesPerView="auto"
-                className={`${styles.swiper}`}
+                className={`${styles.swiper} gallery__swiper`}
                 grabCursor
                 autoHeight
                 breakpoints={{
                     1170: {
-                        spaceBetween: 50,
+                        spaceBetween: 20,
                         centeredSlides: true,
                     },
                     0: {
                         spaceBetween: 10,
-                        centeredSlides: false,
+                        centeredSlides: true,
                     },
                 }}
             >
                 {obj[`${activeTag}`].map((item, index) => (
                     <SwiperSlide className={styles.swiperSlide} key={index}>
-                        <div className={`${styles.slide}`}>
-                            <Image src={item} layout="fill" alt="slide" />
+                        <div className="slide-wrapper">
+                            <div className={`${styles.slide}`}>
+                                <Image src={item} layout="fill" alt="slide" />
+                            </div>
                         </div>
                     </SwiperSlide>
                 ))}
+                <SlideBtn adaptive="desktop" type="next" />
             </Swiper>
         </section>
     );

@@ -1,0 +1,141 @@
+@import "../const";
+
+.section {
+    margin-bottom: 60px;
+}
+
+.wrapper {
+    padding: 50px 30px 30px 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+
+    @media (max-width: $md) {
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        background: linear-gradient(
+            97.47deg,
+            rgba(0, 0, 0, 0.81) 10.31%,
+            rgba(0, 0, 0, 0) 41.12%
+        );
+        opacity: 0.7;
+        z-index: 0;
+    }
+
+    &:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.729) 5%,
+            rgba(0, 0, 0, 0) 88.83%
+        );
+        z-index: 1;
+    }
+}
+
+.notice {
+    z-index: 1;
+    position: relative;
+    font-size: 18px;
+    line-height: 21px;
+    color: $blue;
+    margin-bottom: 10px;
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.img {
+    border-radius: 10px;
+}
+
+.title {
+    z-index: 1;
+    position: relative;
+    max-width: 448px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 47px;
+    color: #fff;
+    margin-bottom: 25px;
+
+    @media (max-width: $md) {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 29px;
+        margin-bottom: 30px;
+    }
+}
+
+.btn {
+    z-index: 1;
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+    padding: 12px 38px;
+    background: #3ba8c0;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    width: -moz-fit-content;
+    width: fit-content;
+    @media (max-width: $md) {
+        order: 1;
+        margin-bottom: 0;
+    }
+}
+
+.list {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    gap: 37px;
+    flex-wrap: wrap;
+    row-gap: 18px;
+
+    @media (max-width: $md) {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+.item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.caption {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: $light-gray;
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}

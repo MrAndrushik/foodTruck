@@ -1,0 +1,30 @@
+@import "../const";
+
+.next,
+.prev {
+    z-index: 100;
+    width: 140px;
+    height: 48px;
+    transition: $transition;
+    position: absolute;
+}
+
+.next {
+    right: 70px;
+    top: 50%;
+    transform: translateY(-24px);
+}
+
+.prev {
+    transform: rotate(180deg);
+}
+
+.desktop {
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.disabled {
+    opacity: 0;
+}

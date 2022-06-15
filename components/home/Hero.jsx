@@ -6,7 +6,7 @@ import styles from "../../styles/home/Hero.module.scss";
 
 const Hero = ({ obj }) => {
     return (
-        <section className={styles.hero}>
+        <section className={styles.section}>
             <div className={styles.imgBlock}>
                 <Image
                     priority

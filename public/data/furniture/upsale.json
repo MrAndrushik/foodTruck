@@ -1,0 +1,46 @@
+{
+    "title": "Выберите станцию под мебель",
+    "tags": ["Все", "Столы", "Стулья", "Урны", "Станции", "Шатры, киоски"],
+    "catalog": [
+        {
+            "tags": ["Станции"],
+            "imgSrc": "/img/furniture/upsale-1.jpg",
+            "caption": "Стул белый кьявари",
+            "startPrice1": "250",
+            "startPrice2": "100",
+            "id": 1
+        },
+        {
+            "tags": ["Столы"],
+            "imgSrc": "/img/furniture/catalog-2.jpg",
+            "caption": "Стол бочка №1",
+            "startPrice1": "750",
+            "startPrice2": "450",
+            "id": 2
+        },
+        {
+            "tags": ["Стулья"],
+            "imgSrc": "/img/furniture/catalog-3.jpg",
+            "caption": "Пластиковый бак для мусора",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": 3
+        },
+        {
+            "tags": ["Шатры, киоски"],
+            "imgSrc": "/img/furniture/catalog-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": 4
+        },
+        {
+            "tags": ["Урны"],
+            "imgSrc": "/img/furniture/catalog-4.jpg",
+            "caption": "Стол с лавочками",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": 5
+        }
+    ]
+}

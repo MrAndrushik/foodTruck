@@ -1,6 +1,6 @@
 @import "../const";
 
-.hero {
+.section {
     display: flex;
     flex-direction: column;
     margin-bottom: 60px;
@@ -17,8 +17,11 @@
 }
 
 .imgBlock {
-    @media (max-width: $md) {
-        // height: 160px
+    min-width: 452px;
+    clip-path: polygon(0% 0%, 0 94%, 30% 100%, 86% 93%, 100% 100%, 100% 0);
+
+    @media (max-width: 452px) {
+        margin-left: calc(-1 * ((452px - 100vw) / 2));
     }
 }
 
@@ -39,7 +42,7 @@
     position: relative;
     padding: 40px 30px;
     top: -150px;
-    margin-bottom: -110px;
+    margin-bottom: -130px;
 
     @media (max-width: $xl) {
         width: -moz-fit-content;

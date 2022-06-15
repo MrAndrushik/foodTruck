@@ -1,0 +1,47 @@
+{
+    "title": "Каталог станций",
+    "catalog": [
+        {
+            "imgSrc": "/img/stations/catalog-1.jpg",
+            "caption": "Попкорн станция ",
+            "startPrice1": "11 550",
+            "startPrice2": "9000",
+            "id": "S-1"
+        },
+        {
+            "imgSrc": "/img/stations/catalog-2.jpg",
+            "caption": "Сахарная вата",
+            "startPrice1": "9650",
+            "startPrice2": "1250",
+            "id": "S-2"
+        },
+        {
+            "imgSrc": "/img/stations/catalog-3.jpg",
+            "caption": "Стойка с сиропом",
+            "startPrice1": "370",
+            "startPrice2": "130",
+            "id": "S-3"
+        },
+        {
+            "imgSrc": "/img/stations/catalog-4.jpg",
+            "caption": "Шоколадный фонтан",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": "S-4"
+        },
+        {
+            "imgSrc": "/img/stations/catalog-5.jpg",
+            "caption": "Велошейкер",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": "S-5"
+        },
+        {
+            "imgSrc": "/img/stations/catalog-6.jpg",
+            "caption": "Аппарат с газированной водой",
+            "startPrice1": "1150",
+            "startPrice2": "750",
+            "id": "S-6"
+        }
+    ]
+}
