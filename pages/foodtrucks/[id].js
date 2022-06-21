@@ -70,7 +70,7 @@ const FoodtruckDetails = ({ foodtrucks }) => {
                         },
                     }}
                 >
-                    {foodtruck.gallery.map((item, index) => (
+                    {foodtruck.gallery?.map((item, index) => (
                         <SwiperSlide className={styles.swiperSlide} key={index}>
                             <div className="slide-wrapper">
                                 <div className={`${styles.slide}`}>
@@ -91,20 +91,25 @@ const FoodtruckDetails = ({ foodtrucks }) => {
                     {foodtruck.characteristic.title}
                 </h2>
                 <div className={styles.block}>
-                    {foodtruck.characteristic.information.map((item, index) => (
-                        <div key={index} className={styles.blockItem}>
-                            <p className={styles.blockCaption}>
-                                {item.caption}
-                            </p>
-                            <div className={styles.descrBlock}>
-                                {item.descr.map((descr, index) => (
-                                    <p key={index} className={styles.blockText}>
-                                        {descr}
-                                    </p>
-                                ))}
+                    {foodtruck.characteristic?.information?.map(
+                        (item, index) => (
+                            <div key={index} className={styles.blockItem}>
+                                <p className={styles.blockCaption}>
+                                    {item.caption}
+                                </p>
+                                <div className={styles.descrBlock}>
+                                    {item.descr?.map((descr, index) => (
+                                        <p
+                                            key={index}
+                                            className={styles.blockText}
+                                        >
+                                            {descr}
+                                        </p>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )
+                    )}
                 </div>
             </section>
             <Advantages obj={CookData} border={false} background="right" />
