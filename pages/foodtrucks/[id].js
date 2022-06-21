@@ -136,7 +136,34 @@ const FoodtruckDetails = ({ foodtrucks }) => {
             <h1 className={`${styles.title} stn-title`}>
                 {foodtruck.caption}{" "}
             </h1>
-            ;
+            <Swiper
+                modules={[Navigation]}
+                slidesPerView="auto"
+                className={`${styles.swiper} gallery__swiper`}
+                grabCursor
+                autoHeight
+                breakpoints={{
+                    1170: {
+                        spaceBetween: 20,
+                        centeredSlides: true,
+                    },
+                    0: {
+                        spaceBetween: 10,
+                        centeredSlides: true,
+                    },
+                }}
+            >
+                {foodtruck.gallery.map((item, index) => (
+                    <SwiperSlide className={styles.swiperSlide} key={index}>
+                        <div className="slide-wrapper">
+                            <div className={`${styles.slide}`}>
+                                <Image src={item} layout="fill" alt="slide" />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+                <SlideBtn adaptive="desktop" type="next" />
+            </Swiper>
         </section>
     );
 };
