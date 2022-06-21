@@ -14,38 +14,38 @@ import CookData from "../../public/data/foodtrucks/details/cooking.json";
 import AdvantagesData from "../../public/data/foodtrucks/advantages.json";
 import RecipeData from "../../public/data/foodtrucks/details/recipe.json";
 
-// export const getStaticPaths = async () => {
-//     const res = await fetch(
-//         "https://food-truck-nine.vercel.app/api/foodtrucks"
-//     );
-//     const data = await res.json();
-//     const paths = data.map((item) => {
-//         return {
-//             params: { id: item.id.toString() },
-//         };
-//     });
+export const getStaticPaths = async () => {
+    const res = await fetch(
+        "https://food-truck-nine.vercel.app/api/foodtrucks"
+    );
+    const data = await res.json();
+    const paths = data.map((item) => {
+        return {
+            params: { id: item.id.toString() },
+        };
+    });
 
-//     return {
-//         paths,
-//         fallback: false,
-//     };
-// };
+    return {
+        paths,
+        fallback: false,
+    };
+};
 
-// export const getStaticProps = async (context) => {
-//     const id = context.params.id;
+export const getStaticProps = async (context) => {
+    const id = context.params.id;
 
-//     const res = await fetch(
-//         "https://food-truck-nine.vercel.app/api/foodtrucks/" + id
-//     );
-//     const data = await res.json();
+    const res = await fetch(
+        "https://food-truck-nine.vercel.app/api/foodtrucks/" + id
+    );
+    const data = await res.json();
 
-//     return {
-//         props: { foodtrucks: data },
-//     };
-// };
+    return {
+        props: { foodtrucks: data },
+    };
+};
 
 const FoodtruckDetails = ({ foodtrucks }) => {
-    // const foodtruck = foodtrucks[0];
+    const foodtruck = foodtrucks[0];
     // return (
     //     <>
     //         <section className={styles.section}>
@@ -130,7 +130,15 @@ const FoodtruckDetails = ({ foodtrucks }) => {
     //         </section>
     //     </>
     // );
-    return <div>COCO</div>;
+    return (
+        <section className={styles.section}>
+            <Breadcrumbs />{" "}
+            <h1 className={`${styles.title} stn-title`}>
+                {foodtruck.caption}{" "}
+            </h1>
+            ;
+        </section>
+    );
 };
 
 export default FoodtruckDetails;
