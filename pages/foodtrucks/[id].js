@@ -131,40 +131,67 @@ const FoodtruckDetails = ({ foodtrucks }) => {
     //     </>
     // );
     return (
-        <section className={styles.section}>
-            <Breadcrumbs />{" "}
-            <h1 className={`${styles.title} stn-title`}>
-                {foodtruck.caption}{" "}
-            </h1>
-            <Swiper
-                modules={[Navigation]}
-                slidesPerView="auto"
-                className={`${styles.swiper} gallery__swiper`}
-                grabCursor
-                autoHeight
-                breakpoints={{
-                    1170: {
-                        spaceBetween: 20,
-                        centeredSlides: true,
-                    },
-                    0: {
-                        spaceBetween: 10,
-                        centeredSlides: true,
-                    },
-                }}
-            >
-                {foodtruck.gallery.map((item, index) => (
-                    <SwiperSlide className={styles.swiperSlide} key={index}>
-                        <div className="slide-wrapper">
-                            <div className={`${styles.slide}`}>
-                                <Image src={item} layout="fill" alt="slide" />
+        <div>
+            <section className={styles.section}>
+                <Breadcrumbs />{" "}
+                <h1 className={`${styles.title} stn-title`}>
+                    {foodtruck.caption}{" "}
+                </h1>
+                <Swiper
+                    modules={[Navigation]}
+                    slidesPerView="auto"
+                    className={`${styles.swiper} gallery__swiper`}
+                    grabCursor
+                    autoHeight
+                    breakpoints={{
+                        1170: {
+                            spaceBetween: 20,
+                            centeredSlides: true,
+                        },
+                        0: {
+                            spaceBetween: 10,
+                            centeredSlides: true,
+                        },
+                    }}
+                >
+                    {foodtruck.gallery.map((item, index) => (
+                        <SwiperSlide className={styles.swiperSlide} key={index}>
+                            <div className="slide-wrapper">
+                                <div className={`${styles.slide}`}>
+                                    <Image
+                                        src={item}
+                                        layout="fill"
+                                        alt="slide"
+                                    />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                    <SlideBtn adaptive="desktop" type="next" />
+                </Swiper>
+            </section>
+            <section className={styles.characteristic}>
+                <h2 className={`${styles.caption} stn-title`}>
+                    {foodtruck.characteristic.title}
+                </h2>
+                <div className={styles.block}>
+                    {foodtruck.characteristic.information.map((item, index) => (
+                        <div key={index} className={styles.blockItem}>
+                            <p className={styles.blockCaption}>
+                                {item.caption}
+                            </p>
+                            <div className={styles.descrBlock}>
+                                {item.descr.map((descr, index) => (
+                                    <p key={index} className={styles.blockText}>
+                                        {descr}
+                                    </p>
+                                ))}
                             </div>
                         </div>
-                    </SwiperSlide>
-                ))}
-                <SlideBtn adaptive="desktop" type="next" />
-            </Swiper>
-        </section>
+                    ))}
+                </div>
+            </section>
+        </div>
     );
 };
 
