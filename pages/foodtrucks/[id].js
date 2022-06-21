@@ -45,7 +45,7 @@ import RecipeData from "../../public/data/foodtrucks/details/recipe.json";
 // };
 
 const FoodtruckDetails = ({ foodtrucks }) => {
-    const foodtruck = foodtrucks[0];
+    // const foodtruck = foodtrucks[0];
     // return (
     //     <>
     //         <section className={styles.section}>
