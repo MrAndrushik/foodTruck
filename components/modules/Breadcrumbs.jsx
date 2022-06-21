@@ -26,9 +26,7 @@ const Breadcrumbs = () => {
     const [last, setLast] = useState("");
 
     const asyncData = async () => {
-        const res = await fetch(
-            "https://food-truck-nine.vercel.app/api" + router.asPath
-        );
+        const res = await fetch("http://localhost:3000/api" + router.asPath);
         const data = await res.json();
         setLast(data[0].caption);
     };
@@ -49,9 +47,9 @@ const Breadcrumbs = () => {
                     : transformPaths[subpath];
             return { href, title };
         });
-        if (router.pathname.includes("[id]")) {
-            asyncData();
-        }
+        // if (router.pathname.includes("[id]")) {
+        //     asyncData();
+        // }
         return [{ href: "/", title: "Главная" }, ...crumblist];
     };
 

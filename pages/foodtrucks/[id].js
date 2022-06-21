@@ -33,6 +33,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
+
     const res = await fetch(
         "https://food-truck-nine.vercel.app/api/foodtrucks/" + id
     );
