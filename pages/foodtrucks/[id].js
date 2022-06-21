@@ -191,6 +191,27 @@ const FoodtruckDetails = ({ foodtrucks }) => {
                     ))}
                 </div>
             </section>
+            <Advantages obj={CookData} border={false} background="right" />
+            <Advantages obj={AdvantagesData} />
+            <Advantages obj={RecipeData} border={false} background="right" />
+            <section className={styles.poster}>
+                <div className={styles.imgBlock}>
+                    <Image
+                        src="/img/foodtrucks/poster.png"
+                        layout="fill"
+                        alt="food"
+                        objectFit="cover"
+                    />
+                </div>
+                <div className={styles.content}>
+                    <p>
+                        В наличии более чем 30 видов блюд и более 15 видов
+                        оборудования для фудтрака.{" "}
+                        <span>Более подробно расскажет наш менеджер</span>
+                    </p>
+                    <button className={styles.btn}>Оставить заявку</button>
+                </div>
+            </section>
         </div>
     );
 };
