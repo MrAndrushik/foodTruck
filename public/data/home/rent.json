@@ -2,26 +2,26 @@
     {
         "caption": "Фудтраки",
         "imgSrc": "/img/home/rent-1.jpg",
-        "link": "/"
+        "link": "/foodtrucks"
     },
     {
         "caption": "Кулинарные станции",
         "imgSrc": "/img/home/rent-2.jpg",
-        "link": "/"
+        "link": "/stations"
     },
     {
         "caption": "Мастер-классы",
         "imgSrc": "/img/home/rent-3.jpg",
-        "link": "/"
+        "link": "/master-class"
     },
     {
         "caption": "Киоски, палатки",
         "imgSrc": "/img/home/rent-4.jpg",
-        "link": "/"
+        "link": "/kiosks"
     },
     {
         "caption": "Аренда мебели",
         "imgSrc": "/img/home/rent-5.jpg",
-        "link": "/"
+        "link": "/furniture"
     }
 ]

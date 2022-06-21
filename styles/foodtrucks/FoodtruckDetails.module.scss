@@ -1,0 +1,147 @@
+@import "../const";
+
+.section {
+    position: relative;
+    padding-top: 140px;
+    margin-bottom: 0;
+    padding-bottom: 100px;
+    @media (max-width: $xl) {
+        padding-top: 88px;
+        padding-bottom: 40px;
+    }
+}
+
+.title {
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.swiper {
+    padding: 0 15px;
+
+    // @media (max-width: $xl) {
+    //     padding-left: calc((100% - $md + 30px) / 2);
+    // }
+
+    @media (max-width: $md) {
+        padding: 0 15px;
+    }
+}
+
+.swiperSlide {
+    width: auto;
+    position: relative;
+}
+
+.slide {
+    transition: $transition;
+    width: 644px;
+    height: 347px;
+    position: relative;
+
+    & > span {
+        border-radius: 10px;
+    }
+
+    @media (max-width: $xl) {
+        width: 277px;
+        height: 149px;
+    }
+}
+
+.caption {
+    margin-bottom: 30px;
+}
+
+.characteristic {
+    text-align: center;
+    padding: 40px 15px;
+    margin-bottom: 0;
+    background: linear-gradient(93.04deg, #fcfcfc 10.53%, #dcdcdc 92.66%);
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    max-width: 754px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.blockItem {
+    font-family: "Roboto Slab";
+}
+
+.blockCaption {
+    font-size: 18px;
+    line-height: 24px;
+    color: $gray;
+    margin-bottom: 5px;
+}
+
+.blockText {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.descrBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.poster {
+    width: 100%;
+    padding: 40px 15px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+    }
+}
+
+.content {
+    max-width: 517px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    & p {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 29px;
+        color: $light-gray;
+        margin-bottom: 20px;
+    }
+
+    & span {
+        display: block;
+        color: #ffffff;
+    }
+}
+
+.btn {
+    background: $blue;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+    padding: 12px 35px;
+}
+
+.imgBlock {
+    & span {
+        opacity: 0.3 !important;
+    }
+}

@@ -8,7 +8,32 @@
             "caption": "Фудтрак военный",
             "startPrice1": "55 000",
             "startPrice2": "35 000",
-            "id": 1
+            "id": "foodtruck-1",
+            "gallery": [
+                "/img/foodtrucks/catalog-1.jpg",
+                "/img/foodtrucks/catalog-2.jpg",
+                "/img/foodtrucks/catalog-3.jpg"
+            ],
+            "characteristic": {
+                "title": "Характеристики фудтрака",
+                "information": [
+                    {
+                        "caption": "Внешнее подключение:",
+                        "descr": ["380 В. Мощность: 20кВт"]
+                    },
+                    {
+                        "caption": "Размеры:",
+                        "descr": ["Длина - 6м. Ширина - 2,7. Высота - 3,2"]
+                    },
+                    {
+                        "caption": "Дополнительное описание:",
+                        "descr": [
+                            "Здесь будет какое-то общее описание: типо фуд трак (прицеп) красного цвета.",
+                            "Имеется в наличии 3 цвета и возможность брендировать корпус фудтрака (уточняйте отдельно у менеджера)"
+                        ]
+                    }
+                ]
+            }
         },
         {
             "tags": ["Фудтраки"],
@@ -16,7 +41,7 @@
             "caption": "AFORMER 65 - 6 МЕТРОВ",
             "startPrice1": "55 000",
             "startPrice2": "35 000",
-            "id": 2
+            "id": "foodtruck-2"
         },
         {
             "tags": ["Фудтраки"],
@@ -24,7 +49,7 @@
             "caption": "V6 ДЛИНА 6 МЕТРОВ",
             "startPrice1": "55 000",
             "startPrice2": "35 000",
-            "id": 3
+            "id": "foodtruck-3"
         },
         {
             "tags": ["Фудтраки"],
@@ -32,7 +57,7 @@
             "caption": "SL4 САМЫЙ КОМПАКТНЫЙ И МОБИЛЬНЫЙ 4,5 МЕТРА ",
             "startPrice1": "55 000",
             "startPrice2": "35 000",
-            "id": 4
+            "id": "foodtruck-4"
         },
         {
             "tags": ["Фудтраки"],
@@ -40,7 +65,7 @@
             "caption": "V6 ДЛИНА 6 МЕТРОВ",
             "startPrice1": "55 000",
             "startPrice2": "35 000",
-            "id": 5
+            "id": "foodtruck-5"
         },
         {
             "tags": ["Фудтраки"],
@@ -48,7 +73,7 @@
             "caption": "Бочка с квасом",
             "startPrice1": "55 000",
             "startPrice2": "35 000",
-            "id": 6
+            "id": "foodtruck-6"
         },
         {
             "tags": ["Полевая кухня"],
@@ -56,7 +81,7 @@
             "caption": "КП-150 (кухня)",
             "startPrice1": "55 000",
             "startPrice2": "35 000",
-            "id": 7
+            "id": "foodtruck-7"
         },
         {
             "tags": ["Полевая кухня"],
@@ -64,7 +89,7 @@
             "caption": "КП-150 (кухня)",
             "startPrice1": "55 000",
             "startPrice2": "35 000",
-            "id": 8
+            "id": "foodtruck-8"
         }
     ]
 }

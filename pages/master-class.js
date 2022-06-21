@@ -3,10 +3,6 @@ import Hero from "../components/modules/Hero";
 import Poster from "../components/master-class/Poster";
 import Catalog from "../components/modules/Catalog";
 import Upsale from "../components/modules/Upsale";
-import Gifts from "../components/modules/Gifts";
-import Events from "../components/modules/Events";
-import FAQ from "../components/modules/FAQ";
-import Feedback from "../components/modules/Feedback";
 
 // DATA
 import HeroData from "../public/data/master-class/hero.json";
@@ -25,10 +21,6 @@ export default function FoodTrucks() {
             <Poster />
             <Catalog partial={true} bucket={true} obj={CatalogData} />
             <Upsale obj={UpsaleData} />
-            <Gifts />
-            <Events />
-            <FAQ />
-            <Feedback />
         </div>
     );
 }

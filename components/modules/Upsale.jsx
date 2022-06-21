@@ -53,13 +53,14 @@ const Upsale = ({ obj }) => {
                                 key={item.id}
                             >
                                 <Card
+                                    obj={item}
                                     bucket={true}
                                     key={item.id}
-                                    caption={item.caption}
-                                    imgSrc={item.imgSrc}
-                                    id={item.id}
-                                    startPrice1={item.startPrice1}
-                                    startPrice2={item.startPrice2}
+                                    // caption={item.caption}
+                                    // imgSrc={item.imgSrc}
+                                    // id={item.id}
+                                    // startPrice1={item.startPrice1}
+                                    // startPrice2={item.startPrice2}
                                 />
                             </SwiperSlide>
                         )

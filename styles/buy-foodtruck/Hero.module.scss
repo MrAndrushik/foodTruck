@@ -1,0 +1,79 @@
+@import "../const";
+
+.section {
+    position: relative;
+    padding-top: 160px;
+    @media (max-width: $xl) {
+        padding-top: 108px;
+        padding-bottom: 40px;
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 74px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+
+    @media (max-width: $xl) {
+        font-size: 26px;
+        line-height: 34px;
+        margin-bottom: 20px;
+    }
+}
+
+.imgBlock {
+    margin-bottom: 40px;
+    @media (max-width: $xl) {
+        margin-bottom: 20px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: $md) {
+        flex-direction: column;
+    }
+}
+
+.block {
+    width: 33%;
+    padding: 30px 25px;
+    background: linear-gradient(93.04deg, #fcfcfc 10.53%, #dcdcdc 92.66%);
+    border: 1px solid $light-gray;
+    border-radius: 10px;
+    text-align: center;
+
+    @media (max-width: $xl) {
+        padding: 20px;
+    }
+
+    @media (max-width: $md) {
+        width: 100%;
+    }
+}
+
+.caption {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 29px;
+    color: $gray;
+    margin-bottom: 13px;
+
+    @media (max-width: $xl) {
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+.descr {
+    font-size: 14px;
+    line-height: 16px;
+    color: $gray;
+    opacity: 0.5;
+}

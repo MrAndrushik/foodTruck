@@ -1,11 +1,7 @@
 import Head from "next/head";
 import Hero from "../components/home/Hero";
 import Rent from "../components/home/Rent";
-import Gallery from "../components/home/Gallery";
-import Gifts from "../components/modules/Gifts";
-import Events from "../components/modules/Events";
-import FAQ from "../components/modules/FAQ";
-import Feedback from "../components/modules/Feedback";
+import Gallery from "../components/modules/Gallery";
 
 // DATA
 import StepsData from "../public/data/home/steps.json";
@@ -23,10 +19,6 @@ export default function Home() {
             <Hero obj={StepsData} />
             <Rent arr={RentData} />
             <Gallery obj={GalleryData} />
-            <Gifts />
-            <Events />
-            <FAQ />
-            <Feedback />
         </div>
     );
 }

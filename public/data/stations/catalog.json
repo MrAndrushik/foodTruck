@@ -6,42 +6,402 @@
             "caption": "Попкорн станция ",
             "startPrice1": "11 550",
             "startPrice2": "9000",
-            "id": "S-1"
+            "id": "stations-1",
+            "gallery": [
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg"
+            ],
+            "descr": [
+                "Шоколадный фонтан представляет собой набор каскадов высотой от 20 до 140 см, по которым циркулирует горячий шоколад. Рядом как правило лежат шпашки, на которые нанизываются фрукты. Фрукты + шоколад - очень вкусное решение!"
+            ],
+            "include": [
+                {
+                    "imgSrc": "/img/stations/include-1.jpg",
+                    "caption": "Шоколадный фонтан"
+                },
+                {
+                    "imgSrc": "/img/stations/include-2.jpg",
+                    "caption": "Шпашки + 3 кг шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/include-3.jpg",
+                    "caption": "5 кг фруктов (бананы, яблоки, клубника, виноград, киви)"
+                }
+            ],
+            "upsale": [
+                {
+                    "imgSrc": "/img/stations/upsale-1.jpg",
+                    "caption": "Добавить цвет и количество шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-2.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-3.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-4.jpg",
+                    "caption": "Заменить стандартный фонтан на размер больше"
+                }
+            ],
+            "characteristic": {
+                "title": "Характеристики станции",
+                "information": [
+                    {
+                        "caption": "Внешнее подключение:",
+                        "descr": "220 В. Мощность: 20кВт"
+                    },
+                    {
+                        "caption": "Размеры:",
+                        "descr": "Длина - 6м. Ширина - 2,7. Высота - 3,2"
+                    },
+                    {
+                        "caption": "Дополнительное описание:",
+                        "descr": "Станция имеет возможность настройки темепратуры плавления шоколада. Она представляет собой трехкаскадную пирамидку. Есть возможность заказать станции больше (уточняйте у менеджера)"
+                    }
+                ]
+            }
         },
         {
             "imgSrc": "/img/stations/catalog-2.jpg",
             "caption": "Сахарная вата",
             "startPrice1": "9650",
             "startPrice2": "1250",
-            "id": "S-2"
+            "id": "stations-2",
+            "gallery": [
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg"
+            ],
+            "descr": [
+                "Шоколадный фонтан представляет собой набор каскадов высотой от 20 до 140 см, по которым циркулирует горячий шоколад. Рядом как правило лежат шпашки, на которые нанизываются фрукты. Фрукты + шоколад - очень вкусное решение!"
+            ],
+            "include": [
+                {
+                    "imgSrc": "/img/stations/include-1.jpg",
+                    "caption": "Шоколадный фонтан"
+                },
+                {
+                    "imgSrc": "/img/stations/include-2.jpg",
+                    "caption": "Шпашки + 3 кг шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/include-3.jpg",
+                    "caption": "5 кг фруктов (бананы, яблоки, клубника, виноград, киви)"
+                }
+            ],
+            "upsale": [
+                {
+                    "imgSrc": "/img/stations/upsale-1.jpg",
+                    "caption": "Добавить цвет и количество шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-2.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-3.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-4.jpg",
+                    "caption": "Заменить стандартный фонтан на размер больше"
+                }
+            ],
+            "characteristic": {
+                "title": "Характеристики станции",
+                "information": [
+                    {
+                        "caption": "Внешнее подключение:",
+                        "descr": "220 В. Мощность: 20кВт"
+                    },
+                    {
+                        "caption": "Размеры:",
+                        "descr": "Длина - 6м. Ширина - 2,7. Высота - 3,2"
+                    },
+                    {
+                        "caption": "Дополнительное описание:",
+                        "descr": "Станция имеет возможность настройки темепратуры плавления шоколада. Она представляет собой трехкаскадную пирамидку. Есть возможность заказать станции больше (уточняйте у менеджера)"
+                    }
+                ]
+            }
         },
         {
             "imgSrc": "/img/stations/catalog-3.jpg",
             "caption": "Стойка с сиропом",
             "startPrice1": "370",
             "startPrice2": "130",
-            "id": "S-3"
+            "id": "stations-3",
+            "gallery": [
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg"
+            ],
+            "descr": [
+                "Шоколадный фонтан представляет собой набор каскадов высотой от 20 до 140 см, по которым циркулирует горячий шоколад. Рядом как правило лежат шпашки, на которые нанизываются фрукты. Фрукты + шоколад - очень вкусное решение!"
+            ],
+            "include": [
+                {
+                    "imgSrc": "/img/stations/include-1.jpg",
+                    "caption": "Шоколадный фонтан"
+                },
+                {
+                    "imgSrc": "/img/stations/include-2.jpg",
+                    "caption": "Шпашки + 3 кг шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/include-3.jpg",
+                    "caption": "5 кг фруктов (бананы, яблоки, клубника, виноград, киви)"
+                }
+            ],
+            "upsale": [
+                {
+                    "imgSrc": "/img/stations/upsale-1.jpg",
+                    "caption": "Добавить цвет и количество шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-2.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-3.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-4.jpg",
+                    "caption": "Заменить стандартный фонтан на размер больше"
+                }
+            ],
+            "characteristic": {
+                "title": "Характеристики станции",
+                "information": [
+                    {
+                        "caption": "Внешнее подключение:",
+                        "descr": "220 В. Мощность: 20кВт"
+                    },
+                    {
+                        "caption": "Размеры:",
+                        "descr": "Длина - 6м. Ширина - 2,7. Высота - 3,2"
+                    },
+                    {
+                        "caption": "Дополнительное описание:",
+                        "descr": "Станция имеет возможность настройки темепратуры плавления шоколада. Она представляет собой трехкаскадную пирамидку. Есть возможность заказать станции больше (уточняйте у менеджера)"
+                    }
+                ]
+            }
         },
         {
             "imgSrc": "/img/stations/catalog-4.jpg",
             "caption": "Шоколадный фонтан",
             "startPrice1": "1150",
             "startPrice2": "750",
-            "id": "S-4"
+            "id": "stations-4",
+            "gallery": [
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg"
+            ],
+            "descr": [
+                "Шоколадный фонтан представляет собой набор каскадов высотой от 20 до 140 см, по которым циркулирует горячий шоколад. Рядом как правило лежат шпашки, на которые нанизываются фрукты. Фрукты + шоколад - очень вкусное решение!"
+            ],
+            "include": [
+                {
+                    "imgSrc": "/img/stations/include-1.jpg",
+                    "caption": "Шоколадный фонтан"
+                },
+                {
+                    "imgSrc": "/img/stations/include-2.jpg",
+                    "caption": "Шпашки + 3 кг шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/include-3.jpg",
+                    "caption": "5 кг фруктов (бананы, яблоки, клубника, виноград, киви)"
+                }
+            ],
+            "upsale": [
+                {
+                    "imgSrc": "/img/stations/upsale-1.jpg",
+                    "caption": "Добавить цвет и количество шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-2.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-3.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-4.jpg",
+                    "caption": "Заменить стандартный фонтан на размер больше"
+                }
+            ],
+            "characteristic": {
+                "title": "Характеристики станции",
+                "information": [
+                    {
+                        "caption": "Внешнее подключение:",
+                        "descr": "220 В. Мощность: 20кВт"
+                    },
+                    {
+                        "caption": "Размеры:",
+                        "descr": "Длина - 6м. Ширина - 2,7. Высота - 3,2"
+                    },
+                    {
+                        "caption": "Дополнительное описание:",
+                        "descr": "Станция имеет возможность настройки темепратуры плавления шоколада. Она представляет собой трехкаскадную пирамидку. Есть возможность заказать станции больше (уточняйте у менеджера)"
+                    }
+                ]
+            }
         },
         {
             "imgSrc": "/img/stations/catalog-5.jpg",
             "caption": "Велошейкер",
             "startPrice1": "1150",
             "startPrice2": "750",
-            "id": "S-5"
+            "id": "stations-5",
+            "gallery": [
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg"
+            ],
+            "descr": [
+                "Шоколадный фонтан представляет собой набор каскадов высотой от 20 до 140 см, по которым циркулирует горячий шоколад. Рядом как правило лежат шпашки, на которые нанизываются фрукты. Фрукты + шоколад - очень вкусное решение!"
+            ],
+            "include": [
+                {
+                    "imgSrc": "/img/stations/include-1.jpg",
+                    "caption": "Шоколадный фонтан"
+                },
+                {
+                    "imgSrc": "/img/stations/include-2.jpg",
+                    "caption": "Шпашки + 3 кг шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/include-3.jpg",
+                    "caption": "5 кг фруктов (бананы, яблоки, клубника, виноград, киви)"
+                }
+            ],
+            "upsale": [
+                {
+                    "imgSrc": "/img/stations/upsale-1.jpg",
+                    "caption": "Добавить цвет и количество шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-2.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-3.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-4.jpg",
+                    "caption": "Заменить стандартный фонтан на размер больше"
+                }
+            ],
+            "characteristic": {
+                "title": "Характеристики станции",
+                "information": [
+                    {
+                        "caption": "Внешнее подключение:",
+                        "descr": "220 В. Мощность: 20кВт"
+                    },
+                    {
+                        "caption": "Размеры:",
+                        "descr": "Длина - 6м. Ширина - 2,7. Высота - 3,2"
+                    },
+                    {
+                        "caption": "Дополнительное описание:",
+                        "descr": "Станция имеет возможность настройки темепратуры плавления шоколада. Она представляет собой трехкаскадную пирамидку. Есть возможность заказать станции больше (уточняйте у менеджера)"
+                    }
+                ]
+            }
         },
         {
             "imgSrc": "/img/stations/catalog-6.jpg",
             "caption": "Аппарат с газированной водой",
             "startPrice1": "1150",
             "startPrice2": "750",
-            "id": "S-6"
+            "id": "stations-6",
+            "gallery": [
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg",
+                "/img/stations/catalog-4.jpg",
+                "/img/stations/modal-1.jpg"
+            ],
+            "descr": [
+                "Шоколадный фонтан представляет собой набор каскадов высотой от 20 до 140 см, по которым циркулирует горячий шоколад. Рядом как правило лежат шпашки, на которые нанизываются фрукты. Фрукты + шоколад - очень вкусное решение!"
+            ],
+            "include": [
+                {
+                    "imgSrc": "/img/stations/include-1.jpg",
+                    "caption": "Шоколадный фонтан"
+                },
+                {
+                    "imgSrc": "/img/stations/include-2.jpg",
+                    "caption": "Шпашки + 3 кг шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/include-3.jpg",
+                    "caption": "5 кг фруктов (бананы, яблоки, клубника, виноград, киви)"
+                }
+            ],
+            "upsale": [
+                {
+                    "imgSrc": "/img/stations/upsale-1.jpg",
+                    "caption": "Добавить цвет и количество шоколада"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-2.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-3.jpg",
+                    "caption": "Добавить фрукты или сладости"
+                },
+                {
+                    "imgSrc": "/img/stations/upsale-4.jpg",
+                    "caption": "Заменить стандартный фонтан на размер больше"
+                }
+            ],
+            "characteristic": {
+                "title": "Характеристики станции",
+                "information": [
+                    {
+                        "caption": "Внешнее подключение:",
+                        "descr": "220 В. Мощность: 20кВт"
+                    },
+                    {
+                        "caption": "Размеры:",
+                        "descr": "Длина - 6м. Ширина - 2,7. Высота - 3,2"
+                    },
+                    {
+                        "caption": "Дополнительное описание:",
+                        "descr": "Станция имеет возможность настройки темепратуры плавления шоколада. Она представляет собой трехкаскадную пирамидку. Есть возможность заказать станции больше (уточняйте у менеджера)"
+                    }
+                ]
+            }
         }
     ]
 }

@@ -1,7 +1,18 @@
 import Image from "next/image";
 import styles from "../../styles/modules/Feedback.module.scss";
 
+import { setFeedbackIsOpen } from "../../redux/toolkitSlice";
+import { useDispatch } from "react-redux";
+
 const Feedback = () => {
+    const dispatch = useDispatch();
+    const handleClick = () => {
+        const padding =
+            window.innerWidth - document.documentElement.clientWidth;
+        document.querySelector("html").classList.add("hidden");
+        dispatch(setFeedbackIsOpen(true));
+    };
+
     return (
         <section className={styles.section}>
             <div className={`${styles.container} container`}>
@@ -14,7 +25,12 @@ const Feedback = () => {
                         рассказать о индивидуальном предложении по организации
                         питания
                     </p>
-                    <button className={styles.button}>Оставить заявку</button>
+                    <button
+                        onClick={() => handleClick()}
+                        className={styles.button}
+                    >
+                        Оставить заявку
+                    </button>
                 </div>
                 <Image
                     src="/img/feedback.png"

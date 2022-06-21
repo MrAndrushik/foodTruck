@@ -1,0 +1,25 @@
+{
+    "title": "На чём готовить?",
+    "catalog": [
+        {
+            "imgSrc": "/img/foodtrucks/cook-1.jpg",
+            "title": "Гриль",
+            "descr": "6000 ₽/сутки"
+        },
+        {
+            "imgSrc": "/img/foodtrucks/cook-2.jpg",
+            "title": "Фритюрница",
+            "descr": "6000 ₽/сутки"
+        },
+        {
+            "imgSrc": "/img/foodtrucks/cook-3.jpg",
+            "title": "Кофемашина",
+            "descr": "6000 ₽/сутки"
+        },
+        {
+            "imgSrc": "/img/foodtrucks/cook-4.jpg",
+            "title": "Духовый шкаф",
+            "descr": "6000 ₽/сутки"
+        }
+    ]
+}

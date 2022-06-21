@@ -1,42 +1,50 @@
 {
-    "Все": [
-        "/img/home/gallery-1.jpg",
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-3.jpg",
-        "/img/home/gallery-1.jpg",
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-3.jpg"
-    ],
-    "Фудтраки": [
-        "/img/home/gallery-1.jpg",
-        "/img/home/gallery-1.jpg",
-        "/img/home/gallery-1.jpg",
-        "/img/home/gallery-1.jpg",
-        "/img/home/gallery-1.jpg",
-        "/img/home/gallery-1.jpg"
-    ],
-    "Киоски, шатры": [
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-2.jpg"
-    ],
-    "Мастер-классы": [
-        "/img/home/gallery-3.jpg",
-        "/img/home/gallery-3.jpg",
-        "/img/home/gallery-3.jpg",
-        "/img/home/gallery-3.jpg",
-        "/img/home/gallery-3.jpg",
-        "/img/home/gallery-3.jpg"
-    ],
-    "Мебель": [
-        "/img/home/gallery-3.jpg",
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-1.jpg",
-        "/img/home/gallery-3.jpg",
-        "/img/home/gallery-2.jpg",
-        "/img/home/gallery-1.jpg"
+    "tags": ["Все", "Фудтраки", "Киоски, шатры", "Мастер-классы", "Мебель"],
+    "title": "Как это выглядит в деле",
+    "catalog": [
+        {
+            "tags": ["Фудтраки"],
+            "gallery": [
+                "/img/home/gallery-1.jpg",
+                "/img/home/gallery-1.jpg",
+                "/img/home/gallery-1.jpg",
+                "/img/home/gallery-1.jpg",
+                "/img/home/gallery-1.jpg",
+                "/img/home/gallery-1.jpg"
+            ]
+        },
+        {
+            "tags": ["Киоски, шатры"],
+            "gallery": [
+                "/img/home/gallery-2.jpg",
+                "/img/home/gallery-2.jpg",
+                "/img/home/gallery-2.jpg",
+                "/img/home/gallery-2.jpg",
+                "/img/home/gallery-2.jpg",
+                "/img/home/gallery-2.jpg"
+            ]
+        },
+        {
+            "tags": ["Мастер-классы"],
+            "gallery": [
+                "/img/home/gallery-3.jpg",
+                "/img/home/gallery-3.jpg",
+                "/img/home/gallery-3.jpg",
+                "/img/home/gallery-3.jpg",
+                "/img/home/gallery-3.jpg",
+                "/img/home/gallery-3.jpg"
+            ]
+        },
+        {
+            "tags": ["Мебель"],
+            "gallery": [
+                "/img/home/gallery-3.jpg",
+                "/img/home/gallery-2.jpg",
+                "/img/home/gallery-1.jpg",
+                "/img/home/gallery-3.jpg",
+                "/img/home/gallery-2.jpg",
+                "/img/home/gallery-1.jpg"
+            ]
+        }
     ]
 }

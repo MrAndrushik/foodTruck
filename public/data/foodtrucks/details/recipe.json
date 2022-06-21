@@ -1,0 +1,45 @@
+{
+    "title": "Подберем рецепты готовых блюд",
+    "catalog": [
+        {
+            "imgSrc": "/img/foodtrucks/recipe-1.jpg",
+            "title": "Пицца",
+            "descr": "от 250 ₽/чел "
+        },
+        {
+            "imgSrc": "/img/foodtrucks/recipe-2.jpg",
+            "title": "Хот-доги",
+            "descr": "от 250 ₽/чел "
+        },
+        {
+            "imgSrc": "/img/foodtrucks/recipe-3.jpg",
+            "title": "WOK",
+            "descr": "от 250 ₽/чел "
+        },
+        {
+            "imgSrc": "/img/foodtrucks/recipe-4.jpg",
+            "title": "Бургеры",
+            "descr": "от 250 ₽/чел "
+        },
+        {
+            "imgSrc": "/img/foodtrucks/recipe-5.jpg",
+            "title": "Мороженное",
+            "descr": "от 250 ₽/чел "
+        },
+        {
+            "imgSrc": "/img/foodtrucks/recipe-6.jpg",
+            "title": "Шаурма",
+            "descr": "от 250 ₽/чел "
+        },
+        {
+            "imgSrc": "/img/foodtrucks/recipe-7.jpg",
+            "title": "Кесадилья",
+            "descr": "от 250 ₽/чел "
+        },
+        {
+            "imgSrc": "/img/foodtrucks/recipe-8.jpg",
+            "title": "Пончики чуррос",
+            "descr": "от 250 ₽/чел "
+        }
+    ]
+}

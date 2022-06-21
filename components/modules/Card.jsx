@@ -1,7 +1,19 @@
-import styles from "../../styles/modules/Card.module.scss";
 import Image from "next/image";
+import Link from "next/link";
+import { setDetailsContent } from "../../redux/toolkitSlice";
+import { useDispatch } from "react-redux";
 
-const Card = ({ caption, imgSrc, id, startPrice1, startPrice2, bucket }) => {
+import styles from "../../styles/modules/Card.module.scss";
+
+const Card = ({ obj, bucket, link }) => {
+    const { caption, imgSrc, id, startPrice1, startPrice2 } = obj;
+    const dispatch = useDispatch();
+
+    const handleDetails = (obj) => {
+        document.querySelector("html").classList.add("hidden");
+        dispatch(setDetailsContent(obj));
+    };
+
     return (
         <div className={styles.block}>
             <div className={styles.imgBlock}>
@@ -21,7 +33,18 @@ const Card = ({ caption, imgSrc, id, startPrice1, startPrice2, bucket }) => {
                 </div>
             </div>
             <div className={styles.buttonBlock}>
-                <button className={styles.btn}>Подробнее</button>
+                {link ? (
+                    <Link href={`/foodtrucks/` + id}>
+                        <button className={styles.btn}>Подробнее</button>
+                    </Link>
+                ) : (
+                    <button
+                        onClick={() => handleDetails(obj)}
+                        className={styles.btn}
+                    >
+                        Подробнее
+                    </button>
+                )}
                 {bucket && (
                     <button className={styles.bucketBtn}>+ Добавить</button>
                 )}

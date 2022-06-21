@@ -4,7 +4,7 @@ import styles from "../../styles/modules/Catalog.module.scss";
 import Card from "./Card";
 import Tags from "./Tags";
 
-const Catalog = ({ obj, bucket = false, partial = false }) => {
+const Catalog = ({ obj, bucket = false, partial = false, link = false }) => {
     const tags = obj.tags;
     const catalog = obj.catalog;
 
@@ -36,13 +36,15 @@ const Catalog = ({ obj, bucket = false, partial = false }) => {
                             (activeTag === "Все" ||
                                 item.tags.includes(activeTag)) && (
                                 <Card
+                                    obj={item}
                                     bucket={bucket}
                                     key={item.id}
-                                    caption={item.caption}
-                                    imgSrc={item.imgSrc}
-                                    id={item.id}
-                                    startPrice1={item.startPrice1}
-                                    startPrice2={item.startPrice2}
+                                    link={link}
+                                    // caption={item.caption}
+                                    // imgSrc={item.imgSrc}
+                                    // id={item.id}
+                                    // startPrice1={item.startPrice1}
+                                    // startPrice2={item.startPrice2}
                                 />
                             )
                     )}

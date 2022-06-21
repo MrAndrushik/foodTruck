@@ -200,7 +200,14 @@ const Header = () => {
                             ))}
                         </ul>
                         <ul className="nav__block">
-                            <li className="nav__link">Мероприятия</li>
+                            <Link href="/events">
+                                <li
+                                    onClick={() => handleClick()}
+                                    className="nav__link"
+                                >
+                                    Мероприятия
+                                </li>
+                            </Link>
                             <li className="nav__link">Вопросы и ответы</li>
                             <li className="nav__link">Контакты</li>
                         </ul>

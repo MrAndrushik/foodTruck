@@ -22,9 +22,7 @@
 }
 
 .container {
-    @media (max-width: $md) {
-        padding: 0;
-    }
+    padding: 0 !important;
 }
 
 .title {
