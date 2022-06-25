@@ -87,27 +87,6 @@
                     }
                 ]
             }
-        },
-        {
-            "tags": ["Дополнительно"],
-            "imgSrc": "/img/furniture/catalog-4.jpg",
-            "caption": "Стол с лавочками",
-            "startPrice1": "370",
-            "startPrice2": "130",
-            "id": "furniture-5",
-            "characteristic": {
-                "title": "Описание",
-                "information": [
-                    {
-                        "caption": "Размеры:",
-                        "descr": "Ширина - 0,40. Высота - 1,25"
-                    },
-                    {
-                        "caption": "Дополнительное описание:",
-                        "descr": "Возможен брендинг"
-                    }
-                ]
-            }
         }
     ]
 }

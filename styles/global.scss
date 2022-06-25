@@ -24,7 +24,6 @@ body {
 
 html {
     overflow: -moz-scrollbars-none;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -113,11 +112,11 @@ a {
 // HEADER START //
 
 .header {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
 }
 
 .header-top {
@@ -354,6 +353,13 @@ a {
         height: auto;
         padding: 30px 0 54px 0;
     }
+
+    @media (max-width: $xl) {
+        &--active {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
 }
 
 .header__icon {
@@ -366,6 +372,13 @@ a {
     @media (max-width: $xl) {
         gap: 20px;
         justify-content: flex-start;
+        padding: 18px 15px;
+    }
+
+    @media (max-width: $md) {
+        flex-direction: column;
+        gap: 0;
+        padding: 25px 0;
     }
 }
 
@@ -387,8 +400,15 @@ a {
         gap: 0;
 
         & > .nav__link:nth-child(2n) {
-            padding-left: 20px;
+            padding-left: 0px;
         }
+    }
+
+    @media (max-width: $md) {
+        max-width: 100%;
+        gap: 20px 30px;
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }
 
@@ -417,6 +437,10 @@ a {
     &:hover path {
         fill: $blue;
     }
+
+    @media (max-width: $md) {
+        width: unset;
+    }
 }
 
 .nav__block {
@@ -434,6 +458,22 @@ a {
 
     & > .nav__link:hover {
         color: $blue;
+    }
+
+    @media (max-width: $xl) {
+        padding: 10px 0;
+    }
+
+    @media (max-width: $md) {
+        flex-direction: row;
+        margin-top: 25px;
+        border-top: 1px solid $gray;
+        gap: 20px 30px;
+        flex-wrap: wrap;
+        padding: 25px 15px 0 15px;
+        & .nav__link {
+            width: unset;
+        }
     }
 }
 
@@ -457,6 +497,104 @@ a {
     color: #ffffff;
 }
 
+.header-outter__top {
+    border-bottom: 1px solid $gray;
+    border-top: 1px solid $gray;
+
+    @media (max-width: $xl) {
+        padding-left: calc((100% - $md + 30px) / 2);
+        padding-right: calc((100% - $md + 30px) / 2);
+    }
+
+    @media (max-width: $md) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.header-outter__search-block {
+    display: flex;
+    width: 100%;
+    border-right: 1px solid $gray;
+    padding: 18px 0;
+    height: 100%;
+    padding-right: 18px;
+    gap: 5px;
+}
+
+.header-outter__search-input {
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Roboto Slab";
+    color: #ffffff;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.header-outter__favorites-block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 0;
+    justify-content: flex-end;
+
+    & p {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        font-family: "Roboto Slab";
+        color: #ffffff;
+        opacity: 0.5;
+    }
+}
+
+.header-tablet {
+    display: none;
+
+    @media (max-width: $xl) {
+        display: flex;
+    }
+}
+
+.header-outter__bottom {
+    border-bottom: 1px solid $gray;
+    border-top: 1px solid $gray;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    justify-content: space-between;
+    @media (max-width: $xl) {
+        display: flex;
+        padding-left: calc((100% - $md + 30px) / 2);
+        padding-right: calc((100% - $md + 30px) / 2);
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: $md) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.header-outter__link-1 {
+    font-family: "Roboto Slab";
+    font-size: 16px;
+    line-height: 26px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-outter__flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
 // HEADER END //
 
 // FOOTER START

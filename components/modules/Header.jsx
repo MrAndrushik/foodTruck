@@ -19,10 +19,14 @@ import {
     Cart,
 } from "./SvgSprite";
 
+import { useDispatch, useSelector } from "react-redux";
+
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [value, setValue] = useState("");
+
+    const bucketCollection = useSelector((state) => state.bucket.collection);
 
     const navLinks = [
         {
@@ -166,14 +170,21 @@ const Header = () => {
                         </button>
                         <button className="header-bottom__favorites header__desktop ">
                             <Favorites />
-                            <div className="header-bottom__circle">9</div>
+                            {/* <div className="header-bottom__circle">9</div> */}
                         </button>
-                        <button className="header-bottom__cart">
-                            <Cart />
-                            <div className="header-bottom__circle header__desktop">
-                                32
-                            </div>
-                        </button>
+                        <Link href="/bucket">
+                            <a className="header-bottom__cart">
+                                <Cart />
+                                {bucketCollection?.length > 0 && (
+                                    <div className="header-bottom__circle header__desktop">
+                                        {bucketCollection.reduce(
+                                            (sum, item) => sum + item.quantity,
+                                            0
+                                        )}
+                                    </div>
+                                )}
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -184,8 +195,23 @@ const Header = () => {
                         : "header-outter"
                 }
             >
-                <div className="header-outter__container container">
-                    <nav className="header-outter__nav nav">
+                <div className="header-outter__container">
+                    <div className="header-outter__top header-tablet">
+                        <div className="header-outter__search-block">
+                            <input
+                                value={value}
+                                onChange={(e) => setValue(e.target.value)}
+                                className="header-outter__search-input"
+                                placeholder="Поиск по сайту"
+                            />
+                            <Search />
+                        </div>
+                        <div className="header-outter__favorites-block">
+                            <p>Избранные</p>
+                            <Favorites />
+                        </div>
+                    </div>
+                    <nav className="header-outter__nav nav container">
                         <ul className="nav__list">
                             {navLinks.map((link) => (
                                 <Link key={link.text} href={link.href}>
@@ -229,6 +255,32 @@ const Header = () => {
                             </div>
                         </Link>
                     </nav>
+                    <div className="header-outter__bottom header-tablet">
+                        <a
+                            href="mailto:admin@mail.ru"
+                            className="header-outter__link-1"
+                        >
+                            <Email fill="#646464" />
+                            info@fudtrak-v-arendu.ru
+                        </a>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.google.ru/maps/place/%D0%BF%D1%80.+%D0%95%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,+2%D0%B0,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+109382/@55.6733545,37.7319352,17z/data=!3m1!4b1!4m5!3m4!1s0x414ab4680617c1fb:0x1d8eebb8559f46d7!8m2!3d55.6733515!4d37.7341239"
+                            className="header-outter__link-1"
+                        >
+                            <Marker fill="#646464" />
+                            Егорьевский проезд, 2А
+                        </a>
+                        <div className="header-outter__flex">
+                            <a href="#">
+                                <Facebook fill="#646464" />
+                            </a>
+                            <a href="#">
+                                <Instagram fill="#646464" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>

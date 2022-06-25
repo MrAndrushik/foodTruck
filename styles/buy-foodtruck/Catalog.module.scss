@@ -12,6 +12,12 @@
         display: flex;
         flex-direction: row-reverse;
     }
+
+    @media (max-width: $xl) {
+        & .container {
+            flex-direction: column;
+        }
+    }
 }
 
 .heading {
@@ -21,11 +27,19 @@
 .container {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+    }
 }
 
 .swiper {
     width: 559px;
     text-align: center;
+
+    @media (max-width: $xl) {
+        width: auto;
+    }
 }
 
 .swiperSlide {
@@ -34,8 +48,6 @@
 
 .imgBlock {
     position: relative;
-    width: 559px;
-    height: 301px;
     border-radius: 20px;
 
     & span {
@@ -46,6 +58,10 @@
 .content {
     width: 560px;
     color: $gray;
+
+    @media (max-width: $xl) {
+        width: 100%;
+    }
 }
 
 .title {
@@ -53,6 +69,12 @@
     font-size: 36px;
     line-height: 47px;
     margin-bottom: 10px;
+
+    @media (max-width: $xl) {
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 34px;
+    }
 }
 
 .descr {
@@ -63,8 +85,10 @@
 
 .parametrsBlock {
     display: flex;
-    gap: 30px;
+    column-gap: 30px;
+    row-gap: 15px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .caption {

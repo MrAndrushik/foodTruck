@@ -6,12 +6,33 @@ import { useState } from "react";
 
 import styles from "../../styles/modules/FeedbackModal.module.scss";
 import { setFeedbackIsOpen } from "../../redux/toolkitSlice";
+import { sendEmail } from "../../lib/helpers";
 
-const FeedbackModal = () => {
+const FeedbackModal = ({ type }) => {
     const isFeedbackOpen = useSelector((state) => state.toolkit.feedbackIsOpen);
+
+    const bucket = useSelector((state) => state.bucket);
+    const bucketCollection = bucket.collection;
+    const period = bucket.period;
+
     const [selectValue, setSelectValue] = useState("Позвонить по телефону");
     const [selectIsOpen, setSelectIsOpen] = useState(false);
     const dispatch = useDispatch();
+
+    const calcItemTotal = (item) => {
+        if (period === 1) {
+            const total =
+                Number(item.startPrice1.split(" ").join("")) * item.quantity;
+            return total;
+        } else {
+            const total =
+                Number(item.startPrice1.split(" ").join("")) * item.quantity +
+                Number(item.startPrice2.split(" ").join("")) *
+                    item.quantity *
+                    (period - 1);
+            return total;
+        }
+    };
 
     const variants = [
         "Позвонить по телефону",
@@ -30,8 +51,12 @@ const FeedbackModal = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = async (data) => {
+        const dataWithBucket = Object.assign(data, {
+            bucket: bucketCollection,
+            period: period,
+        });
+        sendEmail({ data: dataWithBucket });
     };
 
     return (
@@ -57,15 +82,36 @@ const FeedbackModal = () => {
                         height={35}
                     />
                 </button>
-                <h2 className={styles.title}>Оставьте заявку</h2>
+                <h2 className={`${styles.title} stn-title`}>
+                    {type === "bucket" ? "Ваш заказ" : "Оставьте заявку"}
+                </h2>
                 <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+                    {type === "bucket" && (
+                        <ul className={styles.wrapper}>
+                            {bucketCollection.map((item) => (
+                                <li key={item.id} className={styles.item}>
+                                    <h4 className={styles.bucketCaption}>
+                                        {item.caption}
+                                    </h4>
+                                    <div className={styles.currentBlock}>
+                                        <span className={styles.currentTotal}>
+                                            {`${calcItemTotal(item)} ₽`}
+                                        </span>
+                                        <p className={styles.notice}>
+                                            {`х${item.quantity} за ${period} сутки`}
+                                        </p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                     <label className={styles.label}>
                         Ваш телефон
                         <input
                             className={styles.input}
-                            type="tel"
+                            type="phone"
                             placeholder="+7 999 999 999"
-                            {...register("tel", {
+                            {...register("phone", {
                                 required: "Обязательное поле",
                                 pattern: {
                                     value: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
@@ -73,9 +119,9 @@ const FeedbackModal = () => {
                                 },
                             })}
                         />
-                        {errors.tel?.message && (
+                        {errors.phone?.message && (
                             <span className={styles.error}>
-                                {errors.tel?.message}
+                                {errors.phone?.message}
                             </span>
                         )}
                     </label>

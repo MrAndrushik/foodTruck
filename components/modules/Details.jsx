@@ -84,36 +84,43 @@ const Details = () => {
                                 <div className={styles.imgBlock}>
                                     <Image
                                         src={detailsContent.imgSrc}
-                                        layout="fill"
+                                        layout="responsive"
+                                        width="365"
+                                        height="229"
                                         alt="slide"
                                     />
                                 </div>
                             )}
-                            <h2 className={`${styles.title} stn-title`}>
-                                {detailsContent.caption}
-                            </h2>
-                            {detailsContent.descr?.map((description, index) => (
-                                <p key={index} className={styles.descr}>
-                                    {description}
-                                </p>
-                            ))}
-                            <div className={styles.priceBlock}>
-                                <div className={styles.priceItem}>
-                                    <p className={styles.price}>
-                                        {detailsContent.startPrice1} ₽
-                                        <span>Первые 4 часа</span>
-                                    </p>
+                            <div className="container">
+                                <h2 className={`${styles.title} stn-title`}>
+                                    {detailsContent.caption}
+                                </h2>
+                                {detailsContent.descr?.map(
+                                    (description, index) => (
+                                        <p key={index} className={styles.descr}>
+                                            {description}
+                                        </p>
+                                    )
+                                )}
+
+                                <div className={styles.priceBlock}>
+                                    <div className={styles.priceItem}>
+                                        <p className={styles.price}>
+                                            {detailsContent.startPrice1} ₽
+                                            <span>Первые 4 часа</span>
+                                        </p>
+                                    </div>
+                                    <div className={styles.priceItem}>
+                                        <p className={styles.price}>
+                                            {detailsContent.startPrice2} ₽
+                                            <span>Следующий час</span>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className={styles.priceItem}>
-                                    <p className={styles.price}>
-                                        {detailsContent.startPrice2} ₽
-                                        <span>Следующий час</span>
-                                    </p>
-                                </div>
+                                <button className={styles.btn}>
+                                    + Добавить в корзину
+                                </button>
                             </div>
-                            <button className={styles.btn}>
-                                + Добавить в корзину
-                            </button>
                         </section>
                         {detailsContent.include && (
                             <section className={styles.include}>

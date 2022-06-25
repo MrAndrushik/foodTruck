@@ -1,0 +1,63 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const toolkitSlice = createSlice({
+    name: "bucket",
+    initialState: {
+        collection: [],
+        liked: [],
+        period: 1,
+    },
+    reducers: {
+        addToCart(state, action) {
+            const quantity = { quantity: 1 };
+            const obj = Object.assign(quantity, action.payload);
+            state.collection.push(obj);
+        },
+        incrQuantity(state, action) {
+            state.collection.filter((item) => item.id === action.payload.id)[0]
+                .quantity++;
+        },
+        decrQuantity(state, action) {
+            if (
+                state.collection.filter(
+                    (item) => item.id === action.payload.id
+                )[0].quantity === 1
+            ) {
+                state.collection = state.collection.filter(
+                    (item) => item.id !== action.payload.id
+                );
+            } else {
+                state.collection.filter(
+                    (item) => item.id === action.payload.id
+                )[0].quantity--;
+            }
+        },
+        incPeriod(state) {
+            state.period++;
+        },
+        decrPeriod(state) {
+            if (state.period !== 1) {
+                state.period--;
+            }
+        },
+        clearBucket(state) {
+            state.collection = [];
+        },
+        deleteProduct(state, action) {
+            state.collection = state.collection.filter(
+                (item) => item.id !== action.payload.id
+            );
+        },
+    },
+});
+
+export default toolkitSlice.reducer;
+export const {
+    addToCart,
+    incrQuantity,
+    decrQuantity,
+    incPeriod,
+    decrPeriod,
+    clearBucket,
+    deleteProduct,
+} = toolkitSlice.actions;

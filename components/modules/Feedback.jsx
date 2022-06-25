@@ -7,8 +7,8 @@ import { useDispatch } from "react-redux";
 const Feedback = () => {
     const dispatch = useDispatch();
     const handleClick = () => {
-        const padding =
-            window.innerWidth - document.documentElement.clientWidth;
+        // const padding =
+        //     window.innerWidth - document.documentElement.clientWidth;
         document.querySelector("html").classList.add("hidden");
         dispatch(setFeedbackIsOpen(true));
     };

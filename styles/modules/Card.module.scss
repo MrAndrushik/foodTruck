@@ -65,7 +65,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 100%;
 
     &:last-child {
         border-left: 1px solid #d3d3d3;
@@ -129,5 +129,30 @@
     &:hover {
         background-color: $blue;
         color: #fff;
+    }
+}
+
+.quantityBlock {
+    width: 100%;
+    border-left: 1px solid $gray;
+    background: $gray;
+    font-size: 26px;
+    line-height: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & button {
+        opacity: 0.5;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        transition: all 0.1s ease;
+        height: 100%;
+    }
+
+    & button:hover {
+        opacity: 1;
     }
 }

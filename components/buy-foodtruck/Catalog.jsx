@@ -38,7 +38,8 @@ const Catalog = ({ arr }) => {
                                             <Image
                                                 src={imgSrc}
                                                 alt="slide"
-                                                layout="fill"
+                                                width={559}
+                                                height={301}
                                             />
                                         </div>
                                     </SwiperSlide>

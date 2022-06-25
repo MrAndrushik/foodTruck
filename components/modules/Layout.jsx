@@ -14,7 +14,11 @@ const Layout = ({ children }) => {
     return (
         <>
             <Header />
-            <FeedbackModal />
+            {router.pathname === "/bucket" ? (
+                <FeedbackModal type="bucket" />
+            ) : (
+                <FeedbackModal />
+            )}
             <Details />
             {children}
             <Gifts />

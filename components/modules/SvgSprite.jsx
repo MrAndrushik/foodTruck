@@ -204,7 +204,11 @@ export const Cart = ({ fill = "white" }) => {
 export const Search = ({ setIsSearchOpen }) => {
     return (
         <svg
-            onClick={() => setIsSearchOpen(true)}
+            onClick={
+                setIsSearchOpen
+                    ? () => setIsSearchOpen(true)
+                    : () => console.log("none")
+            }
             width="24"
             height="24"
             viewBox="0 0 24 24"

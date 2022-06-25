@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SlideBtn from "../../components/modules/SlideBtn";
+import { useRouter } from "next/router";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,6 +14,7 @@ import Breadcrumbs from "../../components/modules/Breadcrumbs";
 
 export const getStaticPaths = async () => {
     const res = await fetch("https://food-truck-nine.vercel.app/api/events");
+    // const res = await fetch("http://localhost:3000/api/events");
     const data = await res.json();
     const paths = data.map((item) => {
         return {
@@ -31,6 +33,7 @@ export const getStaticProps = async (context) => {
     const res = await fetch(
         "https://food-truck-nine.vercel.app/api/events/" + id
     );
+    // const res = await fetch("http://localhost:3000/api/events/" + id);
     const data = await res.json();
 
     return {

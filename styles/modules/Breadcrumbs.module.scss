@@ -4,6 +4,10 @@
     display: flex;
     margin-bottom: 0;
     justify-content: center;
+
+    @media (max-width: $xl) {
+        margin-bottom: 20px;
+    }
 }
 
 .list {

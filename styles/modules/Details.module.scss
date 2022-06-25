@@ -13,32 +13,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 15px;
 }
 
 .close {
     position: absolute;
     right: -60px;
     top: 0;
+    z-index: 10;
 
-    @media (max-width: $md) {
-        right: 0;
+    @media (max-width: calc($xl + 120px)) {
+        right: 10px;
+        top: 10px;
     }
 }
 
 .overflowActive {
     opacity: 1;
-    z-index: 11;
+    z-index: 110;
 }
 
 .modal {
     width: 100%;
     position: relative;
     max-width: 946px;
-    height: 80%;
+    height: 90%;
     background: #ffffff;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.07);
-    border-radius: 10px;
     padding: 0 !important;
+    border-radius: 10px;
     // overflow-y: scroll;
 }
 
@@ -46,6 +49,7 @@
     height: 100%;
     overflow-y: scroll;
     scrollbar-width: thin;
+    border-radius: 10px;
 
     &::-webkit-scrollbar {
         width: 5px;
@@ -91,14 +95,18 @@
         width: 277px;
         height: 149px;
     }
+
+    @media (max-width: $md) {
+        width: 204px;
+        height: 110px;
+    }
 }
 
 .imgBlock {
-    width: 497px;
-    height: 268px;
     position: relative;
     margin: 0 auto;
     margin-bottom: 30px;
+    max-width: 497px;
 }
 
 .title {
@@ -116,7 +124,8 @@
     margin-bottom: 40px;
 
     @media (max-width: $xl) {
-        padding: 0 15px;
+        font-size: 18px;
+        line-height: 20px;
     }
 }
 .priceBlock {
@@ -160,6 +169,11 @@
         font-size: 12px;
         line-height: 14px;
         opacity: 0.5;
+    }
+
+    @media (max-width: $md) {
+        font-size: 18px;
+        line-height: 20px;
     }
 }
 
