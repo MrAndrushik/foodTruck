@@ -7,7 +7,7 @@ import CatalogData from "../public/data/buy-foodtruck/catalog.json";
 
 const BuyFoodtruck = () => {
     return (
-        <div>
+        <>
             <Head>
                 <title>FoodTruck</title>
                 <meta name="FoodTruck" />
@@ -15,7 +15,7 @@ const BuyFoodtruck = () => {
             </Head>
             <Hero />
             <Catalog arr={CatalogData} />
-        </div>
+        </>
     );
 };
 

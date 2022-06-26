@@ -10,7 +10,7 @@ import UpsaleData from "../public/data/furniture/upsale.json";
 
 export default function FoodTrucks() {
     return (
-        <div>
+        <>
             <Head>
                 <title>Кулинарные станции</title>
                 <meta name="FoodTruck" />
@@ -19,6 +19,6 @@ export default function FoodTrucks() {
             <Hero partial={true} obj={HeroData} />
             <Catalog partial={true} bucket={true} obj={CatalogData} />
             <Upsale obj={UpsaleData} />
-        </div>
+        </>
     );
 }
