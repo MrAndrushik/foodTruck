@@ -100,12 +100,30 @@
     text-align: center;
     margin-top: 50px;
 
+    color: $gray;
+    font-size: 22px;
+    line-height: 29px;
+    align-items: center;
+    font-family: "Roboto Slab";
+
+    & p {
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 18px;
+        line-height: 21px;
+        text-align: left;
+    }
+
     @media (max-width: $xl) {
         margin-top: 30px;
     }
 }
 
 .descrTitle {
+    text-align: center;
+    color: $black;
     font-size: 36px;
     line-height: 47px;
     margin-bottom: 20px;
@@ -118,21 +136,6 @@
     @media (max-width: $md) {
         font-size: 22px;
         line-height: 29px;
-    }
-}
-
-.text {
-    color: $gray;
-    font-size: 22px;
-    line-height: 29px;
-    align-items: center;
-    margin-bottom: 20px;
-    font-family: "Roboto Slab";
-
-    @media (max-width: $md) {
-        font-size: 18px;
-        line-height: 21px;
-        text-align: left;
     }
 }
 
@@ -206,9 +209,10 @@
 
 .swiper {
     padding: 0 15px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     @media (max-width: $md) {
         padding: 0 15px;
+        margin-bottom: 30px;
     }
 }
 
@@ -228,6 +232,11 @@
     }
 
     @media (max-width: $xl) {
+        width: 380px;
+        height: 204px;
+    }
+
+    @media (max-width: $md) {
         width: 277px;
         height: 149px;
     }

@@ -3,7 +3,7 @@ import styles from "../../styles/modules/SlideBtn.module.scss";
 import cl from "classnames";
 import { useState } from "react";
 
-function SlideBtn({ type, adaptive }) {
+function SlideBtn({ type, adaptive, position, aside }) {
     const swiper = useSwiper();
     const [isEnd, setIsEnd] = useState(false);
 
@@ -22,7 +22,13 @@ function SlideBtn({ type, adaptive }) {
                 className={cl({
                     [styles.next]: type === "next",
                     [styles.prev]: type === "prev",
+                    [styles.full]: type === "full",
                     [styles.desktop]: adaptive === "desktop",
+                    [styles.tablet]: adaptive === "tablet",
+                    [styles.mobile]: adaptive === "mobile",
+                    [styles.bottom]: position === "bottom",
+                    [styles.left]: aside === "left",
+                    [styles.right]: aside === "right",
                     // [styles.disabled]: isEnd,
                 })}
                 onClick={() => handleClick()}

@@ -65,7 +65,8 @@ const Upsale = ({ obj }) => {
                             </SwiperSlide>
                         )
                 )}
-                <SlideBtn type="next" adaptive="desktop" />
+                <SlideBtn type="next" adaptive="full" />
+                <SlideBtn type="prev" adaptive="tablet" />
             </Swiper>
         </section>
     );

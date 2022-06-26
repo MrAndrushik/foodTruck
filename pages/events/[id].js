@@ -85,11 +85,11 @@ const EventsDetails = ({ events }) => {
                     </Swiper>
                     <div className={styles.textBlock}>
                         <h2 className={styles.descrTitle}>Описание</h2>
-                        {event.fullDescrArr.map((descr, index) => (
-                            <p key={index} className={styles.text}>
-                                {descr}
-                            </p>
-                        ))}
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: event.fullDescr,
+                            }}
+                        ></div>
                     </div>
                 </div>
             ))}

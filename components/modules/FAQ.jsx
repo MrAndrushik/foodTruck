@@ -50,9 +50,10 @@ const DropdownItem = ({ title, body }) => {
                             ? `${styles.bottom} ${styles.bottomActive}`
                             : `${styles.bottom}`
                     }
-                >
-                    <p className={styles.text}>{body}</p>
-                </div>
+                    dangerouslySetInnerHTML={{
+                        __html: body,
+                    }}
+                ></div>
             </div>
         </div>
     );

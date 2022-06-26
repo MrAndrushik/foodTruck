@@ -7,11 +7,11 @@
     background-color: #f4f4f4;
 
     @media (max-width: $xl) {
-        padding-bottom: 50px;
+        padding-bottom: 80px;
     }
 
     @media (max-width: $md) {
-        padding-bottom: 30px;
+        padding-bottom: 50px;
     }
 }
 
@@ -20,6 +20,7 @@
 }
 
 .swiper {
+    position: relative;
     padding-left: calc((100% - $xl + 30px) / 2);
 
     @media (max-width: $xl) {
@@ -27,7 +28,7 @@
     }
 
     & > div {
-        padding-bottom: 30px;
+        padding-bottom: 60px;
     }
 }
 

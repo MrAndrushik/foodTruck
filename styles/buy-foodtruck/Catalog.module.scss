@@ -36,14 +36,21 @@
 .swiper {
     width: 559px;
     text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 
     @media (max-width: $xl) {
         width: auto;
+        padding-bottom: 10px;
     }
 }
 
 .swiperSlide {
     margin-bottom: 20px;
+
+    @media (max-width: $xl) {
+        width: 100%;
+    }
 }
 
 .imgBlock {

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "../../styles/buy-foodtruck/Catalog.module.scss";
+import SlideBtn from "../modules/SlideBtn";
 
 const Catalog = ({ arr }) => {
     return (
@@ -38,12 +39,25 @@ const Catalog = ({ arr }) => {
                                             <Image
                                                 src={imgSrc}
                                                 alt="slide"
+                                                layout="responsive"
                                                 width={559}
                                                 height={301}
                                             />
                                         </div>
                                     </SwiperSlide>
                                 ))}
+                                <SlideBtn
+                                    adaptive="full"
+                                    type="prev"
+                                    position="bottom"
+                                    aside="left"
+                                />
+                                <SlideBtn
+                                    adaptive="full"
+                                    type="next"
+                                    position="bottom"
+                                    aside="right"
+                                />
                             </Swiper>
                         </div>
                         <div className={styles.content}>

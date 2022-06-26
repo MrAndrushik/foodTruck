@@ -3,26 +3,91 @@
 .next,
 .prev {
     z-index: 100;
-    width: 140px;
-    height: 48px;
     transition: $transition;
     position: absolute;
+
+    & > svg {
+        width: 140px;
+        height: 48px;
+    }
+
+    @media (max-width: $xl) {
+        & > svg {
+            width: 100px;
+            height: 33px;
+        }
+    }
 }
 
 .next {
     right: 70px;
     top: 50%;
     transform: translateY(-24px);
+
+    @media (max-width: $xl) {
+        transform: translateY(0);
+        top: unset;
+        bottom: 0;
+        right: calc((100% - $md + 30px) / 2);
+    }
+
+    @media (max-width: $md) {
+        right: 15px;
+    }
 }
 
 .prev {
-    transform: rotate(180deg);
+    left: 70px;
+    top: 50%;
+    transform: scale(-1, 1) !important;
+
+    @media (max-width: $xl) {
+        top: unset;
+        bottom: 0;
+        left: calc((100% - $md + 30px) / 2);
+    }
+
+    @media (max-width: $md) {
+        left: 15px;
+    }
+}
+
+.full {
+    display: block;
 }
 
 .desktop {
     @media (max-width: $xl) {
         display: none;
     }
+}
+
+.tablet {
+    display: none;
+    @media (max-width: $xl) {
+        display: block;
+    }
+}
+
+.mobile {
+    display: none;
+    @media (max-width: $md) {
+        display: block;
+    }
+}
+
+.bottom {
+    top: unset;
+    transform: translateY(0);
+    bottom: 0;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
 }
 
 .disabled {
