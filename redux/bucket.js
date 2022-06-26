@@ -9,9 +9,20 @@ const toolkitSlice = createSlice({
     },
     reducers: {
         addToCart(state, action) {
-            const quantity = { quantity: 1 };
-            const obj = Object.assign(quantity, action.payload);
-            state.collection.push(obj);
+            if (
+                state.collection.filter((item) => item.id === action.payload.id)
+                    .length > 0
+            ) {
+                state.collection.map((item) =>
+                    item.id === action.payload.id
+                        ? (item.activeTariff = action.payload.activeTariff)
+                        : item
+                );
+            } else {
+                const quantity = { quantity: 1 };
+                const obj = Object.assign(quantity, action.payload);
+                state.collection.push(obj);
+            }
         },
         incrQuantity(state, action) {
             state.collection.filter((item) => item.id === action.payload.id)[0]

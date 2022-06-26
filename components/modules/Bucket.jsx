@@ -17,9 +17,29 @@ import Image from "next/image";
 const Bucket = () => {
     const calcItemTotal = (item) => {
         const total = 0;
-        if (period === 1) {
+
+        if (period === 1 && item.activeTariff) {
+            const price = item.tariffs.filter(
+                (tariff) => tariff.id === item.activeTariff
+            )[0].startPrice1;
+            total = Number(price.split(" ").join("")) * item.quantity;
+        } else if (period === 1 && !item.activeTariff) {
             total =
                 Number(item.startPrice1.split(" ").join("")) * item.quantity;
+        } else if (period > 1 && item.activeTariff) {
+            const price1 = item.tariffs.filter(
+                (tariff) => tariff.id === item.activeTariff
+            )[0].startPrice1;
+
+            const price2 = item.tariffs.filter(
+                (tariff) => tariff.id === item.activeTariff
+            )[0].startPrice2;
+
+            total =
+                Number(price1.split(" ").join("")) * item.quantity +
+                Number(price2.split(" ").join("")) *
+                    item.quantity *
+                    (period - 1);
         } else {
             total =
                 Number(item.startPrice1.split(" ").join("")) * item.quantity +
@@ -139,9 +159,24 @@ const Bucket = () => {
                                                                 styles.price
                                                             }
                                                         >
-                                                            <span>
-                                                                {`${item.startPrice1} ₽`}
-                                                            </span>
+                                                            {item.activeTariff ? (
+                                                                <span>
+                                                                    {`${
+                                                                        item.tariffs.filter(
+                                                                            (
+                                                                                tariff
+                                                                            ) =>
+                                                                                tariff.id ===
+                                                                                item.activeTariff
+                                                                        )[0]
+                                                                            .startPrice1
+                                                                    } ₽`}
+                                                                </span>
+                                                            ) : (
+                                                                <span>
+                                                                    {`${item.startPrice1} ₽`}
+                                                                </span>
+                                                            )}
                                                             Первые сутки
                                                         </p>
                                                         <p
@@ -149,9 +184,24 @@ const Bucket = () => {
                                                                 styles.price
                                                             }
                                                         >
-                                                            <span>
-                                                                {`${item.startPrice2} ₽`}
-                                                            </span>
+                                                            {item.activeTariff ? (
+                                                                <span>
+                                                                    {`${
+                                                                        item.tariffs.filter(
+                                                                            (
+                                                                                tariff
+                                                                            ) =>
+                                                                                tariff.id ===
+                                                                                item.activeTariff
+                                                                        )[0]
+                                                                            .startPrice2
+                                                                    } ₽`}
+                                                                </span>
+                                                            ) : (
+                                                                <span>
+                                                                    {`${item.startPrice2} ₽`}
+                                                                </span>
+                                                            )}
                                                             Вторые сутки
                                                         </p>
                                                     </div>
