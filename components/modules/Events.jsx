@@ -8,7 +8,7 @@ import styles from "../../styles/modules/Events.module.scss";
 
 const Events = ({ limit = 3 }) => {
     return (
-        <section className={!limit ? `${styles.section}` : ""}>
+        <section className={!limit ? `${styles.section}` : `${styles.sectio1}`}>
             <div className="container">
                 {limit === false ? (
                     <>
