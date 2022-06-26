@@ -15,7 +15,7 @@ import UpsaleData from "../../public/data/foodtrucks/upsale.json";
 
 export default function FoodTrucks() {
     return (
-        <div>
+        <>
             <Head>
                 <title>FoodTruck</title>
                 <meta name="FoodTruck" />
@@ -27,6 +27,6 @@ export default function FoodTrucks() {
             <Questions />
             <Catalog obj={CatalogData} link={true} />
             <Upsale obj={UpsaleData} />
-        </div>
+        </>
     );
 }

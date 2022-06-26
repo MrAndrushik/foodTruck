@@ -232,7 +232,7 @@ const FoodtruckDetails = ({ foodtrucks }) => {
 
     const foodtruck = foodtrucks[0];
     return (
-        <div>
+        <>
             <section className={styles.section}>
                 <Breadcrumbs />{" "}
                 <h1 className={`${styles.title} stn-title`}>
@@ -325,7 +325,7 @@ const FoodtruckDetails = ({ foodtrucks }) => {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     );
 };
 
