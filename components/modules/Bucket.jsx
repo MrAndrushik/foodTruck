@@ -51,7 +51,7 @@ const Bucket = () => {
     };
 
     const handleOpen = () => {
-        document.querySelector("html").classList.remove("hidden");
+        document.querySelector("html").classList.add("hidden");
         dispatch(setFeedbackIsOpen(true));
     };
 
