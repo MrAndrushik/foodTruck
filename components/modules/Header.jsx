@@ -19,6 +19,21 @@ import {
     Cart,
 } from "./SvgSprite";
 
+import data2 from "../../public/data/foodtrucks/catalog.json";
+import data3 from "../../public/data/furniture/catalog.json";
+import data4 from "../../public/data/kiosks/catalog.json";
+import data5 from "../../public/data/master-class/catalog.json";
+import data6 from "../../public/data/stations/catalog.json";
+
+const searchArr = new Array(
+    data2.catalog,
+    data3.catalog,
+    data4.catalog,
+    data5.catalog,
+    data6.catalog
+);
+
+import { setDetailsContent } from "../../redux/toolkitSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
@@ -27,6 +42,9 @@ const Header = () => {
     const [value, setValue] = useState("");
 
     const bucketCollection = useSelector((state) => state.bucket.collection);
+    const liked = useSelector((state) => state.bucket.liked);
+
+    const dispatch = useDispatch();
 
     const navLinks = [
         {
@@ -88,6 +106,11 @@ const Header = () => {
             }
         }
         setIsOpen(false);
+    };
+
+    const handleDetails = (obj) => {
+        document.querySelector("html").classList.add("hidden");
+        dispatch(setDetailsContent(obj));
     };
 
     return (
@@ -212,15 +235,95 @@ const Header = () => {
                                     >
                                         <BurgerClose fill="#888888" />
                                     </div>
+                                    {value && (
+                                        <div className="search">
+                                            <h3 className="seacrh__result">
+                                                Результаты поиска:{" "}
+                                                <span>
+                                                    {searchArr.reduce(
+                                                        (sum, exactArr) =>
+                                                            exactArr.filter(
+                                                                (item) =>
+                                                                    item.caption
+                                                                        .toLowerCase()
+                                                                        .indexOf(
+                                                                            value.toLowerCase()
+                                                                        ) === 0
+                                                            ).length + sum,
+                                                        0
+                                                    )}
+                                                </span>
+                                            </h3>
+                                            <ul className="search__list">
+                                                {searchArr.map((exactArr) =>
+                                                    exactArr
+                                                        .filter(
+                                                            (item) =>
+                                                                item.caption
+                                                                    .toLowerCase()
+                                                                    .indexOf(
+                                                                        value.toLowerCase()
+                                                                    ) === 0
+                                                        )
+                                                        .map((result) => (
+                                                            <li
+                                                                onClick={() =>
+                                                                    handleDetails(
+                                                                        result
+                                                                    )
+                                                                }
+                                                                className="search__item"
+                                                                key={result.id}
+                                                            >
+                                                                <div className="search__imgBlock">
+                                                                    <Image
+                                                                        width={
+                                                                            75
+                                                                        }
+                                                                        height={
+                                                                            50
+                                                                        }
+                                                                        src={
+                                                                            result.imgSrc
+                                                                        }
+                                                                        alt="product"
+                                                                    />
+                                                                </div>
+                                                                <p className="search__text">
+                                                                    {
+                                                                        result.caption
+                                                                    }
+                                                                </p>
+                                                            </li>
+                                                        ))
+                                                )}
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             )}
                         </button>
-                        <button className="header-bottom__favorites header__desktop ">
-                            <Favorites />
-                            {/* <div className="header-bottom__circle">9</div> */}
-                        </button>
+                        <Link href="/favorites">
+                            <a
+                                onClick={() => handleClick()}
+                                className="header-bottom__favorites header__desktop"
+                            >
+                                <Favorites />
+                                {liked?.length > 0 && (
+                                    <div className="header-bottom__circle">
+                                        {liked.reduce(
+                                            (sum, item) => sum + 1,
+                                            0
+                                        )}
+                                    </div>
+                                )}
+                            </a>
+                        </Link>
                         <Link href="/bucket">
-                            <a className="header-bottom__cart">
+                            <a
+                                onClick={() => handleClick()}
+                                className="header-bottom__cart"
+                            >
                                 <Cart />
                                 {bucketCollection?.length > 0 && (
                                     <div className="header-bottom__circle header__desktop">
@@ -251,10 +354,83 @@ const Header = () => {
                                 className="header-outter__search-input"
                                 placeholder="Поиск по сайту"
                             />
-                            <Search />
+                            {value ? (
+                                <button onClick={() => setValue("")}>
+                                    <Image
+                                        width={24}
+                                        height={24}
+                                        alt="close"
+                                        src="/img/delete.svg"
+                                    />
+                                </button>
+                            ) : (
+                                <Search />
+                            )}
+
+                            {value && (
+                                <div className="search">
+                                    <h3 className="seacrh__result">
+                                        Результаты поиска:{" "}
+                                        <span>
+                                            {searchArr.reduce(
+                                                (sum, exactArr) =>
+                                                    exactArr.filter(
+                                                        (item) =>
+                                                            item.caption
+                                                                .toLowerCase()
+                                                                .indexOf(
+                                                                    value.toLowerCase()
+                                                                ) === 0
+                                                    ).length + sum,
+                                                0
+                                            )}
+                                        </span>
+                                    </h3>
+                                    <ul className="search__list">
+                                        {searchArr.map((exactArr) =>
+                                            exactArr
+                                                .filter(
+                                                    (item) =>
+                                                        item.caption
+                                                            .toLowerCase()
+                                                            .indexOf(
+                                                                value.toLowerCase()
+                                                            ) === 0
+                                                )
+                                                .map((result) => (
+                                                    <li
+                                                        onClick={() =>
+                                                            handleDetails(
+                                                                result
+                                                            )
+                                                        }
+                                                        className="search__item"
+                                                        key={result.id}
+                                                    >
+                                                        <div className="search__imgBlock">
+                                                            <Image
+                                                                width={75}
+                                                                height={50}
+                                                                src={
+                                                                    result.imgSrc
+                                                                }
+                                                                alt="product"
+                                                            />
+                                                        </div>
+                                                        <p className="search__text">
+                                                            {result.caption}
+                                                        </p>
+                                                    </li>
+                                                ))
+                                        )}
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                         <div className="header-outter__favorites-block">
-                            <p>Избранные</p>
+                            <Link href="/favorites">
+                                <a onClick={() => handleClick()}>Избранные</a>
+                            </Link>
                             <Favorites />
                         </div>
                     </div>

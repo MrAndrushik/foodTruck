@@ -11,6 +11,7 @@ import Upsale from "../../components/modules/Upsale";
 import HeroData from "../../public/data/foodtrucks/hero.json";
 import StepsData from "../../public/data/foodtrucks/steps.json";
 import AdvantagesData from "../../public/data/foodtrucks/advantages.json";
+import QuestionData from "../../public/data/foodtrucks/questions.json";
 import CatalogData from "../../public/data/foodtrucks/catalog.json";
 import UpsaleData from "../../public/data/foodtrucks/upsale.json";
 
@@ -35,7 +36,7 @@ export default function FoodTrucks() {
             <Hero />
             <StepsBlock obj={StepsData} />
             <Advantages obj={AdvantagesData} />
-            <Questions />
+            <Questions arr={QuestionData} />
             <Catalog obj={CatalogData} link={true} />
             <Upsale obj={UpsaleData} />
         </>

@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
-import data from "../../public/data/foodtrucks/questions.json";
 
 import styles from "../../styles/foodtrucks/Questions.module.scss";
 
-const Questions = () => {
+const Questions = ({ arr }) => {
     const DropdownItem = ({ title, body }) => {
         const [isOpen, setIsOpen] = useState(false);
         const ref = useRef(null);
@@ -50,9 +49,8 @@ const Questions = () => {
                             ? `${styles.bottom} ${styles.bottomActive}`
                             : `${styles.bottom}`
                     }
-                >
-                    <p className={styles.text}>{body}</p>
-                </div>
+                    dangerouslySetInnerHTML={{ __html: body }}
+                ></div>
             </div>
         );
     };
@@ -61,7 +59,7 @@ const Questions = () => {
         <section className={styles.section}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    {data.map(({ title, body }, index) => (
+                    {arr.map(({ title, body }, index) => (
                         <DropdownItem title={title} body={body} key={index} />
                     ))}
                 </div>

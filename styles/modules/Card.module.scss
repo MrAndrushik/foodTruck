@@ -1,6 +1,7 @@
 @import "../const";
 
 .block {
+    position: relative;
     width: 367px;
     background: #ffffff;
     border: 1px solid #d3d3d3;
@@ -16,6 +17,28 @@
         min-width: 300px;
         width: 100%;
     }
+}
+
+.selected {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    z-index: 2;
+}
+
+.favorite {
+    cursor: pointer;
+    position: absolute;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    border-radius: 50%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    top: 14px;
+    z-index: 2;
 }
 
 .imgBlock {

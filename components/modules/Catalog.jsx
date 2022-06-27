@@ -4,14 +4,28 @@ import styles from "../../styles/modules/Catalog.module.scss";
 import Card from "./Card";
 import Tags from "./Tags";
 
-const Catalog = ({ obj, bucket = false, partial = false, link = false }) => {
-    const tags = obj.tags;
-    const catalog = obj.catalog;
+const Catalog = ({
+    style,
+    obj,
+    arr,
+    bucket = false,
+    partial = false,
+    link = false,
+}) => {
+    const tags = obj?.tags;
+    const catalog = [];
+
+    if (arr) {
+        catalog = arr;
+    } else {
+        catalog = obj.catalog;
+    }
 
     const [activeTag, setActiveTag] = useState("Все");
 
     return (
         <section
+            style={style}
             id="catalog"
             className={
                 partial
@@ -19,7 +33,7 @@ const Catalog = ({ obj, bucket = false, partial = false, link = false }) => {
                     : `${styles.section}`
             }
         >
-            {obj.title && (
+            {obj?.title && (
                 <h2 className={`${styles.title} stn-title`}>{obj.title}</h2>
             )}
             {tags && (

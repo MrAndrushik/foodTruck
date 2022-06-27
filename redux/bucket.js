@@ -8,6 +8,21 @@ const toolkitSlice = createSlice({
         period: 1,
     },
     reducers: {
+        toggleToLiked(state, action) {
+            if (
+                state.liked.filter((item) => item.id === action.payload.id)
+                    .length > 0
+            ) {
+                state.liked = state.liked.filter(
+                    (item) => item.id !== action.payload.id
+                );
+            } else {
+                state.liked.push(action.payload);
+            }
+        },
+        clearLiked(state) {
+            state.liked = [];
+        },
         addToCart(state, action) {
             if (
                 state.collection.filter((item) => item.id === action.payload.id)
@@ -64,6 +79,8 @@ const toolkitSlice = createSlice({
 
 export default toolkitSlice.reducer;
 export const {
+    toggleToLiked,
+    clearLiked,
     addToCart,
     incrQuantity,
     decrQuantity,

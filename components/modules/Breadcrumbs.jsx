@@ -69,6 +69,7 @@ const Breadcrumbs = () => {
                 {breadcrumbs.map((crumb, index) =>
                     index < breadcrumbs.length - 1 ? (
                         <li
+                            className={styles.item}
                             key={index}
                             itemProp="itemListElement"
                             itemScope
@@ -87,6 +88,7 @@ const Breadcrumbs = () => {
                                     </span>
                                 </a>
                             </Link>
+                            <span className={styles.line}></span>
                             <meta
                                 itemProp="position"
                                 content={`${index + 1}`}
