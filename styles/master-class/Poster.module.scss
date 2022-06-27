@@ -95,11 +95,17 @@
     line-height: 21px;
     color: #fff;
     padding: 12px 38px;
-    background: #3ba8c0;
+    background: $blue;
     border-radius: 10px;
     margin-bottom: 50px;
     width: -moz-fit-content;
     width: fit-content;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+        background: #338fa3;
+    }
+
     @media (max-width: $md) {
         order: 1;
         margin-bottom: 0;

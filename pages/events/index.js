@@ -1,8 +1,6 @@
 import Events from "../../components/modules/Events";
 import Head from "next/head";
 
-import styles from "../../styles/modules/Events.module.scss";
-
 const AllEvents = () => {
     return (
         <>

@@ -8,17 +8,29 @@ import styles from "../../styles/modules/Events.module.scss";
 
 const Events = ({ limit = 3 }) => {
     return (
-        <section className={!limit ? `${styles.section}` : `${styles.sectio1}`}>
-            <div className="container">
+        <section
+            className={!limit ? `${styles.section}` : `${styles.section1}`}
+        >
+            <div
+                itemScope
+                itemType="http://schema.org/Blog"
+                className="container"
+            >
                 {limit === false ? (
                     <>
                         <Breadcrumbs />
-                        <h1 className={`${styles.mainTitle}`}>
+                        <h1
+                            itemProp="description"
+                            className={`${styles.mainTitle}`}
+                        >
                             Проведённые мероприятия
                         </h1>
                     </>
                 ) : (
-                    <h2 className={`${styles.title} stn-title`}>
+                    <h2
+                        itemProp="description"
+                        className={`${styles.title} stn-title`}
+                    >
                         Проведённые мероприятия
                     </h2>
                 )}
@@ -27,9 +39,16 @@ const Events = ({ limit = 3 }) => {
                     {data.map(
                         (item, index) =>
                             (index < limit || limit === false) && (
-                                <div key={item.id} className={styles.block}>
+                                <article
+                                    itemProp="blogPosts"
+                                    itemScope
+                                    itemType="http://schema.org/BlogPosting"
+                                    key={item.id}
+                                    className={styles.block}
+                                >
                                     <div className={styles.imgBlock}>
                                         <Image
+                                            itemProp="image"
                                             src={item.imgSrc}
                                             alt="event"
                                             width={365}
@@ -38,10 +57,16 @@ const Events = ({ limit = 3 }) => {
                                         />
                                     </div>
                                     <div className={styles.content}>
-                                        <h3 className={styles.caption}>
+                                        <h3
+                                            itemProp="headline"
+                                            className={styles.caption}
+                                        >
                                             {item.caption}
                                         </h3>
-                                        <p className={styles.descr}>
+                                        <p
+                                            itemProp="description"
+                                            className={styles.descr}
+                                        >
                                             {item.shortDescr}
                                         </p>
                                     </div>
@@ -50,7 +75,7 @@ const Events = ({ limit = 3 }) => {
                                             Подробнее
                                         </button>
                                     </Link>
-                                </div>
+                                </article>
                             )
                     )}
                 </div>

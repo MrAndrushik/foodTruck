@@ -5,6 +5,7 @@ const toolkitSlice = createSlice({
     initialState: {
         feedbackIsOpen: false,
         detailsContent: {},
+        detailsSwiperContent: {},
     },
     reducers: {
         setFeedbackIsOpen(state, action) {
@@ -13,8 +14,12 @@ const toolkitSlice = createSlice({
         setDetailsContent(state, action) {
             state.detailsContent = action.payload;
         },
+        setDetailsSwiperContent(state, action) {
+            state.detailsSwiperContent = action.payload;
+        },
     },
 });
 
 export default toolkitSlice.reducer;
-export const { setFeedbackIsOpen, setDetailsContent } = toolkitSlice.actions;
+export const { setFeedbackIsOpen, setDetailsContent, setDetailsSwiperContent } =
+    toolkitSlice.actions;

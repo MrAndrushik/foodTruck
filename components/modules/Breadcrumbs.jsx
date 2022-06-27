@@ -61,17 +61,52 @@ const Breadcrumbs = () => {
     const breadcrumbs = generateBreadcrumbs();
     return (
         <div className={styles.block}>
-            <ul className={styles.list}>
+            <ul
+                itemScope
+                itemType="http://schema.org/BreadcrumbList"
+                className={styles.list}
+            >
                 {breadcrumbs.map((crumb, index) =>
                     index < breadcrumbs.length - 1 ? (
-                        <Link href={crumb.href} key={index}>
-                            <li className={styles.crumbActive}>
-                                {crumb.title}
-                            </li>
-                        </Link>
+                        <li
+                            key={index}
+                            itemProp="itemListElement"
+                            itemScope
+                            itemType="http://schema.org/ListItem"
+                        >
+                            <Link href={crumb.href}>
+                                <a
+                                    itemProp="item"
+                                    className={styles.crumbActive}
+                                >
+                                    <span
+                                        itemProp="name"
+                                        className={styles.span}
+                                    >
+                                        {crumb.title}
+                                    </span>
+                                </a>
+                            </Link>
+                            <meta
+                                itemProp="position"
+                                content={`${index + 1}`}
+                            />
+                        </li>
                     ) : (
-                        <li key={index} className={styles.crumb}>
-                            {crumb.title}
+                        <li
+                            itemProp="itemListElement"
+                            itemScope
+                            itemType="http://schema.org/ListItem"
+                            key={index}
+                            className={styles.crumb}
+                        >
+                            <span itemProp="name" className={styles.span}>
+                                {crumb.title}
+                            </span>
+                            <meta
+                                itemProp="position"
+                                content={`${index + 1}`}
+                            />
                         </li>
                     )
                 )}

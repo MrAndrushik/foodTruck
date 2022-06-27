@@ -18,8 +18,14 @@ const DropdownItem = ({ title, body }) => {
 
     return (
         <div className={styles.shadow}>
-            <div className={styles.dropdown}>
+            <div
+                itemProp="mainEntity"
+                itemScope
+                itemType="https://schema.org/Question"
+                className={styles.dropdown}
+            >
                 <div
+                    itemProp="name"
                     onClick={() => handleFunc()}
                     className={
                         isOpen
@@ -44,6 +50,9 @@ const DropdownItem = ({ title, body }) => {
                     </svg>
                 </div>
                 <div
+                    itemProp="acceptedAnswer"
+                    itemScope=""
+                    itemType="http://schema.org/Answer"
                     ref={ref}
                     className={
                         isOpen
@@ -61,12 +70,16 @@ const DropdownItem = ({ title, body }) => {
 
 const FAQ = () => {
     return (
-        <section className={styles.section}>
+        <section id="faq" className={styles.section}>
             <div className="container">
                 <h2 className={`${styles.title} stn-title`}>
                     Вопросы и ответы
                 </h2>
-                <div className={styles.wrapper}>
+                <div
+                    itemScope
+                    itemType="https://schema.org/FAQPage"
+                    className={styles.wrapper}
+                >
                     {data.map(({ title, body }, index) => (
                         <DropdownItem title={title} body={body} key={index} />
                     ))}

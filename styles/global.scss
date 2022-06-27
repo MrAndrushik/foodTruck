@@ -77,6 +77,15 @@ a {
     font-weight: 400;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: $light-gray;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $blue;
+}
+
 .hidden {
     overflow: hidden;
 }
@@ -173,6 +182,15 @@ a {
     height: 100%;
     padding: 0 25px;
     border-left: 1px solid rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease;
+
+    &:hover {
+        background-color: $blue;
+
+        & svg path {
+            fill: #fff;
+        }
+    }
 }
 
 .header-top__block {
@@ -187,6 +205,20 @@ a {
     &:last-child {
         border-right: 1px solid rgba(0, 0, 0, 0.3);
     }
+
+    transition: all 0.1s ease;
+
+    &:hover {
+        background-color: $blue;
+
+        & .header-top__link {
+            color: #ffffff;
+        }
+
+        & svg path {
+            fill: #fff;
+        }
+    }
 }
 
 .header-top__link {
@@ -195,6 +227,7 @@ a {
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
+    transition: all 0.1s ease;
 }
 
 .header-top__tel {
@@ -227,6 +260,22 @@ a {
     display: flex;
     align-items: center;
     gap: 15px;
+
+    & svg path {
+        transition: all 0.1s ease;
+    }
+
+    &:hover svg path {
+        fill: $blue;
+    }
+
+    & a {
+        transition: all 0.1s ease;
+    }
+
+    &:hover a {
+        color: $blue;
+    }
 }
 
 .header-bottom__text {
@@ -390,7 +439,7 @@ a {
     width: 100%;
     row-gap: 30px;
 
-    & > .nav__link:nth-child(2n) {
+    & > .nav__item:nth-child(2n) {
         padding-left: 70px;
     }
 
@@ -399,7 +448,7 @@ a {
         justify-content: flex-start;
         gap: 0;
 
-        & > .nav__link:nth-child(2n) {
+        & > .nav__item:nth-child(2n) {
             padding-left: 0px;
         }
     }
@@ -422,7 +471,6 @@ a {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 50%;
     cursor: pointer;
     transition: all 0.1s ease-in;
 
@@ -437,6 +485,12 @@ a {
     &:hover path {
         fill: $blue;
     }
+}
+
+.nav__item {
+    width: 50%;
+    display: flex;
+    align-items: center;
 
     @media (max-width: $md) {
         width: unset;
@@ -448,7 +502,7 @@ a {
     flex-direction: column;
     row-gap: 30px;
 
-    & > .nav__link {
+    & .nav__link {
         width: 100%;
         font-size: 16px;
         line-height: 21px;
@@ -456,7 +510,7 @@ a {
         transition: all 0.1s ease-in;
     }
 
-    & > .nav__link:hover {
+    & .nav__link:hover {
         color: $blue;
     }
 
@@ -802,5 +856,37 @@ a {
         padding: 20px;
         // padding: 0;
         // transform: scale(1);
+    }
+}
+
+.privacy {
+    padding-top: 160px;
+
+    @media (max-width: $xl) {
+        padding-top: 80px;
+    }
+}
+
+.privacy__title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 74px;
+    margin-bottom: 30px;
+
+    @media (max-width: $xl) {
+        font-size: 26px;
+        line-height: 34px;
+        margin-bottom: 10px;
+    }
+}
+
+.privacy__text {
+    font-family: "Roboto Slab";
+    font-size: 18px;
+    color: $black;
+    margin-bottom: 20px;
+
+    @media (max-width: $xl) {
+        font-size: 16px;
     }
 }

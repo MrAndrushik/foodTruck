@@ -2,7 +2,12 @@ import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { setDetailsContent } from "../../redux/toolkitSlice";
+import {
+    setDetailsContent,
+    setDetailsSwiperContent,
+} from "../../redux/toolkitSlice";
+import { addToCart, incrQuantity, decrQuantity } from "../../redux/bucket";
+import DetailsModalSwiper from "./DetailsModalSwiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,6 +17,11 @@ const Details = () => {
     const detailsContent = useSelector((state) => state.toolkit.detailsContent);
     const isDetailsEmpty = Object.keys(detailsContent).length === 0;
     const dispatch = useDispatch();
+
+    const bucketCollection = useSelector((state) => state.bucket.collection);
+    const currentCardInBucket = bucketCollection.filter(
+        (bucket) => bucket.id === detailsContent.id
+    )[0];
 
     const handleClose = () => {
         document.querySelector("html").classList.remove("hidden");
@@ -26,6 +36,7 @@ const Details = () => {
                     : `${styles.overflow}`
             }
         >
+            <DetailsModalSwiper />
             <div className={`${styles.modal} container`}>
                 <button onClick={() => handleClose()} className={styles.close}>
                     <Image
@@ -60,6 +71,18 @@ const Details = () => {
                                         detailsContent.gallery.map(
                                             (imgSrc, index) => (
                                                 <SwiperSlide
+                                                    onClick={() =>
+                                                        dispatch(
+                                                            setDetailsSwiperContent(
+                                                                Object.assign({
+                                                                    content:
+                                                                        detailsContent.gallery,
+                                                                    activeIndex:
+                                                                        index,
+                                                                })
+                                                            )
+                                                        )
+                                                    }
                                                     className={
                                                         styles.swiperSlide
                                                     }
@@ -117,9 +140,70 @@ const Details = () => {
                                         </p>
                                     </div>
                                 </div>
-                                <button className={styles.btn}>
-                                    + Добавить в корзину
-                                </button>
+                                {!currentCardInBucket ? (
+                                    <button
+                                        className={styles.btn}
+                                        onClick={() =>
+                                            dispatch(addToCart(detailsContent))
+                                        }
+                                    >
+                                        + Добавить в корзину
+                                    </button>
+                                ) : (
+                                    <div className={styles.quantityBlock}>
+                                        <button
+                                            onClick={() =>
+                                                dispatch(
+                                                    decrQuantity(
+                                                        currentCardInBucket
+                                                    )
+                                                )
+                                            }
+                                        >
+                                            <svg
+                                                width="17"
+                                                height="3"
+                                                viewBox="0 0 17 3"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    clipRule="evenodd"
+                                                    d="M0 1.25C0 0.559644 0.559644 0 1.25 0H15.75C16.4404 0 17 0.559644 17 1.25C17 1.94036 16.4404 2.5 15.75 2.5H1.25C0.559644 2.5 0 1.94036 0 1.25Z"
+                                                    fill="white"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <span>
+                                            {currentCardInBucket.quantity}
+                                        </span>
+                                        <button
+                                            onClick={() =>
+                                                dispatch(
+                                                    incrQuantity(
+                                                        currentCardInBucket
+                                                    )
+                                                )
+                                            }
+                                        >
+                                            <svg
+                                                width="17"
+                                                height="17"
+                                                viewBox="0 0 17 17"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    clipRule="evenodd"
+                                                    d="M8.5 0C9.19036 0 9.75 0.559644 9.75 1.25V7H15.75C16.4404 7 17 7.55964 17 8.25C17 8.94036 16.4404 9.5 15.75 9.5H9.75V15.75C9.75 16.4404 9.19036 17 8.5 17C7.80964 17 7.25 16.4404 7.25 15.75V9.5H1.25C0.559644 9.5 0 8.94036 0 8.25C0 7.55964 0.559644 7 1.25 7H7.25V1.25C7.25 0.559644 7.80964 0 8.5 0Z"
+                                                    fill="white"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         </section>
                         {detailsContent.include && (

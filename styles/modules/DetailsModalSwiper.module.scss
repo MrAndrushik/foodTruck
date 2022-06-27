@@ -1,0 +1,66 @@
+@import "../const";
+
+.overflow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #101010dc;
+    transition: $transition;
+    z-index: -1;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.close {
+    position: absolute;
+    right: -60px;
+    top: 0;
+    z-index: 10;
+
+    @media (max-width: calc($xl + 120px)) {
+        right: 10px;
+        top: 10px;
+    }
+}
+
+.overflowActive {
+    opacity: 1;
+    z-index: 120;
+}
+
+.modal {
+    width: 100%;
+    position: relative;
+    height: 90%;
+    max-width: 946px;
+    background: transparent;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.07);
+    padding: 0 !important;
+    border-radius: 10px;
+}
+
+.swiper {
+    width: 100%;
+    padding-bottom: 80px;
+
+    @media (max-width: $md) {
+        padding-bottom: 50px;
+    }
+}
+
+.slide {
+    border-radius: 10px;
+
+    & span {
+        border-radius: 10px;
+    }
+}
+
+.swiperSlide {
+    background: $black;
+}

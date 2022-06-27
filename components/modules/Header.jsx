@@ -61,7 +61,32 @@ const Header = () => {
         },
     ];
 
-    const handleClick = () => {
+    const getCoords = (elem) => {
+        let box = elem.getBoundingClientRect();
+        return {
+            top: box.top + window.pageYOffset,
+        };
+    };
+
+    const handleClick = (e) => {
+        if (e && e.target.href.indexOf("#") !== -1) {
+            e.preventDefault();
+            const id = e.target.href.split("#")[1];
+            if (document.querySelector("#" + id)) {
+                const position = getCoords(document.querySelector("#" + id));
+                if (window.innerWidth > 1170) {
+                    window.scrollTo({
+                        top: `${position.top - 100}`,
+                        behavior: "smooth",
+                    });
+                } else {
+                    window.scrollTo({
+                        top: `${position.top - 70}`,
+                        behavior: "smooth",
+                    });
+                }
+            }
+        }
         setIsOpen(false);
     };
 
@@ -72,26 +97,45 @@ const Header = () => {
                     isOpen ? "header-top header-top--active" : "header-top"
                 }
             >
-                <div className="header-top__container container">
+                <div
+                    itemScope
+                    itemType="https://schema.org/Organization"
+                    className="header-top__container container"
+                >
                     <div className="header-top__social">
-                        <div className="header-top__social-item">
+                        <a
+                            href="https://ru-ru.facebook.com/"
+                            className="header-top__social-item"
+                        >
                             <Facebook fill="#646464" />
-                        </div>
-                        <div className="header-top__social-item">
+                        </a>
+                        <a
+                            href="https://www.instagram.com/"
+                            className="header-top__social-item"
+                        >
                             <Instagram fill="#646464" />
-                        </div>
+                        </a>
                     </div>
                     <div className="header-top__block">
                         <Email fill="#646464" />
                         <Link href="mailto:admin@mail.ru">
-                            <a className="header-top__link">
+                            <a
+                                itemProp="telephone"
+                                className="header-top__link"
+                            >
                                 info@fudtrak-v-arendu.ru
                             </a>
                         </Link>
                     </div>
-                    <div className="header-top__block">
+                    <div
+                        itemProp="address"
+                        itemScope
+                        itemType="https://schema.org/PostalAddress"
+                        className="header-top__block"
+                    >
                         <Marker fill="#646464" />
                         <a
+                            itemProp="streetAddress"
                             target="_blank"
                             rel="noreferrer"
                             href="https://www.google.ru/maps/place/%D0%BF%D1%80.+%D0%95%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,+2%D0%B0,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+109382/@55.6733545,37.7319352,17z/data=!3m1!4b1!4m5!3m4!1s0x414ab4680617c1fb:0x1d8eebb8559f46d7!8m2!3d55.6733515!4d37.7341239"
@@ -108,7 +152,10 @@ const Header = () => {
                     <Link href="tel:89999999999">
                         <div className="header-top__block">
                             <Telephone fill="#646464" />
-                            <a className="header-top__link header-top__tel">
+                            <a
+                                itemProp="telephone"
+                                className="header-top__link header-top__tel"
+                            >
                                 8 999 999 99-99
                             </a>
                         </div>
@@ -122,9 +169,9 @@ const Header = () => {
                         className="header-bottom__burger"
                     >
                         {!isOpen ? <Burger /> : <BurgerClose />}
-                        <p className="header-bottom__text header__desktop">
+                        <a className="header-bottom__text header__desktop">
                             меню
-                        </p>
+                        </a>
                     </button>
                     <Link href="/">
                         <div
@@ -212,30 +259,62 @@ const Header = () => {
                         </div>
                     </div>
                     <nav className="header-outter__nav nav container">
-                        <ul className="nav__list">
+                        <ul
+                            itemScope
+                            itemType="http://schema.org/SiteNavigationElement"
+                            className="nav__list"
+                        >
                             {navLinks.map((link) => (
-                                <Link key={link.text} href={link.href}>
-                                    <li
+                                <li className="nav__item" key={link.text}>
+                                    <Link key={link.text} href={link.href}>
+                                        <a
+                                            itemProp="url"
+                                            onClick={() => handleClick()}
+                                            className="nav__link"
+                                        >
+                                            {link.Component}
+                                            {link.text}
+                                        </a>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <ul
+                            itemScope
+                            itemType="http://schema.org/SiteNavigationElement"
+                            className="nav__block"
+                        >
+                            <li>
+                                <Link href="/events">
+                                    <a
+                                        itemProp="url"
                                         onClick={() => handleClick()}
                                         className="nav__link"
                                     >
-                                        {link.Component}
-                                        {link.text}
-                                    </li>
+                                        Мероприятия
+                                    </a>
                                 </Link>
-                            ))}
-                        </ul>
-                        <ul className="nav__block">
-                            <Link href="/events">
-                                <li
-                                    onClick={() => handleClick()}
+                            </li>
+                            <li>
+                                <a
+                                    itemProp="url"
                                     className="nav__link"
+                                    onClick={(e) => handleClick(e)}
+                                    href="#faq"
                                 >
-                                    Мероприятия
-                                </li>
-                            </Link>
-                            <li className="nav__link">Вопросы и ответы</li>
-                            <li className="nav__link">Контакты</li>
+                                    Вопросы и ответы
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    onClick={(e) => handleClick(e)}
+                                    itemProp="url"
+                                    className="nav__link"
+                                    href="#contacts"
+                                >
+                                    Контакты
+                                </a>
+                            </li>
                         </ul>
                         <Link href="tel:89999999999">
                             <div className="nav__tel-block">

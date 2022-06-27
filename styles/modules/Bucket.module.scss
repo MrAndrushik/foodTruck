@@ -11,6 +11,10 @@
     }
 }
 
+.container {
+    height: 100%;
+}
+
 .title {
     padding: 0 15px;
     font-weight: 700;
@@ -127,6 +131,7 @@
     position: absolute;
     right: 10px;
     top: 10px;
+    z-index: 10;
 }
 
 .content {

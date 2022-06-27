@@ -12,6 +12,7 @@ const Catalog = ({ obj, bucket = false, partial = false, link = false }) => {
 
     return (
         <section
+            id="catalog"
             className={
                 partial
                     ? `${styles.section} ${styles.sectionPartial}`
@@ -30,7 +31,11 @@ const Catalog = ({ obj, bucket = false, partial = false, link = false }) => {
             )}
 
             <div className="container">
-                <div className={styles.wrapper}>
+                <ul
+                    itemScope
+                    itemType="http://schema.org/ItemList"
+                    className={styles.wrapper}
+                >
                     {catalog.map(
                         (item) =>
                             (activeTag === "Все" ||
@@ -40,15 +45,10 @@ const Catalog = ({ obj, bucket = false, partial = false, link = false }) => {
                                     bucket={bucket}
                                     key={item.id}
                                     link={link}
-                                    // caption={item.caption}
-                                    // imgSrc={item.imgSrc}
-                                    // id={item.id}
-                                    // startPrice1={item.startPrice1}
-                                    // startPrice2={item.startPrice2}
                                 />
                             )
                     )}
-                </div>
+                </ul>
             </div>
         </section>
     );

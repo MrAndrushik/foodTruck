@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "../../styles/buy-foodtruck/Catalog.module.scss";
 import SlideBtn from "../modules/SlideBtn";
+import BidBtn from "../modules/BidBtn";
 
 const Catalog = ({ arr }) => {
     return (
@@ -92,9 +93,7 @@ const Catalog = ({ arr }) => {
                                     от {item.price} ₽
                                 </span>
                             </div>
-                            <button className={styles.btn}>
-                                Оставить заявку
-                            </button>
+                            <BidBtn>Оставить заявку</BidBtn>
                         </div>
                     </div>
                 </div>

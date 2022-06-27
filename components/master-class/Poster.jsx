@@ -1,7 +1,10 @@
-import styles from "../../styles/master-class/Poster.module.scss";
 import Image from "next/image";
+import { setFeedbackIsOpen } from "../../redux/toolkitSlice";
+import { useDispatch } from "react-redux";
 
 import background from "../../public/img/master-class/poster-bg.png";
+
+import styles from "../../styles/master-class/Poster.module.scss";
 
 const Poster = () => {
     const list = [
@@ -18,6 +21,12 @@ const Poster = () => {
             imgSrc: "/img/master-class/home.svg",
         },
     ];
+
+    const dispatch = useDispatch();
+    const handleClick = () => {
+        document.querySelector("html").classList.add("hidden");
+        dispatch(setFeedbackIsOpen(true));
+    };
 
     return (
         <section className={styles.section}>
@@ -36,7 +45,12 @@ const Poster = () => {
                     <h2 className={styles.title}>
                         Проведём мастер-класс у нас на площадке
                     </h2>
-                    <button className={styles.btn}>Оставить заявку</button>
+                    <button
+                        className={styles.btn}
+                        onClick={() => handleClick()}
+                    >
+                        Оставить заявку
+                    </button>
                     <ul className={styles.list}>
                         {list.map((item, index) => (
                             <li key={index} className={styles.item}>

@@ -3,11 +3,13 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SlideBtn from "../../components/modules/SlideBtn";
 import Image from "next/image";
+import Head from "next/head";
 import Link from "next/link";
 import Advantages from "../../components/foodtrucks/Advantages";
 import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/bucket";
+import BidBtn from "../../components/modules/BidBtn";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -233,6 +235,20 @@ const FoodtruckDetails = ({ foodtrucks }) => {
     const foodtruck = foodtrucks[0];
     return (
         <>
+            <Head itemScope itemType="http://schema.org/WPHeader">
+                <title itemProp="headline">{foodtruck.caption}</title>
+                <meta
+                    itemProp="description"
+                    name="description"
+                    content={`${foodtruck.metaDescr}`}
+                />
+                <meta
+                    itemProp="keywords"
+                    name="keywords"
+                    content="ключевые_слова_для_страницы"
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <section className={styles.section}>
                 <Breadcrumbs />{" "}
                 <h1 className={`${styles.title} stn-title`}>
@@ -310,7 +326,8 @@ const FoodtruckDetails = ({ foodtrucks }) => {
                         оборудования для фудтрака.{" "}
                         <span>Более подробно расскажет наш менеджер</span>
                     </p>
-                    <button className={styles.btn}>Оставить заявку</button>
+                    {/* <button className={styles.btn}>Оставить заявку</button> */}
+                    <BidBtn>Оставить заявку</BidBtn>
                 </div>
             </section>
             <section className={styles.tariff}>

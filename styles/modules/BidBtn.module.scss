@@ -1,0 +1,19 @@
+@import "../const";
+
+.button {
+    background: #3ba8c0;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+    padding: 12px 38px;
+    transition: all 0.1s ease-in;
+    width: -moz-fit-content;
+    width: fit-content;
+    z-index: 1;
+
+    &:hover {
+        background: $black;
+    }
+}

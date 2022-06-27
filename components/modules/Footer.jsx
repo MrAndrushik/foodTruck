@@ -42,9 +42,11 @@ const Footer = () => {
                     <p className="footer-bottom__text">
                         Все права защищены © 2022 «Фудтраки в аренду»
                     </p>
-                    <a className="footer-bottom__text footer-bottom__text--privacy">
-                        Политика конфиденциальности
-                    </a>
+                    <Link href="/privacy">
+                        <a className="footer-bottom__text footer-bottom__text--privacy">
+                            Политика конфиденциальности
+                        </a>
+                    </Link>
                 </div>
             </div>
         </footer>

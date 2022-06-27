@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: SITE_URL/sitemap.xml

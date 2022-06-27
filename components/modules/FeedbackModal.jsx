@@ -20,18 +20,54 @@ const FeedbackModal = ({ type }) => {
     const dispatch = useDispatch();
 
     const calcItemTotal = (item) => {
-        if (period === 1) {
-            const total =
+        const total = 0;
+
+        if (period === 1 && item.activeTariff) {
+            const price = item.tariffs.filter(
+                (tariff) => tariff.id === item.activeTariff
+            )[0].startPrice1;
+            total = Number(price.split(" ").join("")) * item.quantity;
+        } else if (period === 1 && !item.activeTariff) {
+            total =
                 Number(item.startPrice1.split(" ").join("")) * item.quantity;
-            return total;
+        } else if (period > 1 && item.activeTariff) {
+            const price1 = item.tariffs.filter(
+                (tariff) => tariff.id === item.activeTariff
+            )[0].startPrice1;
+
+            const price2 = item.tariffs.filter(
+                (tariff) => tariff.id === item.activeTariff
+            )[0].startPrice2;
+
+            total =
+                Number(price1.split(" ").join("")) * item.quantity +
+                Number(price2.split(" ").join("")) *
+                    item.quantity *
+                    (period - 1);
         } else {
-            const total =
+            total =
                 Number(item.startPrice1.split(" ").join("")) * item.quantity +
                 Number(item.startPrice2.split(" ").join("")) *
                     item.quantity *
                     (period - 1);
-            return total;
         }
+        return total;
+    };
+
+    const declOfNum = (num) => {
+        const textForms = ["день", "дня", "дней"];
+        num = Math.abs(num) % 100;
+        const n = num % 10;
+        if (num > 10 && num < 20) {
+            return textForms[2];
+        }
+        if (n > 1 && n < 5) {
+            return textForms[1];
+        }
+        if (n == 1) {
+            return textForms[0];
+        }
+        return textForms[2];
     };
 
     const variants = [
@@ -95,10 +131,16 @@ const FeedbackModal = ({ type }) => {
                                     </h4>
                                     <div className={styles.currentBlock}>
                                         <span className={styles.currentTotal}>
-                                            {`${calcItemTotal(item)} ₽`}
+                                            {`${calcItemTotal(
+                                                item
+                                            ).toLocaleString()} ₽`}
                                         </span>
                                         <p className={styles.notice}>
-                                            {`х${item.quantity} за ${period} сутки`}
+                                            {`х${
+                                                item.quantity
+                                            } за ${period} ${declOfNum(
+                                                period
+                                            )}`}
                                         </p>
                                     </div>
                                 </li>

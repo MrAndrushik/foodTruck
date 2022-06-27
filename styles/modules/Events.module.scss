@@ -209,6 +209,12 @@
     border-radius: 10px;
     display: flex;
     margin: 0 auto;
+
+    transition: all 0.1s ease-in;
+
+    &:hover {
+        background: $black;
+    }
 }
 
 .swiper {

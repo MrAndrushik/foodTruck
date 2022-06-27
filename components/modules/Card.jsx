@@ -22,27 +22,48 @@ const Card = ({ obj, bucket, link }) => {
     };
 
     return (
-        <div className={styles.block}>
-            <div className={styles.imgBlock}>
+        <li
+            itemProp="itemListElement"
+            itemType="http://schema.org/Product"
+            className={styles.block}
+        >
+            <div itemProp="image" className={styles.imgBlock}>
                 <Image src={imgSrc} alt="catalog-item" layout="fill" />
             </div>
             <div className={styles.titleBlock}>
-                <h3 className={styles.caption}>{caption}</h3>
+                <h3 itemProp="name" className={styles.caption}>
+                    {caption}
+                </h3>
             </div>
-            <div className={styles.priceBlock}>
+            <div
+                itemProp="offers"
+                itemScope
+                itemType="http://schema.org/Offer"
+                className={styles.priceBlock}
+            >
                 <div className={styles.priceItem}>
-                    <p className={styles.price}>{`ОТ ${startPrice1} ₽`}</p>
+                    <p className={styles.price}>
+                        ОТ <span itemProp="price">{startPrice1}</span>{" "}
+                        <span itemProp="priceCurrency" content="RUB">
+                            ₽
+                        </span>
+                    </p>
                     <span>Первые сутки</span>
                 </div>
                 <div className={styles.priceItem}>
-                    <p className={styles.price}>{`ОТ ${startPrice2} ₽`}</p>
+                    <p className={styles.price}>
+                        ОТ <span itemProp="price">{startPrice2}</span>{" "}
+                        <span itemProp="priceCurrency" content="RUB">
+                            ₽
+                        </span>
+                    </p>
                     <span>Вторые сутки</span>
                 </div>
             </div>
             <div className={styles.buttonBlock}>
                 {link ? (
                     <Link href={`/foodtrucks/` + id}>
-                        <button className={styles.btn}>Подробнее</button>
+                        <a className={styles.btn}>Подробнее</a>
                     </Link>
                 ) : (
                     <button
@@ -106,7 +127,7 @@ const Card = ({ obj, bucket, link }) => {
                     </div>
                 )}
             </div>
-        </div>
+        </li>
     );
 };
 

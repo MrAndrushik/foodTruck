@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 // next breadcrumb
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,57 +44,87 @@ export const getStaticProps = async (context) => {
 
 const EventsDetails = ({ events }) => {
     return (
-        <section className={styles.section}>
-            <Breadcrumbs />
-            {events.map((event) => (
-                <div key={event.id} className={styles.container}>
-                    <h1 className={styles.mainTitle}>{event.caption}</h1>
-                    <Swiper
-                        modules={[Navigation]}
-                        slidesPerView="auto"
-                        className={`${styles.swiper} gallery__swiper`}
-                        grabCursor
-                        autoHeight
-                        breakpoints={{
-                            1170: {
-                                spaceBetween: 20,
-                                centeredSlides: true,
-                            },
-                            0: {
-                                spaceBetween: 10,
-                                centeredSlides: true,
-                            },
-                        }}
+        <>
+            <Head itemScope itemType="http://schema.org/WPHeader">
+                <title itemProp="headline">{events[0].metaTitle}</title>
+                <meta
+                    itemProp="description"
+                    name="description"
+                    content={`${events[0].metaDescr}`}
+                />
+                <meta
+                    itemProp="keywords"
+                    name="keywords"
+                    content="ключевые_слова_для_страницы"
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <section className={styles.section}>
+                <Breadcrumbs />
+                {events.map((event) => (
+                    <article
+                        itemProp="blogPosts"
+                        itemScope
+                        itemType="http://schema.org/BlogPosting"
+                        key={event.id}
+                        className={styles.container}
                     >
-                        {event.gallery.map((item, index) => (
-                            <SwiperSlide
-                                className={styles.swiperSlide}
-                                key={index}
-                            >
-                                <div className="slide-wrapper">
-                                    <div className={`${styles.slide}`}>
-                                        <Image
-                                            src={item}
-                                            layout="fill"
-                                            alt="slide"
-                                        />
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                        <SlideBtn adaptive="desktop" type="next" />
-                    </Swiper>
-                    <div className={styles.textBlock}>
-                        <h2 className={styles.descrTitle}>Описание</h2>
-                        <div
-                            dangerouslySetInnerHTML={{
-                                __html: event.fullDescr,
+                        <h1 itemProp="headline" className={styles.mainTitle}>
+                            {event.caption}
+                        </h1>
+                        <Swiper
+                            modules={[Navigation]}
+                            slidesPerView="auto"
+                            className={`${styles.swiper} gallery__swiper`}
+                            grabCursor
+                            autoHeight
+                            breakpoints={{
+                                1170: {
+                                    spaceBetween: 20,
+                                    centeredSlides: true,
+                                },
+                                0: {
+                                    spaceBetween: 10,
+                                    centeredSlides: true,
+                                },
                             }}
-                        ></div>
-                    </div>
-                </div>
-            ))}
-        </section>
+                        >
+                            {event.gallery.map((item, index) => (
+                                <SwiperSlide
+                                    className={styles.swiperSlide}
+                                    key={index}
+                                >
+                                    <div className="slide-wrapper">
+                                        <div
+                                            itemProp="image"
+                                            className={`${styles.slide}`}
+                                        >
+                                            <Image
+                                                src={item}
+                                                layout="fill"
+                                                alt="slide"
+                                            />
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                            <SlideBtn adaptive="desktop" type="next" />
+                        </Swiper>
+                        <div
+                            itempProp="articleBody"
+                            className={styles.textBlock}
+                        >
+                            <h2 className={styles.descrTitle}>Описание</h2>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: event.fullDescr,
+                                }}
+                            ></div>
+                        </div>
+                    </article>
+                ))}
+            </section>
+        </>
     );
 };
 
