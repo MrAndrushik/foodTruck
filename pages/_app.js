@@ -2,14 +2,16 @@ import Layout from "../components/modules/Layout";
 import "normalize.css";
 import "../styles/global.scss";
 
-import { Provider } from "react-redux";
+import { useStore, Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "../redux/store";
+import { wrapper } from "../redux/store";
 
 function MyApp({ Component, pageProps }) {
+    const store = useStore((state) => state);
+
     return (
         <Provider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
+            <PersistGate loading={null} persistor={store.__persistor}>
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>
@@ -18,4 +20,4 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://food-truck-nine.vercel.app/
+
+# Sitemaps
+Sitemap: https://food-truck-nine.vercel.app/sitemap.xml

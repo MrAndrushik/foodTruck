@@ -1,4 +1,6 @@
+// ./store/store
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { createWrapper, HYDRATE } from "next-redux-wrapper";
 import {
     persistStore,
     persistReducer,
@@ -13,33 +15,46 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import bucket from "./bucket";
 import toolkitSlice from "./toolkitSlice";
 
-const rootReducer = combineReducers({
-    toolkit: toolkitSlice,
+const combinedReducer = combineReducers({
     bucket: bucket,
+    toolkit: toolkitSlice,
 });
 
-const persistConfig = {
-    key: "root",
-    storage,
+const makeStore = ({ isServer }) => {
+    if (isServer) {
+        return configureStore({
+            reducer: combinedReducer,
+        });
+    } else {
+        const persistConfig = {
+            key: "nextjs",
+            whitelist: ["bucket", "toolkit"],
+            storage,
+        };
+
+        const persistedReducer = persistReducer(persistConfig, combinedReducer); // Create a new reducer with our existing reducer
+
+        const store = configureStore({
+            reducer: persistedReducer,
+            middleware: (getDefaultMiddleware) =>
+                getDefaultMiddleware({
+                    serializableCheck: {
+                        ignoredActions: [
+                            FLUSH,
+                            REHYDRATE,
+                            PAUSE,
+                            PERSIST,
+                            PURGE,
+                            REGISTER,
+                        ],
+                    },
+                }),
+        });
+
+        store.__persistor = persistStore(store); // This creates a persistor object & push that persisted object to .__persistor, so that we can avail the persistability feature
+
+        return store;
+    }
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-export const store = configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [
-                    FLUSH,
-                    REHYDRATE,
-                    PAUSE,
-                    PERSIST,
-                    PURGE,
-                    REGISTER,
-                ],
-            },
-        }),
-});
-
-export const persistor = persistStore(store);
+export const wrapper = createWrapper(makeStore);
