@@ -36,3 +36,11 @@
         height: 149px;
     }
 }
+
+.galleryWrapper {
+    height: 347px;
+
+    @media (max-width: $xl) {
+        height: 149px;
+    }
+}

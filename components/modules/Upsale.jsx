@@ -3,7 +3,6 @@ import Tags from "./Tags";
 
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "next/image";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -52,16 +51,7 @@ const Upsale = ({ obj }) => {
                                 className={`${styles.swiperSlide}`}
                                 key={item.id}
                             >
-                                <Card
-                                    obj={item}
-                                    bucket={true}
-                                    key={item.id}
-                                    // caption={item.caption}
-                                    // imgSrc={item.imgSrc}
-                                    // id={item.id}
-                                    // startPrice1={item.startPrice1}
-                                    // startPrice2={item.startPrice2}
-                                />
+                                <Card obj={item} bucket={true} key={item.id} />
                             </SwiperSlide>
                         )
                 )}

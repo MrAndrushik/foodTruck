@@ -15,8 +15,15 @@ import Tags from "./Tags";
 
 const Gallery = ({ obj }) => {
     const [activeTag, setActiveTag] = useState("Все");
+    const [destroy, setDestroy] = useState(false);
     const tags = obj.tags;
     const catalog = obj.catalog;
+
+    const handleClick = (tag) => {
+        setDestroy(true);
+        setActiveTag(tag);
+        setTimeout(() => setDestroy(false), 0);
+    };
 
     return (
         <section className={styles.gallery}>
@@ -29,66 +36,72 @@ const Gallery = ({ obj }) => {
                 <Tags
                     tags={tags}
                     activeTag={activeTag}
-                    setActiveTag={setActiveTag}
+                    setActiveTag={handleClick}
                 />
             )}
-            <Swiper
-                modules={[Navigation]}
-                slidesPerView="auto"
-                className={`${styles.swiper} gallery__swiper`}
-                grabCursor
-                autoHeight
-                breakpoints={{
-                    1170: {
-                        spaceBetween: 20,
-                        centeredSlides: true,
-                    },
-                    0: {
-                        spaceBetween: 10,
-                        centeredSlides: true,
-                    },
-                }}
-            >
-                {activeTag !== "Все" &&
-                    catalog
-                        .filter((item) => item.tags.includes(activeTag))[0]
-                        .gallery.map((item, index) => (
-                            <SwiperSlide
-                                className={styles.swiperSlide}
-                                key={index}
-                            >
-                                <div className="slide-wrapper">
-                                    <div className={`${styles.slide}`}>
-                                        <Image
-                                            src={item}
-                                            layout="fill"
-                                            alt="slide"
-                                        />
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                {activeTag === "Все" &&
-                    catalog.map((item, index) =>
-                        item.gallery.map((gallery, index) => (
-                            <SwiperSlide
-                                className={styles.swiperSlide}
-                                key={index}
-                            >
-                                <div className="slide-wrapper">
-                                    <div className={`${styles.slide}`}>
-                                        <Image
-                                            src={gallery}
-                                            layout="fill"
-                                            alt="slide"
-                                        />
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))
-                    )}
-                <SlideBtn adaptive="desktop" type="next" />
-            </Swiper>
+            <div className={styles.galleryWrapper}>
+                {!destroy && (
+                    <Swiper
+                        modules={[Navigation]}
+                        slidesPerView="auto"
+                        className={`${styles.swiper} gallery__swiper`}
+                        grabCursor
+                        autoHeight
+                        breakpoints={{
+                            1170: {
+                                spaceBetween: 20,
+                                centeredSlides: true,
+                            },
+                            0: {
+                                spaceBetween: 10,
+                                centeredSlides: true,
+                            },
+                        }}
+                    >
+                        {activeTag !== "Все" &&
+                            catalog
+                                .filter((item) =>
+                                    item.tags.includes(activeTag)
+                                )[0]
+                                .gallery.map((item, index) => (
+                                    <SwiperSlide
+                                        className={styles.swiperSlide}
+                                        key={index}
+                                    >
+                                        <div className="slide-wrapper">
+                                            <div className={`${styles.slide}`}>
+                                                <Image
+                                                    src={item}
+                                                    layout="fill"
+                                                    alt="slide"
+                                                />
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                        {activeTag === "Все" &&
+                            catalog.map((item, index) =>
+                                item.gallery.map((gallery, index) => (
+                                    <SwiperSlide
+                                        className={styles.swiperSlide}
+                                        key={index}
+                                    >
+                                        <div className="slide-wrapper">
+                                            <div className={`${styles.slide}`}>
+                                                <Image
+                                                    src={gallery}
+                                                    layout="fill"
+                                                    alt="slide"
+                                                />
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            )}
+                        <SlideBtn adaptive="desktop" type="next" />
+                    </Swiper>
+                )}
+            </div>
         </section>
     );
 };
