@@ -1,0 +1,94 @@
+@import "../const";
+
+.section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 0;
+
+    @media (max-width: $md) {
+        padding-bottom: 80px;
+    }
+
+    @media (max-width: $md) {
+        padding-top: 30px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @media (max-width: $xl) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 45px 20px;
+    }
+
+    @media (max-width: $md) {
+        row-gap: 60px;
+    }
+}
+
+.block {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+
+    &:nth-child(2n) {
+        flex-direction: row-reverse;
+    }
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+        gap: 30px 20px;
+
+        &:nth-child(2n) {
+            flex-direction: column;
+        }
+
+        &:nth-child(3n-2),
+        &:nth-child(3n-1) {
+            width: 48%;
+        }
+    }
+
+    @media (max-width: $md) {
+        width: 100%;
+
+        &:nth-child(3n-2),
+        &:nth-child(3n-1) {
+            width: 100%;
+        }
+    }
+}
+
+.imgBlock {
+    min-width: 560px;
+    width: 560px;
+    position: relative;
+
+    & > * {
+        border-radius: 20px;
+    }
+
+    @media (max-width: $xl) {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+.title {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.textBlock {
+    font-size: 14px;
+    line-height: 16px;
+    color: #414141;
+
+    & p {
+        margin-bottom: 15px;
+    }
+}

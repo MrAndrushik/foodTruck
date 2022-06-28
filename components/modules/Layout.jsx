@@ -5,6 +5,7 @@ import Events from "./Events";
 import FAQ from "./FAQ";
 import Feedback from "./Feedback";
 import Details from "./Details";
+import SEO from "./SEO";
 
 import { useRouter } from "next/router";
 import FeedbackModal from "./FeedbackModal";
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
             <Gifts />
             {router.pathname !== "/events" && <Events />}
             <FAQ />
+            <SEO />
             <Feedback />
             <Footer />
         </>

@@ -672,8 +672,35 @@ a {
         text-align: center;
         font-family: "Roboto Slab";
         color: #ffffff;
+    }
+}
+
+.header-outter__favorites {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 10px;
+
+    & span {
         opacity: 0.5;
     }
+}
+
+.header-outter__circle {
+    font-family: "Roboto";
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $blue;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -12px;
+    right: -12px;
 }
 
 .header-tablet {

@@ -16,6 +16,7 @@ import {
     Search,
     Favorites,
     Cart,
+    Nav6,
 } from "./SvgSprite";
 
 import data2 from "../../public/data/foodtrucks/catalog.json";
@@ -88,7 +89,7 @@ const Header = () => {
         },
         {
             href: "/buy-foodtruck",
-            Component: <Nav4 />,
+            Component: <Nav6 />,
             text: "Купить фудтрак",
         },
     ];
@@ -337,7 +338,7 @@ const Header = () => {
                             >
                                 <Cart />
                                 {bucketCollection?.length > 0 && (
-                                    <div className="header-bottom__circle header__desktop">
+                                    <div className="header-bottom__circle">
                                         {bucketCollection.reduce(
                                             (sum, item) => sum + item.quantity,
                                             0
@@ -439,10 +440,24 @@ const Header = () => {
                             )}
                         </div>
                         <div className="header-outter__favorites-block">
-                            <Link href="/favorites">
+                            {/* <Link href="/favorites">
                                 <a onClick={() => handleClick()}>Избранные</a>
                             </Link>
-                            <Favorites />
+                            <Favorites /> */}
+                            <Link href="/favorites">
+                                <a
+                                    onClick={() => handleClick()}
+                                    className="header-outter__favorites"
+                                >
+                                    <span>Избранные</span>
+                                    <Favorites />
+                                    {liked?.length > 0 && (
+                                        <div className="header-outter__circle">
+                                            {liked.reduce((sum) => sum + 1, 0)}
+                                        </div>
+                                    )}
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <nav className="header-outter__nav nav container">
