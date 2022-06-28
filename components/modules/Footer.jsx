@@ -1,8 +1,7 @@
 import logo from "../../public/img/foodtruck-logo.svg";
-import instagram from "../../public/img/instagram.svg";
-import facebook from "../../public/img/facebook.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { Facebook } from "./SvgSprite";
 
 const Footer = () => {
     return (
@@ -10,16 +9,17 @@ const Footer = () => {
             <div className="footer__container container">
                 <div className="footer-top">
                     <div className="foter-top__social">
-                        <Image alt="facebook" src={facebook} />
-                        <Image alt="instagram" src={instagram} />
+                        <Facebook fill="#646464" />
                     </div>
-                    <div className="footer-top__logo-block">
-                        <span className="footer-top__text">фудтраки</span>
-                        <div className="footer-top__logo">
-                            <Image src={logo} alt="foodtruck" />
+                    <Link href="/">
+                        <div className="footer-top__logo-block">
+                            <span className="footer-top__text">фудтраки</span>
+                            <div className="footer-top__logo">
+                                <Image src={logo} alt="foodtruck" />
+                            </div>
+                            <span className="footer-top__text">в аренду</span>
                         </div>
-                        <span className="footer-top__text">в аренду</span>
-                    </div>
+                    </Link>
                     <Link href="tel:89999999999">
                         <div className="footer-top__block">
                             <svg

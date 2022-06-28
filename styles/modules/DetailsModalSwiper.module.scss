@@ -7,8 +7,8 @@
     width: 100%;
     height: 100%;
     background: #101010dc;
-    transition: $transition;
-    z-index: -1;
+    transition: opacity 0.3s ease;
+    z-index: -2;
     opacity: 0;
     display: flex;
     align-items: center;
@@ -22,6 +22,14 @@
     top: 0;
     z-index: 10;
 
+    & svg path {
+        transition: all 0.15s ease;
+    }
+
+    &:hover path:nth-child(3) {
+        fill: $blue;
+    }
+
     @media (max-width: calc($xl + 120px)) {
         right: 10px;
         top: 10px;
@@ -30,7 +38,7 @@
 
 .overflowActive {
     opacity: 1;
-    z-index: 120;
+    z-index: 121;
 }
 
 .modal {

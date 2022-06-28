@@ -121,46 +121,30 @@ a {
 // HEADER START //
 
 .header {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 100;
 }
 
+.header--fixed {
+    position: fixed;
+}
+
 .header-top {
     width: 100%;
     background-color: #fff;
     height: 50px;
+    display: block;
 
     @media (max-width: $xl) {
         display: none;
     }
 }
 
-.header-top--active {
-    background-color: $blue;
-    color: #fff;
-
-    & .header-top__link {
-        color: #fff;
-    }
-
-    & svg path {
-        fill: #fff;
-    }
-
-    & .header-top__social-item {
-        border: none;
-    }
-
-    & .header-top__block {
-        border: none;
-    }
-
-    & .header-top__block:last-child {
-        border: none;
-    }
+.header-top--none {
+    display: none;
 }
 
 .header-top__container {
@@ -176,9 +160,11 @@ a {
 }
 
 .header-top__social-item {
+    width: 152px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     padding: 0 25px;
     border-left: 1px solid rgba(0, 0, 0, 0.3);
@@ -195,7 +181,7 @@ a {
 
 .header-top__block {
     cursor: pointer;
-    padding: 0 30px;
+    // padding: 0 30px;
     display: flex;
     gap: 4px;
     height: 100%;
@@ -222,11 +208,17 @@ a {
 }
 
 .header-top__link {
+    padding: 0 30px;
+    display: flex;
+    gap: 4px;
     font-family: "Roboto Slab";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
+    height: 100%;
+    align-items: center;
+    display: flex;
     transition: all 0.1s ease;
 }
 
@@ -765,6 +757,15 @@ a {
 .foter-top__social {
     display: flex;
     gap: 40px;
+    cursor: pointer;
+
+    & svg path {
+        transition: all 0.1s ease-in;
+    }
+
+    &:hover svg path {
+        fill: $blue;
+    }
 }
 
 .footer-top__text {
@@ -784,10 +785,19 @@ a {
 }
 
 .footer-top__logo-block {
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 14px;
     padding-left: 80px;
+
+    & span {
+        transition: all 0.1s ease-in;
+    }
+
+    &:hover span {
+        color: $blue;
+    }
 
     @media (max-width: $xl) {
         display: flex;
@@ -826,6 +836,7 @@ a {
 }
 
 .footer-top__link {
+    cursor: pointer;
     font-family: "Roboto Slab";
     font-weight: 400;
     color: #fff;
@@ -861,10 +872,15 @@ a {
 .footer-bottom__text--privacy {
     color: $gray;
     opacity: 1;
+    transition: all 0.1s ease-in;
 
     @media (max-width: $md) {
         font-size: 14px;
         line-height: 16px;
+    }
+
+    &:hover {
+        color: $blue;
     }
 }
 

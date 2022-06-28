@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 import { Navigation } from "swiper";
@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
+
+import { useSwiper } from "swiper/react";
 
 import styles from "../../styles/modules/Gallery.module.scss";
 import SlideBtn from "./SlideBtn";
@@ -15,7 +17,7 @@ const Gallery = ({ obj }) => {
     const [activeTag, setActiveTag] = useState("Все");
     const tags = obj.tags;
     const catalog = obj.catalog;
-    console.log();
+
     return (
         <section className={styles.gallery}>
             <div className="container">

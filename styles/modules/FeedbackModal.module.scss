@@ -19,10 +19,19 @@
     position: absolute;
     right: -60px;
     top: 0;
+    z-index: 10;
 
-    @media (max-width: $md) {
-        right: 0;
-        top: -50px;
+    & svg path {
+        transition: all 0.15s ease;
+    }
+
+    &:hover path:nth-child(3) {
+        fill: $blue;
+    }
+
+    @media (max-width: calc($xl + 120px)) {
+        right: 10px;
+        top: 10px;
     }
 }
 

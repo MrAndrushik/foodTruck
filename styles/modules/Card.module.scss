@@ -26,6 +26,10 @@
     z-index: 2;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .favorite {
     cursor: pointer;
     position: absolute;
@@ -161,6 +165,7 @@
 .quantityBlock {
     width: 100%;
     border-left: 1px solid $gray;
+    border-radius: 0 0 10px 0;
     background: $gray;
     font-size: 26px;
     line-height: 30px;

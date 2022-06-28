@@ -65,20 +65,6 @@
             }
         }
     }
-
-    & button:first-child {
-        position: relative;
-
-        &:after {
-            position: absolute;
-            content: "";
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: $blue;
-            right: -15px;
-        }
-    }
 }
 
 .wrapper {

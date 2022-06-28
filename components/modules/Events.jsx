@@ -39,43 +39,48 @@ const Events = ({ limit = 3 }) => {
                     {data.map(
                         (item, index) =>
                             (index < limit || limit === false) && (
-                                <article
-                                    itemProp="blogPosts"
-                                    itemScope
-                                    itemType="http://schema.org/BlogPosting"
-                                    key={item.id}
-                                    className={styles.block}
-                                >
-                                    <div className={styles.imgBlock}>
-                                        <Image
-                                            itemProp="image"
-                                            src={item.imgSrc}
-                                            alt="event"
-                                            width={365}
-                                            height={229}
-                                            layout="responsive"
-                                        />
-                                    </div>
-                                    <div className={styles.content}>
-                                        <h3
-                                            itemProp="headline"
-                                            className={styles.caption}
+                                <Link key={item.id} href={`/events/${item.id}`}>
+                                    <a className={styles.eventLink}>
+                                        <article
+                                            itemProp="blogPosts"
+                                            itemScope
+                                            itemType="http://schema.org/BlogPosting"
+                                            className={styles.block}
                                         >
-                                            {item.caption}
-                                        </h3>
-                                        <p
-                                            itemProp="description"
-                                            className={styles.descr}
-                                        >
-                                            {item.shortDescr}
-                                        </p>
-                                    </div>
-                                    <Link href={`/events/${item.id}`}>
-                                        <button className={styles.detail}>
-                                            Подробнее
-                                        </button>
-                                    </Link>
-                                </article>
+                                            <div className={styles.imgBlock}>
+                                                <Image
+                                                    itemProp="image"
+                                                    src={item.imgSrc}
+                                                    alt="event"
+                                                    width={365}
+                                                    height={229}
+                                                    layout="responsive"
+                                                />
+                                            </div>
+                                            <div className={styles.content}>
+                                                <h3
+                                                    itemProp="headline"
+                                                    className={styles.caption}
+                                                >
+                                                    {item.caption}
+                                                </h3>
+                                                <p
+                                                    itemProp="description"
+                                                    className={styles.descr}
+                                                >
+                                                    {item.shortDescr}
+                                                </p>
+                                            </div>
+                                            <Link href={`/events/${item.id}`}>
+                                                <button
+                                                    className={styles.detail}
+                                                >
+                                                    Подробнее
+                                                </button>
+                                            </Link>
+                                        </article>
+                                    </a>
+                                </Link>
                             )
                     )}
                 </div>

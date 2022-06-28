@@ -1,0 +1,95 @@
+@import "../const";
+
+.section {
+    position: relative;
+    padding-top: 160px;
+    margin-bottom: 0;
+    padding-bottom: 100px;
+    @media (max-width: $xl) {
+        padding-top: 88px;
+        padding-bottom: 40px;
+    }
+}
+
+.title {
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 74px;
+    text-align: center;
+    max-width: 986px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    @media (max-width: $xl) {
+        font-size: 26px;
+        line-height: 34px;
+        margin-bottom: 30px;
+    }
+
+    @media (max-width: $md) {
+        margin-bottom: 20px;
+    }
+}
+
+.container {
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+
+    @media (max-width: $md) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.imgBlock {
+    width: 560px;
+
+    & span {
+        border-radius: 20px;
+    }
+    @media (max-width: $xl) {
+        width: 386px;
+    }
+    @media (max-width: $md) {
+        width: 100%;
+    }
+}
+
+.content {
+    color: $gray;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    @media (max-width: $md) {
+        padding: 0 15px;
+    }
+}
+
+.tel {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 47px;
+}
+
+.adress {
+    font-size: 18px;
+    line-height: 21px;
+    max-width: 270px;
+
+    @media (max-width: $md) {
+        max-width: unset;
+    }
+}
+
+.mail {
+    font-size: 18px;
+    line-height: 21px;
+    color: $blue;
+}

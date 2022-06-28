@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -6,7 +6,6 @@ import {
     BurgerClose,
     Email,
     Facebook,
-    Instagram,
     Marker,
     Telephone,
     Nav1,
@@ -33,13 +32,28 @@ const searchArr = new Array(
     data6.catalog
 );
 
-import { setDetailsContent } from "../../redux/toolkitSlice";
+import { setDetailsContent, setFeedbackIsOpen } from "../../redux/toolkitSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [value, setValue] = useState("");
+    const headerTopRef = useRef(null);
+    const headerRef = useRef(null);
+
+    useEffect(() => {
+        const topHeight = headerTopRef.current.clientHeight;
+        document.addEventListener("scroll", () => {
+            if (window.pageYOffset >= topHeight) {
+                headerTopRef.current?.classList.add("header-top--none");
+                headerRef.current?.classList.add("header--fixed");
+            } else {
+                headerTopRef.current?.classList.remove("header-top--none");
+                headerRef.current?.classList.remove("header--fixed");
+            }
+        });
+    }, []);
 
     const bucketCollection = useSelector((state) => state.bucket.collection);
     const liked = useSelector((state) => state.bucket.liked);
@@ -113,13 +127,14 @@ const Header = () => {
         dispatch(setDetailsContent(obj));
     };
 
+    const handleFeedback = () => {
+        document.querySelector("html").classList.add("hidden");
+        dispatch(setFeedbackIsOpen(true));
+    };
+
     return (
-        <header className="header">
-            <div
-                className={
-                    isOpen ? "header-top header-top--active" : "header-top"
-                }
-            >
+        <header ref={headerRef} className="header">
+            <div ref={headerTopRef} className={"header-top"}>
                 <div
                     itemScope
                     itemType="https://schema.org/Organization"
@@ -132,20 +147,14 @@ const Header = () => {
                         >
                             <Facebook fill="#646464" />
                         </a>
-                        <a
-                            href="https://www.instagram.com/"
-                            className="header-top__social-item"
-                        >
-                            <Instagram fill="#646464" />
-                        </a>
                     </div>
                     <div className="header-top__block">
-                        <Email fill="#646464" />
                         <Link href="mailto:admin@mail.ru">
                             <a
                                 itemProp="telephone"
                                 className="header-top__link"
                             >
+                                <Email fill="#646464" />
                                 info@fudtrak-v-arendu.ru
                             </a>
                         </Link>
@@ -156,7 +165,6 @@ const Header = () => {
                         itemType="https://schema.org/PostalAddress"
                         className="header-top__block"
                     >
-                        <Marker fill="#646464" />
                         <a
                             itemProp="streetAddress"
                             target="_blank"
@@ -164,22 +172,25 @@ const Header = () => {
                             href="https://www.google.ru/maps/place/%D0%BF%D1%80.+%D0%95%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,+2%D0%B0,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+109382/@55.6733545,37.7319352,17z/data=!3m1!4b1!4m5!3m4!1s0x414ab4680617c1fb:0x1d8eebb8559f46d7!8m2!3d55.6733515!4d37.7341239"
                             className="header-top__link"
                         >
+                            <Marker fill="#646464" />
                             Егорьевский проезд, 2А
                         </a>
                     </div>
                     <div className="header-top__block">
-                        <button className="header-top__link">
+                        <button
+                            onClick={() => handleFeedback()}
+                            className="header-top__link"
+                        >
                             Заказать звонок
                         </button>
                     </div>
                     <Link href="tel:89999999999">
                         <div className="header-top__block">
-                            <Telephone fill="#646464" />
                             <a
                                 itemProp="telephone"
                                 className="header-top__link header-top__tel"
                             >
-                                8 999 999 99-99
+                                <Telephone fill="#646464" />8 999 999 99-99
                             </a>
                         </div>
                     </Link>
@@ -482,14 +493,15 @@ const Header = () => {
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    onClick={(e) => handleClick(e)}
-                                    itemProp="url"
-                                    className="nav__link"
-                                    href="#contacts"
-                                >
-                                    Контакты
-                                </a>
+                                <Link href="/contacts">
+                                    <a
+                                        onClick={() => handleClick()}
+                                        itemProp="url"
+                                        className="nav__link"
+                                    >
+                                        Контакты
+                                    </a>
+                                </Link>
                             </li>
                         </ul>
                         <Link href="tel:89999999999">
@@ -530,9 +542,6 @@ const Header = () => {
                         <div className="header-outter__flex">
                             <a href="#">
                                 <Facebook fill="#646464" />
-                            </a>
-                            <a href="#">
-                                <Instagram fill="#646464" />
                             </a>
                         </div>
                     </div>

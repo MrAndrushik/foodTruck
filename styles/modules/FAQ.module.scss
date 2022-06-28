@@ -119,7 +119,7 @@
 
     & > p {
         margin-bottom: 15px;
-
+        color: $gray;
         @media (max-width: $xl) {
             margin-bottom: 10px;
         }
