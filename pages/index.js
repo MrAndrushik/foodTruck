@@ -2,6 +2,7 @@ import Head from "next/head";
 import Hero from "../components/home/Hero";
 import Rent from "../components/home/Rent";
 import Gallery from "../components/modules/Gallery";
+import { wrapper } from "../redux/store";
 
 // DATA
 import StepsData from "../public/data/home/steps.json";
