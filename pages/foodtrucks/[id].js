@@ -22,7 +22,7 @@ import RecipeData from "../../public/data/foodtrucks/details/recipe.json";
 
 export const getStaticPaths = async () => {
     const res = await fetch(
-        "https://food-truck-nine.vercel.app/api/foodtrucks"
+        process.env.NEXT_PUBLIC_SITE_URL + "/api/foodtrucks/"
     );
     // const res = await fetch("http://localhost:3000/api/foodtrucks");
     const data = await res.json();
@@ -42,9 +42,8 @@ export const getStaticProps = async (context) => {
     const id = context.params.id;
 
     const res = await fetch(
-        "https://food-truck-nine.vercel.app/api/foodtrucks/" + id
+        process.env.NEXT_PUBLIC_SITE_URL + "/api/foodtrucks/" + id
     );
-    // const res = await fetch("http://localhost:3000/api/foodtrucks/" + id);
     const data = await res.json();
 
     return {

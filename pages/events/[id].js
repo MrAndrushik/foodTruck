@@ -14,8 +14,7 @@ import styles from "../../styles/modules/Events.module.scss";
 import Breadcrumbs from "../../components/modules/Breadcrumbs";
 
 export const getStaticPaths = async () => {
-    const res = await fetch("https://food-truck-nine.vercel.app/api/events");
-    // const res = await fetch("http://localhost:3000/api/events");
+    const res = await fetch(process.env.NEXT_PUBLIC_SITE_URL + "/api/events/");
     const data = await res.json();
     const paths = data.map((item) => {
         return {
@@ -32,9 +31,8 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
     const res = await fetch(
-        "https://food-truck-nine.vercel.app/api/events/" + id
+        process.env.NEXT_PUBLIC_SITE_URL + "/api/events/" + id
     );
-    // const res = await fetch("http://localhost:3000/api/events/" + id);
     const data = await res.json();
 
     return {
@@ -111,7 +109,7 @@ const EventsDetails = ({ events }) => {
                             <SlideBtn adaptive="desktop" type="next" />
                         </Swiper>
                         <div
-                            itempProp="articleBody"
+                            itemProp="articleBody"
                             className={styles.textBlock}
                         >
                             <h2 className={styles.descrTitle}>Описание</h2>
