@@ -1,20 +1,30 @@
 import Layout from "../components/modules/Layout";
 import "normalize.css";
 import "../styles/global.scss";
+import { useEffect } from "react";
 
-import { useStore } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { wrapper } from "../redux/store";
+import { Provider } from "react-redux";
+import store from "../redux/store";
+import { setBucketFromStorage } from "../redux/bucket";
 
 function MyApp({ Component, pageProps }) {
-    const store = useStore((state) => state);
+    useEffect(() => {
+        const STORAGE_KEY = "store";
+        const hasStorage = localStorage.getItem(STORAGE_KEY) !== null;
+
+        if (hasStorage) {
+            const localStore = JSON.parse(localStorage.getItem(STORAGE_KEY));
+            store.dispatch(setBucketFromStorage(localStore.bucket));
+        }
+    }, []);
+
     return (
-        <PersistGate loading={null} persistor={store.__persistor}>
+        <Provider store={store}>
             <Layout>
                 <Component {...pageProps} />
             </Layout>
-        </PersistGate>
+        </Provider>
     );
 }
 
-export default wrapper.withRedux(MyApp);
+export default MyApp;

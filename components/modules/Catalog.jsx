@@ -13,7 +13,7 @@ const Catalog = ({
     link = false,
 }) => {
     const tags = obj?.tags;
-    const catalog = [];
+    let catalog = [];
 
     if (arr) {
         catalog = arr;

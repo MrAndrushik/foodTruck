@@ -8,6 +8,10 @@ const toolkitSlice = createSlice({
         period: 1,
     },
     reducers: {
+        setBucketFromStorage(state, action) {
+            state.collection = action.payload.collection;
+            state.liked = action.payload.liked;
+        },
         toggleToLiked(state, action) {
             if (
                 state.liked.filter((item) => item.id === action.payload.id)
@@ -88,4 +92,5 @@ export const {
     decrPeriod,
     clearBucket,
     deleteProduct,
+    setBucketFromStorage,
 } = toolkitSlice.actions;
