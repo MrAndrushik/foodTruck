@@ -24,7 +24,6 @@ export default function Home() {
                     name="keywords"
                     content="ключевые_слова_для_страницы"
                 />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Hero obj={StepsData} />
             <Rent arr={RentData} />

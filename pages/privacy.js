@@ -15,7 +15,6 @@ export default function Privacy() {
                     name="keywords"
                     content="ключевые_слова_для_страницы"
                 />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <section className="privacy">
                 <div className="container">

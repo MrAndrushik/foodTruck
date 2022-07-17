@@ -12,6 +12,7 @@ import FeedbackModal from "./FeedbackModal";
 
 const Layout = ({ children }) => {
     const router = useRouter();
+
     return (
         <>
             <Header />
@@ -25,7 +26,13 @@ const Layout = ({ children }) => {
             <Gifts />
             {router.pathname !== "/events" && <Events />}
             <FAQ />
-            <SEO />
+            {router.pathname !== "/events" &&
+                router.pathname !== "/events/[id]" &&
+                router.pathname !== "/foodtrucks/[id]" &&
+                router.pathname !== "/favorites" &&
+                router.pathname !== "/contacts" &&
+                router.pathname !== "/bucket" &&
+                router.pathname !== "/privacy" && <SEO />}
             <Feedback />
             <Footer />
         </>

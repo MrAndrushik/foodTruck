@@ -23,7 +23,6 @@ export default function FoodTrucks() {
                     name="keywords"
                     content="ключевые_слова_для_страницы"
                 />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Hero partial={true} obj={HeroData} />
             <Catalog partial={true} bucket={true} obj={CatalogData} />

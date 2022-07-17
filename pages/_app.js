@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Layout from "../components/modules/Layout";
 import "normalize.css";
 import "../styles/global.scss";
@@ -21,6 +22,9 @@ function MyApp({ Component, pageProps }) {
     return (
         <Provider store={store}>
             <Layout>
+                <Head>
+                    <link rel="icon" href="/favicon.png" />
+                </Head>
                 <Component {...pageProps} />
             </Layout>
         </Provider>

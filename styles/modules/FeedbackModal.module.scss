@@ -7,7 +7,7 @@
     width: 100%;
     height: 100%;
     background: #10101050;
-    transition: $transition;
+    transition: opacity 0.3s ease;
     z-index: -1;
     opacity: 0;
     display: flex;
@@ -37,7 +37,7 @@
 
 .overflowActive {
     opacity: 1;
-    z-index: 11;
+    z-index: 110;
 }
 
 .modal {

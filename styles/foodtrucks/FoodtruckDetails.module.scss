@@ -160,7 +160,7 @@
 }
 
 .dropdown {
-    border-radius: 10px;
+    border-radius: 15px;
     border: 2px solid $black;
 }
 
@@ -276,7 +276,7 @@
     box-sizing: content-box;
     transition: all 0.15s ease;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 15px;
 
     @media (max-width: $xl) {
         padding: 0 20px 0 20px;

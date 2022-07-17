@@ -16,7 +16,6 @@ const Contacts = () => {
                     name="keywords"
                     content="ключевые_слова_для_страницы"
                 />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Hero />
         </>

@@ -132,11 +132,30 @@ a {
     position: fixed;
 }
 
+.header__overlay {
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #10101050;
+    transition: $transition;
+}
+
+.header__overlay--active {
+    z-index: 90;
+    opacity: 1;
+}
+
 .header-top {
     width: 100%;
+    z-index: 2;
     background-color: #fff;
     height: 50px;
     display: block;
+    position: relative;
 
     @media (max-width: $xl) {
         display: none;
@@ -231,7 +250,8 @@ a {
 .header-bottom {
     background-color: $black;
     height: 60px;
-    z-index: 1;
+    z-index: 2;
+    position: relative;
 
     @media (max-width: $xl) {
         height: 48px;
@@ -428,6 +448,11 @@ a {
     z-index: 3;
 }
 
+.header-bottom__search {
+    display: flex;
+    align-items: center;
+}
+
 .header-bottom__favorites,
 .header-bottom__cart {
     position: relative;
@@ -464,6 +489,8 @@ a {
     opacity: 0;
     height: 0;
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 
     &--active {
         opacity: 1;
