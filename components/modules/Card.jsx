@@ -12,6 +12,7 @@ import {
 import React from "react";
 
 import styles from "../../styles/modules/Card.module.scss";
+import { FUDTRAKI_NA_MEROPRIYATIE_ROUTE } from "../../const/routes";
 
 const Card = ({ obj, bucket, link }) => {
     const { caption, imgSrc, id, startPrice1, startPrice2 } = obj;
@@ -68,7 +69,7 @@ const Card = ({ obj, bucket, link }) => {
             </button>
             {link ? (
                 <>
-                    <Link href={`/foodtrucks/` + id}>
+                    <Link href={`${FUDTRAKI_NA_MEROPRIYATIE_ROUTE}` + "/" + id}>
                         <a>
                             {currentCardInBucket && (
                                 <div className={styles.selected}>
@@ -133,7 +134,13 @@ const Card = ({ obj, bucket, link }) => {
                     </Link>
                     <div className={styles.buttonBlock}>
                         {link ? (
-                            <Link href={`/foodtrucks/` + id}>
+                            <Link
+                                href={
+                                    `${FUDTRAKI_NA_MEROPRIYATIE_ROUTE}` +
+                                    "/" +
+                                    id
+                                }
+                            >
                                 <a className={styles.btn}>Подробнее</a>
                             </Link>
                         ) : (
@@ -267,7 +274,13 @@ const Card = ({ obj, bucket, link }) => {
                     </div>
                     <div className={styles.buttonBlock}>
                         {link ? (
-                            <Link href={`/foodtrucks/` + id}>
+                            <Link
+                                href={
+                                    `${FUDTRAKI_NA_MEROPRIYATIE_ROUTE}` +
+                                    "/" +
+                                    id
+                                }
+                            >
                                 <a className={styles.btn}>Подробнее</a>
                             </Link>
                         ) : (

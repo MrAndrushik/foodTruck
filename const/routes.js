@@ -1,0 +1,11 @@
+export const ARENDA_SHATROV_ROUTE = "/arenda-shatrov";
+export const EVENTS_ROUTE = "/events";
+export const FUDTRAKI_NA_MEROPRIYATIE_ROUTE = "/fudtraki-na-meropriyatie";
+export const ARENDA_ULICHNOY_MEBELI_ROUTE = "/arenda-ulichnoy-mebeli";
+export const BUCKET_ROUTE = "/bucket";
+export const CONTACTS_ROUTE = "/contacts";
+export const FAVORITES_ROUTE = "/favorites";
+export const KULINARNYE_STANCII_ROUTE = "/kulinarnye-stancii";
+export const MASTER_CLASS_ROUTE = "/master-class";
+export const PRIVACY_ROUTE = "/privacy";
+export const PRODAZHA_FUDTRAKOV_ROUTE = "/prodazha-fudtrakov";

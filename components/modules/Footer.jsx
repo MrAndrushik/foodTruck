@@ -2,6 +2,7 @@ import logo from "../../public/img/foodtruck-logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook } from "./SvgSprite";
+import { PRIVACY_ROUTE } from "../../const/routes";
 
 const Footer = () => {
     return (
@@ -42,7 +43,7 @@ const Footer = () => {
                     <p className="footer-bottom__text">
                         Все права защищены © 2022 «Фудтраки в аренду»
                     </p>
-                    <Link href="/privacy">
+                    <Link href={PRIVACY_ROUTE}>
                         <a className="footer-bottom__text footer-bottom__text--privacy">
                             Политика конфиденциальности
                         </a>

@@ -19,10 +19,14 @@ import styles from "../../styles/foodtrucks/FoodtruckDetails.module.scss";
 import CookData from "../../public/data/foodtrucks/details/cooking.json";
 import AdvantagesData from "../../public/data/foodtrucks/advantages.json";
 import RecipeData from "../../public/data/foodtrucks/details/recipe.json";
+import {
+    BUCKET_ROUTE,
+    FUDTRAKI_NA_MEROPRIYATIE_ROUTE,
+} from "../../const/routes";
 
 export const getStaticPaths = async () => {
     const res = await fetch(
-        process.env.NEXT_PUBLIC_SITE_URL + "/api/foodtrucks/"
+        process.env.NEXT_PUBLIC_SITE_URL + "/api/foodtrucks"
     );
     // const res = await fetch("http://localhost:3000/api/foodtrucks");
     const data = await res.json();
@@ -204,7 +208,7 @@ const FoodtruckDetails = ({ foodtrucks }) => {
 
                             <p>
                                 Время аренды вы можете изменить в{" "}
-                                <Link href="/bucket">
+                                <Link href={BUCKET_ROUTE}>
                                     <a>Корзине</a>
                                 </Link>
                             </p>

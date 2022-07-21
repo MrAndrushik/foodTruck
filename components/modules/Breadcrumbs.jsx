@@ -2,32 +2,51 @@ import styles from "../../styles/modules/Breadcrumbs.module.scss";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
+import {
+    ARENDA_SHATROV_ROUTE,
+    ARENDA_ULICHNOY_MEBELI_ROUTE,
+    EVENTS_ROUTE,
+    FUDTRAKI_NA_MEROPRIYATIE_ROUTE,
+    KULINARNYE_STANCII_ROUTE,
+    MASTER_CLASS_ROUTE,
+    PRODAZHA_FUDTRAKOV_ROUTE,
+} from "../../const/routes";
+
+const transformPaths = Object.fromEntries([
+    ["home", "Главная"],
+    [`${FUDTRAKI_NA_MEROPRIYATIE_ROUTE.split("/")[1]}`, "Фудтраки"],
+    [`${KULINARNYE_STANCII_ROUTE.split("/")[1]}`, "Кулинарные станции"],
+    [`${ARENDA_ULICHNOY_MEBELI_ROUTE.split("/")[1]}`, "Мебель"],
+    [`${MASTER_CLASS_ROUTE.split("/")[1]}`, "Мастер-классы"],
+    [`${ARENDA_SHATROV_ROUTE.split("/")[1]}`, "Киоски, шатры"],
+    [`${EVENTS_ROUTE.split("/")[1]}`, "Мероприятия"],
+    [`${PRODAZHA_FUDTRAKOV_ROUTE.split("/")[1]}`, "Купить фудтрак"],
+]);
+
+const currentApi = Object.fromEntries([
+    [FUDTRAKI_NA_MEROPRIYATIE_ROUTE.split("/")[1], "/foodtrucks"],
+    [EVENTS_ROUTE.split("/")[1], "/events"],
+]);
 
 const Breadcrumbs = () => {
     const router = useRouter();
-    const transformPaths = {
-        home: "Главная",
-        foodtrucks: "Фудтраки",
-        stations: "Кулинарные станции",
-        furniture: "Мебель",
-        "master-class": "Мастер-классы",
-        kiosks: "Киоски, шатры",
-        events: "Мероприятия",
-        "buy-foodtruck": "Купить фудтрак",
-    };
 
     useEffect(() => {
-        const asyncData = async () => {
+        const asyncData = async (api, id) => {
             const res = await fetch(
-                process.env.NEXT_PUBLIC_SITE_URL + "/api" + router.asPath
+                process.env.NEXT_PUBLIC_SITE_URL +
+                    "/api" +
+                    currentApi[api] +
+                    "/" +
+                    id
             );
             const data = await res.json();
             setLast(data[0].caption);
         };
 
         if (router.pathname.includes("[id]")) {
-            asyncData();
+            asyncData(router.asPath.split("/")[1], router.asPath.split("/")[2]);
         }
     }, [router]);
 

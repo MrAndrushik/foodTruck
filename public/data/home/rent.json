@@ -2,12 +2,12 @@
     {
         "caption": "Фудтраки",
         "imgSrc": "/img/home/rent-1.jpg",
-        "link": "/foodtrucks"
+        "link": "/fudtraki-na-meropriyatie"
     },
     {
         "caption": "Кулинарные станции",
         "imgSrc": "/img/home/rent-2.jpg",
-        "link": "/stations"
+        "link": "/kulinarnye-stancii"
     },
     {
         "caption": "Мастер-классы",
@@ -17,11 +17,11 @@
     {
         "caption": "Киоски, палатки",
         "imgSrc": "/img/home/rent-4.jpg",
-        "link": "/kiosks"
+        "link": "/arenda-shatrov"
     },
     {
         "caption": "Аренда мебели",
         "imgSrc": "/img/home/rent-5.jpg",
-        "link": "/furniture"
+        "link": "/arenda-ulichnoy-mebeli"
     }
 ]

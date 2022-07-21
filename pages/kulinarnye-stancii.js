@@ -3,7 +3,6 @@ import Hero from "../components/stations/Hero";
 import Catalog from "../components/modules/Catalog";
 import Upsale from "../components/modules/Upsale";
 
-// DATA
 import CatalogData from "../public/data/stations/catalog.json";
 import UpsaleData from "../public/data/stations/upsale.json";
 

@@ -35,6 +35,18 @@ const searchArr = new Array(
 
 import { setDetailsContent, setFeedbackIsOpen } from "../../redux/toolkitSlice";
 import { useDispatch, useSelector } from "react-redux";
+import {
+    ARENDA_SHATROV_ROUTE,
+    ARENDA_ULICHNOY_MEBELI_ROUTE,
+    BUCKET_ROUTE,
+    CONTACTS_ROUTE,
+    EVENTS_ROUTE,
+    FAVORITES_ROUTE,
+    FUDTRAKI_NA_MEROPRIYATIE_ROUTE,
+    KULINARNYE_STANCII_ROUTE,
+    MASTER_CLASS_ROUTE,
+    PRODAZHA_FUDTRAKOV_ROUTE,
+} from "../../const/routes";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -63,32 +75,32 @@ const Header = () => {
 
     const navLinks = [
         {
-            href: "/foodtrucks",
+            href: FUDTRAKI_NA_MEROPRIYATIE_ROUTE,
             Component: <Nav1 />,
             text: "Фудтраки",
         },
         {
-            href: "/furniture",
+            href: ARENDA_ULICHNOY_MEBELI_ROUTE,
             Component: <Nav2 />,
             text: "Аренда мебели",
         },
         {
-            href: "/stations",
+            href: KULINARNYE_STANCII_ROUTE,
             Component: <Nav3 />,
             text: "Кулинарные станции",
         },
         {
-            href: "/kiosks",
+            href: ARENDA_SHATROV_ROUTE,
             Component: <Nav4 />,
             text: "Киоски, шатры",
         },
         {
-            href: "/master-class",
+            href: MASTER_CLASS_ROUTE,
             Component: <Nav5 />,
             text: "Мастер-классы",
         },
         {
-            href: "/buy-foodtruck",
+            href: PRODAZHA_FUDTRAKOV_ROUTE,
             Component: <Nav6 />,
             text: "Купить фудтрак",
         },
@@ -346,7 +358,7 @@ const Header = () => {
                                     </div>
                                 )}
                             </button>
-                            <Link href="/favorites">
+                            <Link href={FAVORITES_ROUTE}>
                                 <a
                                     onClick={() => handleClick()}
                                     className="header-bottom__favorites header__desktop"
@@ -362,7 +374,7 @@ const Header = () => {
                                     )}
                                 </a>
                             </Link>
-                            <Link href="/bucket">
+                            <Link href={BUCKET_ROUTE}>
                                 <a
                                     onClick={() => handleClick()}
                                     className="header-bottom__cart"
@@ -472,11 +484,7 @@ const Header = () => {
                                 )}
                             </div>
                             <div className="header-outter__favorites-block">
-                                {/* <Link href="/favorites">
-                                <a onClick={() => handleClick()}>Избранные</a>
-                            </Link>
-                            <Favorites /> */}
-                                <Link href="/favorites">
+                                <Link href={FAVORITES_ROUTE}>
                                     <a
                                         onClick={() => handleClick()}
                                         className="header-outter__favorites"
@@ -522,7 +530,7 @@ const Header = () => {
                                 className="nav__block"
                             >
                                 <li>
-                                    <Link href="/events">
+                                    <Link href={EVENTS_ROUTE}>
                                         <a
                                             itemProp="url"
                                             onClick={() => handleClick()}
@@ -543,7 +551,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <Link href="/contacts">
+                                    <Link href={CONTACTS_ROUTE}>
                                         <a
                                             onClick={() => handleClick()}
                                             itemProp="url"

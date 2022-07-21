@@ -12,9 +12,10 @@ import "swiper/css/navigation";
 
 import styles from "../../styles/modules/Events.module.scss";
 import Breadcrumbs from "../../components/modules/Breadcrumbs";
+import { EVENTS_ROUTE } from "../../const/routes";
 
 export const getStaticPaths = async () => {
-    const res = await fetch(process.env.NEXT_PUBLIC_SITE_URL + "/api/events/");
+    const res = await fetch(process.env.NEXT_PUBLIC_SITE_URL + "/api/events");
     const data = await res.json();
     const paths = data.map((item) => {
         return {
