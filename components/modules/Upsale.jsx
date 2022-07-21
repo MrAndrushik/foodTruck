@@ -15,6 +15,13 @@ const Upsale = ({ obj }) => {
     const catalog = obj.catalog;
 
     const [activeTag, setActiveTag] = useState("Все");
+    const [destroy, setDestroy] = useState(false);
+
+    const handleClick = (tag) => {
+        setDestroy(true);
+        setActiveTag(tag);
+        setTimeout(() => setDestroy(false), 0);
+    };
 
     return (
         <section className={styles.section}>
@@ -24,40 +31,48 @@ const Upsale = ({ obj }) => {
             <Tags
                 tags={tags}
                 activeTag={activeTag}
-                setActiveTag={setActiveTag}
+                setActiveTag={handleClick}
             />
-            <Swiper
-                modules={[Navigation]}
-                slidesPerView="auto"
-                className={`${styles.swiper} upsale__swiper`}
-                grabCursor
-                autoHeight
-                breakpoints={{
-                    1170: {
-                        spaceBetween: 20,
-                        centeredSlides: false,
-                    },
-                    0: {
-                        spaceBetween: 10,
-                        centeredSlides: false,
-                    },
-                }}
-            >
-                {catalog.map(
-                    (item) =>
-                        (activeTag === "Все" ||
-                            item.tags.includes(activeTag)) && (
-                            <SwiperSlide
-                                className={`${styles.swiperSlide}`}
-                                key={item.id}
-                            >
-                                <Card obj={item} bucket={true} key={item.id} />
-                            </SwiperSlide>
-                        )
+            <div className={styles.galleryWrapper}>
+                {!destroy && (
+                    <Swiper
+                        modules={[Navigation]}
+                        slidesPerView="auto"
+                        className={`${styles.swiper} upsale__swiper`}
+                        grabCursor
+                        autoHeight
+                        breakpoints={{
+                            1170: {
+                                spaceBetween: 20,
+                                centeredSlides: false,
+                            },
+                            0: {
+                                spaceBetween: 10,
+                                centeredSlides: false,
+                            },
+                        }}
+                    >
+                        {catalog.map(
+                            (item) =>
+                                (activeTag === "Все" ||
+                                    item.tags.includes(activeTag)) && (
+                                    <SwiperSlide
+                                        className={`${styles.swiperSlide}`}
+                                        key={item.id}
+                                    >
+                                        <Card
+                                            obj={item}
+                                            bucket={true}
+                                            key={item.id}
+                                        />
+                                    </SwiperSlide>
+                                )
+                        )}
+                        <SlideBtn type="next" adaptive="full" />
+                        <SlideBtn type="prev" adaptive="tablet" />
+                    </Swiper>
                 )}
-                <SlideBtn type="next" adaptive="full" />
-                <SlideBtn type="prev" adaptive="tablet" />
-            </Swiper>
+            </div>
         </section>
     );
 };

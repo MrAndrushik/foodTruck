@@ -35,3 +35,11 @@
 .swiperSlide {
     width: auto;
 }
+
+.galleryWrapper {
+    height: 487px;
+
+    @media (max-width: $xl) {
+        height: 468px;
+    }
+}

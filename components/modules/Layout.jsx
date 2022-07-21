@@ -26,13 +26,7 @@ const Layout = ({ children }) => {
             <Gifts />
             {router.pathname !== "/events" && <Events />}
             <FAQ />
-            {router.pathname !== "/events" &&
-                router.pathname !== "/events/[id]" &&
-                router.pathname !== "/foodtrucks/[id]" &&
-                router.pathname !== "/favorites" &&
-                router.pathname !== "/contacts" &&
-                router.pathname !== "/bucket" &&
-                router.pathname !== "/privacy" && <SEO />}
+            <SEO page={router.pathname} />
             <Feedback />
             <Footer />
         </>

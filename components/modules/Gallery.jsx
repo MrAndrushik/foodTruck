@@ -7,8 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { useSwiper } from "swiper/react";
-
 import styles from "../../styles/modules/Gallery.module.scss";
 import SlideBtn from "./SlideBtn";
 import Tags from "./Tags";

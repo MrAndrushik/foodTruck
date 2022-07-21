@@ -35,8 +35,7 @@ const Gifts = () => {
                                         <Image
                                             src={item.imgSrc}
                                             alt="gift"
-                                            width={188}
-                                            height={142}
+                                            layout="fill"
                                         />
                                     </div>
                                     <div className={styles.content}>

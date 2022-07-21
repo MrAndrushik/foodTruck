@@ -174,14 +174,15 @@ const Header = () => {
                                 <Facebook fill="#646464" />
                             </a>
                         </div>
-                        <div className="header-top__block">
+                        <div className="header-top__block header-top__block-1">
                             <Link href="mailto:admin@mail.ru">
                                 <a
                                     itemProp="telephone"
                                     className="header-top__link"
                                 >
                                     <Email fill="#646464" />
-                                    info@fudtrak-v-arendu.ru
+                                    {/* info@fudtrak-v-arendu.ru */}
+                                    info@fud-trak77.ru
                                 </a>
                             </Link>
                         </div>
@@ -189,7 +190,7 @@ const Header = () => {
                             itemProp="address"
                             itemScope
                             itemType="https://schema.org/PostalAddress"
-                            className="header-top__block"
+                            className="header-top__block header-top__block-2"
                         >
                             <a
                                 itemProp="streetAddress"
@@ -202,7 +203,7 @@ const Header = () => {
                                 Егорьевский проезд, 2А
                             </a>
                         </div>
-                        <div className="header-top__block">
+                        <div className="header-top__block header-top__block-3">
                             <button
                                 onClick={() => handleFeedback()}
                                 className="header-top__link"
@@ -211,7 +212,7 @@ const Header = () => {
                             </button>
                         </div>
                         <Link href="tel:89999999999">
-                            <div className="header-top__block">
+                            <div className="header-top__block header-top__block-4">
                                 <a
                                     itemProp="telephone"
                                     className="header-top__link header-top__tel"

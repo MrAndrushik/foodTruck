@@ -1,13 +1,19 @@
 import styles from "../../styles/modules/SEO.module.scss";
-import data from "../../public/data/seo.json";
 import Image from "next/image";
 
-const SEO = () => {
+import data from "../../public/data/seo.json";
+
+const SEO = ({ page }) => {
+    const arr = data[page];
+
+    if (arr === undefined) {
+        return null;
+    }
     return (
         <section className={styles.section}>
             <div className="container">
                 <ul className={styles.wrapper}>
-                    {data.map((item, index) => (
+                    {arr.map((item, index) => (
                         <li key={index} className={styles.block}>
                             <div className={styles.imgBlock}>
                                 <Image

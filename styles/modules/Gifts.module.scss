@@ -83,19 +83,27 @@
 }
 
 .imgBlock {
+    position: relative;
     width: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
     background: #bdbdbd20;
     border-radius: 20px;
-    padding: 30px 70px 20px;
+    height: 190px;
+    // padding: 30px 70px 20px;
+
+    & > span {
+        border-radius: 20px;
+    }
 
     @media (max-width: $xl) {
-        padding: 16px 55px;
+        // padding: 16px 55px;
+        height: 109px;
     }
 
     @media (max-width: $md) {
-        padding: 22px 77px;
+        // padding: 22px 77px;
+        height: 152px;
     }
 }
 

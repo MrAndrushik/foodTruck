@@ -176,6 +176,7 @@ a {
 .header-top__social {
     height: 100%;
     display: flex;
+    width: 148px;
 }
 
 .header-top__social-item {
@@ -185,7 +186,6 @@ a {
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 0 25px;
     border-left: 1px solid rgba(0, 0, 0, 0.3);
     transition: all 0.1s ease;
 
@@ -200,8 +200,10 @@ a {
 
 .header-top__block {
     cursor: pointer;
-    // padding: 0 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     display: flex;
+    justify-content: center;
     gap: 4px;
     height: 100%;
     align-items: center;
@@ -226,8 +228,23 @@ a {
     }
 }
 
+.header-top__block-1 {
+    width: 279px;
+}
+
+.header-top__block-2 {
+    width: 276px;
+}
+
+.header-top__block-3 {
+    width: 195px;
+}
+
+.header-top__block-4 {
+    width: 242px;
+}
+
 .header-top__link {
-    padding: 0 30px;
     display: flex;
     gap: 4px;
     font-family: "Roboto Slab";
